@@ -62,8 +62,11 @@
             this.Controls.Add(this.LoginPicBox);
             this.Controls.Add(this.TextBox_ID);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CK Connect";
             ((System.ComponentModel.ISupportInitialize)(this.LoginPicBox)).EndInit();
             this.ResumeLayout(false);

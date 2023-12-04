@@ -63,26 +63,6 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap BackGround {
-            get {
-                object obj = ResourceManager.GetObject("BackGround", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap BackGround_2 {
-            get {
-                object obj = ResourceManager.GetObject("BackGround_2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
         internal static System.Drawing.Bitmap BackGround_3 {
             get {
                 object obj = ResourceManager.GetObject("BackGround_3", resourceCulture);
@@ -106,6 +86,16 @@ namespace Final_Project.Properties {
         internal static System.Drawing.Bitmap Btn2_2 {
             get {
                 object obj = ResourceManager.GetObject("Btn2_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap FirstLogin {
+            get {
+                object obj = ResourceManager.GetObject("FirstLogin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
