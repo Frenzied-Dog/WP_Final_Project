@@ -33,7 +33,7 @@
             // 
             this.TextBox_ID.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBox_ID.Location = new System.Drawing.Point(499, 300);
-            this.TextBox_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBox_ID.Margin = new System.Windows.Forms.Padding(4);
             this.TextBox_ID.Name = "TextBox_ID";
             this.TextBox_ID.Size = new System.Drawing.Size(267, 33);
             this.TextBox_ID.TabIndex = 0;
@@ -44,7 +44,7 @@
             this.LoginPicBox.BackColor = System.Drawing.Color.Transparent;
             this.LoginPicBox.Image = global::Final_Project.Properties.Resources.Btn1_2;
             this.LoginPicBox.Location = new System.Drawing.Point(561, 359);
-            this.LoginPicBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LoginPicBox.Margin = new System.Windows.Forms.Padding(4);
             this.LoginPicBox.Name = "LoginPicBox";
             this.LoginPicBox.Size = new System.Drawing.Size(143, 58);
             this.LoginPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -56,8 +56,8 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::Final_Project.Properties.Resources.BackGround_3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
@@ -66,7 +66,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
