@@ -30,6 +30,7 @@
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
             this.PreferTimeComboBox = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // MajorTextBox
@@ -37,7 +38,7 @@
             this.MajorTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MajorTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.MajorTextBox.Location = new System.Drawing.Point(460, 226);
-            this.MajorTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MajorTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.MajorTextBox.Name = "MajorTextBox";
             this.MajorTextBox.Size = new System.Drawing.Size(435, 33);
             this.MajorTextBox.TabIndex = 0;
@@ -48,7 +49,7 @@
             this.GenderTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GenderTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.GenderTextBox.Location = new System.Drawing.Point(460, 276);
-            this.GenderTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GenderTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.GenderTextBox.Name = "GenderTextBox";
             this.GenderTextBox.Size = new System.Drawing.Size(435, 33);
             this.GenderTextBox.TabIndex = 0;
@@ -59,7 +60,7 @@
             this.NicknameTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NicknameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.NicknameTextBox.Location = new System.Drawing.Point(460, 326);
-            this.NicknameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NicknameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NicknameTextBox.Name = "NicknameTextBox";
             this.NicknameTextBox.Size = new System.Drawing.Size(435, 33);
             this.NicknameTextBox.TabIndex = 0;
@@ -70,7 +71,7 @@
             this.BudgetComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BudgetComboBox.FormattingEnabled = true;
             this.BudgetComboBox.Location = new System.Drawing.Point(460, 376);
-            this.BudgetComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BudgetComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.BudgetComboBox.Name = "BudgetComboBox";
             this.BudgetComboBox.Size = new System.Drawing.Size(435, 32);
             this.BudgetComboBox.TabIndex = 1;
@@ -80,7 +81,7 @@
             this.PreferTimeComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.PreferTimeComboBox.FormattingEnabled = true;
             this.PreferTimeComboBox.Location = new System.Drawing.Point(460, 436);
-            this.PreferTimeComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PreferTimeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.PreferTimeComboBox.Name = "PreferTimeComboBox";
             this.PreferTimeComboBox.Size = new System.Drawing.Size(435, 32);
             this.PreferTimeComboBox.TabIndex = 1;
@@ -90,11 +91,20 @@
             this.textBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox1.Location = new System.Drawing.Point(460, 495);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(435, 83);
             this.textBox1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Dev Branch";
             // 
             // NewUserForm
             // 
@@ -103,6 +113,7 @@
             this.BackgroundImage = global::Final_Project.Properties.Resources.FirstLogin;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.PreferTimeComboBox);
             this.Controls.Add(this.BudgetComboBox);
             this.Controls.Add(this.textBox1);
@@ -112,7 +123,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NewUserForm";
             this.Text = "Personal Info";
@@ -129,5 +140,6 @@
         private System.Windows.Forms.ComboBox BudgetComboBox;
         private System.Windows.Forms.ComboBox PreferTimeComboBox;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
