@@ -32,7 +32,7 @@ namespace Final_Project {
 
         private void Form1_Load(object sender, EventArgs e) {
             // TODO: 這行程式碼會將資料載入 'FPds.Users' 資料表。您可以視需要進行移動或移除。
-            this.usersTableAdapter.Fill(this.FPds.Users);
+            //this.usersTableAdapter.Fill(this.FPds.Users);
 
         }
 
@@ -93,7 +93,7 @@ namespace Final_Project {
         private void button4_Click(object sender, EventArgs e) {
             FPds.Users.Rows.Add("E2411","Hank");
             // Maybe should use TRY
-            usersTableAdapter.Update(FPds.Users);
+            //usersTableAdapter.Update(FPds.Users);
         }
     }
 }

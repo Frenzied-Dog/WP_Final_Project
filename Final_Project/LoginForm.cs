@@ -76,11 +76,16 @@ namespace Final_Project {
                 var resultDic = JsonConvert.DeserializeObject<Dictionary<string, object>>(content);
                 name = resultDic["displayName"].ToString().Split(' ').First();
             } catch (Exception ex) {
+                ex.Message.ToString();
                 MessageBox.Show(ex.ToString());
                 return;
             }
 
 
+
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
 
         }
     }
