@@ -26,6 +26,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.TextBox_ID = new System.Windows.Forms.TextBox();
             this.LoginPicBox = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LoginPicBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +55,15 @@
             this.LoginPicBox.MouseEnter += new System.EventHandler(this.LoginPicBox_MouseEnter);
             this.LoginPicBox.MouseLeave += new System.EventHandler(this.LoginPicBox_MouseLeave);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(596, 437);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Dev Branch";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -61,6 +71,7 @@
             this.BackgroundImage = global::Final_Project.Properties.Resources.BackGround_3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginPicBox);
             this.Controls.Add(this.TextBox_ID);
             this.DoubleBuffered = true;
@@ -81,6 +92,7 @@
 
         private System.Windows.Forms.TextBox TextBox_ID;
         private System.Windows.Forms.PictureBox LoginPicBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 
