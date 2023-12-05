@@ -13,7 +13,10 @@ namespace Final_Project {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+
+            Final_ProjectDataSet db = new Final_ProjectDataSet();
+            (new LoginForm(db)).Show();
+            Application.Run();
         }
     }
 }

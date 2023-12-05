@@ -33,7 +33,7 @@
             // TextBox_ID
             // 
             this.TextBox_ID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TextBox_ID.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox_ID.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBox_ID.Location = new System.Drawing.Point(499, 300);
             this.TextBox_ID.Margin = new System.Windows.Forms.Padding(4);
             this.TextBox_ID.Name = "TextBox_ID";
@@ -83,7 +83,6 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CK Connect";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.LoginPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

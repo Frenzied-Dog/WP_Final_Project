@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Final_Project {
     public partial class NewUserForm : Form {
-        public NewUserForm() {
+        Final_ProjectDataSet db;
+
+        public NewUserForm(Final_ProjectDataSet db) {
             InitializeComponent();
+            this.db = db;
         }
 
         private void CommitPicBox_Click(object sender, EventArgs e) {

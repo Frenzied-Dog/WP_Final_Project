@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Final_Project {
@@ -17,13 +18,17 @@ namespace Final_Project {
         static string graphAPI_Me = "https://graph.microsoft.com/v1.0/me";
         string name = "";
         string ID = "";
+        Final_ProjectDataSet db;
+        Final_ProjectDataSetTableAdapters.MeTableAdapter MeAdapter = new Final_ProjectDataSetTableAdapters.MeTableAdapter();
 
-        public LoginForm() {
+        public LoginForm(Final_ProjectDataSet db) {
             InitializeComponent();
             PublicClientApp = PublicClientApplicationBuilder.Create("9cbbf580-d751-42ec-97d0-01d35df3fa7c")
                  .WithRedirectUri("https://login.microsoftonline.com/common/oauth2/nativeclient")
                  .WithAuthority(AzureCloudInstance.AzurePublic, "c2e7753f-aa05-4abc-8c02-293ad122ca19")
                  .Build();
+
+            this.db = db;
         }
 
         private void LoginPicBox_MouseEnter(object sender, EventArgs e) {
@@ -81,12 +86,15 @@ namespace Final_Project {
                 return;
             }
 
+            MeAdapter.Fill(db.Me, ID);
+            if (db.Me.Count == 0) {
+                (new NewUserForm(db)).Show();
+            } else {
+                MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                (new NewUserForm(db)).Show();
+            }
 
-
-        }
-
-        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
-
+            Close();
         }
     }
 }
