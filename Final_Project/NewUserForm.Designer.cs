@@ -30,14 +30,15 @@
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
             this.PreferTimeComboBox = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.CommitPicBox = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.CommitPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // MajorTextBox
             // 
             this.MajorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MajorTextBox.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MajorTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MajorTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.MajorTextBox.Location = new System.Drawing.Point(460, 237);
             this.MajorTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -80,7 +81,7 @@
             // 
             // PreferTimeComboBox
             // 
-            this.PreferTimeComboBox.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.PreferTimeComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.PreferTimeComboBox.FormattingEnabled = true;
             this.PreferTimeComboBox.Location = new System.Drawing.Point(460, 455);
             this.PreferTimeComboBox.Margin = new System.Windows.Forms.Padding(4);
@@ -91,7 +92,7 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox1.Location = new System.Drawing.Point(460, 526);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -100,15 +101,28 @@
             this.textBox1.Size = new System.Drawing.Size(435, 82);
             this.textBox1.TabIndex = 0;
             // 
-            // pictureBox1
+            // CommitPicBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Final_Project.Properties.Resources.報名Btn;
-            this.pictureBox1.Location = new System.Drawing.Point(975, 589);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(136, 39);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.CommitPicBox.BackColor = System.Drawing.Color.Transparent;
+            this.CommitPicBox.Image = global::Final_Project.Properties.Resources.報名Btn;
+            this.CommitPicBox.Location = new System.Drawing.Point(958, 574);
+            this.CommitPicBox.Name = "CommitPicBox";
+            this.CommitPicBox.Size = new System.Drawing.Size(167, 62);
+            this.CommitPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.CommitPicBox.TabIndex = 2;
+            this.CommitPicBox.TabStop = false;
+            this.CommitPicBox.Click += new System.EventHandler(this.CommitPicBox_Click);
+            this.CommitPicBox.MouseEnter += new System.EventHandler(this.CommitPicBox_MouseEnter);
+            this.CommitPicBox.MouseLeave += new System.EventHandler(this.CommitPicBox_MouseLeave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 15);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Dev Branch";
             // 
             // NewUserForm
             // 
@@ -117,7 +131,8 @@
             this.BackgroundImage = global::Final_Project.Properties.Resources.初次登入填寫資料;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 711);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CommitPicBox);
             this.Controls.Add(this.PreferTimeComboBox);
             this.Controls.Add(this.BudgetComboBox);
             this.Controls.Add(this.textBox1);
@@ -131,7 +146,7 @@
             this.MaximizeBox = false;
             this.Name = "NewUserForm";
             this.Text = "Personal Info";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CommitPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,6 +160,7 @@
         private System.Windows.Forms.ComboBox BudgetComboBox;
         private System.Windows.Forms.ComboBox PreferTimeComboBox;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox CommitPicBox;
+        private System.Windows.Forms.Label label1;
     }
 }

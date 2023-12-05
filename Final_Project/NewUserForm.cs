@@ -13,5 +13,17 @@ namespace Final_Project {
         public NewUserForm() {
             InitializeComponent();
         }
+
+        private void CommitPicBox_Click(object sender, EventArgs e) {
+
+        }
+
+        private void CommitPicBox_MouseEnter(object sender, EventArgs e) {
+            CommitPicBox.Image = Properties.Resources.報名Btn_2;
+        }
+
+        private void CommitPicBox_MouseLeave(object sender, EventArgs e) {
+            CommitPicBox.Image = Properties.Resources.報名Btn;
+        }
     }
 }

@@ -264,6 +264,7 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\報名Btn_2.png" />
     <None Include="Resources\cutedog1.png" />
     <None Include="Resources\emptystar.png" />
     <None Include="Resources\star.png" />

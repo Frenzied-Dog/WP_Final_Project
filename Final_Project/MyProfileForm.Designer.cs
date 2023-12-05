@@ -32,24 +32,25 @@
             this.GenderTextBox = new System.Windows.Forms.TextBox();
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
             this.PreferTimeComboBox = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.SelfTextBox = new System.Windows.Forms.TextBox();
+            this.ModifyPicBox = new System.Windows.Forms.PictureBox();
+            this.HomePicBox = new System.Windows.Forms.PictureBox();
+            this.ID_Label = new System.Windows.Forms.Label();
+            this.NameLabel = new System.Windows.Forms.Label();
+            this.Star1 = new System.Windows.Forms.PictureBox();
+            this.Star2 = new System.Windows.Forms.PictureBox();
+            this.Star3 = new System.Windows.Forms.PictureBox();
+            this.Star4 = new System.Windows.Forms.PictureBox();
+            this.Star5 = new System.Windows.Forms.PictureBox();
             this.profile_photo = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ModifyPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile_photo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // 
             this.MajorTextBox.BackColor = System.Drawing.Color.PapayaWhip;
             this.MajorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MajorTextBox.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MajorTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MajorTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.MajorTextBox.Location = new System.Drawing.Point(633, 150);
             this.MajorTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -70,7 +71,7 @@
             // 
             this.GenderTextBox.BackColor = System.Drawing.Color.PapayaWhip;
             this.GenderTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.GenderTextBox.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenderTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GenderTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.GenderTextBox.Location = new System.Drawing.Point(633, 208);
             this.GenderTextBox.Margin = new System.Windows.Forms.Padding(4);
@@ -82,7 +83,7 @@
             // BudgetComboBox
             // 
             this.BudgetComboBox.BackColor = System.Drawing.Color.PapayaWhip;
-            this.BudgetComboBox.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BudgetComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BudgetComboBox.FormattingEnabled = true;
             this.BudgetComboBox.Location = new System.Drawing.Point(633, 284);
             this.BudgetComboBox.Margin = new System.Windows.Forms.Padding(4);
@@ -93,7 +94,7 @@
             // PreferTimeComboBox
             // 
             this.PreferTimeComboBox.BackColor = System.Drawing.Color.PapayaWhip;
-            this.PreferTimeComboBox.Font = new System.Drawing.Font("Microsoft JhengHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.PreferTimeComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.PreferTimeComboBox.FormattingEnabled = true;
             this.PreferTimeComboBox.Location = new System.Drawing.Point(633, 347);
             this.PreferTimeComboBox.Margin = new System.Windows.Forms.Padding(4);
@@ -101,110 +102,110 @@
             this.PreferTimeComboBox.Size = new System.Drawing.Size(435, 32);
             this.PreferTimeComboBox.TabIndex = 4;
             // 
-            // textBox1
+            // SelfTextBox
             // 
-            this.textBox1.BackColor = System.Drawing.Color.PapayaWhip;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(633, 419);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(435, 82);
-            this.textBox1.TabIndex = 5;
+            this.SelfTextBox.BackColor = System.Drawing.Color.PapayaWhip;
+            this.SelfTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SelfTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SelfTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.SelfTextBox.Location = new System.Drawing.Point(633, 419);
+            this.SelfTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.SelfTextBox.Multiline = true;
+            this.SelfTextBox.Name = "SelfTextBox";
+            this.SelfTextBox.Size = new System.Drawing.Size(435, 82);
+            this.SelfTextBox.TabIndex = 5;
             // 
-            // pictureBox1
+            // ModifyPicBox
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Final_Project.Properties.Resources.編輯資料Btn;
-            this.pictureBox1.Location = new System.Drawing.Point(904, 561);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 46);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.ModifyPicBox.BackColor = System.Drawing.Color.Transparent;
+            this.ModifyPicBox.Image = global::Final_Project.Properties.Resources.編輯資料Btn;
+            this.ModifyPicBox.Location = new System.Drawing.Point(904, 561);
+            this.ModifyPicBox.Name = "ModifyPicBox";
+            this.ModifyPicBox.Size = new System.Drawing.Size(164, 46);
+            this.ModifyPicBox.TabIndex = 6;
+            this.ModifyPicBox.TabStop = false;
             // 
-            // pictureBox2
+            // HomePicBox
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Final_Project.Properties.Resources.Home;
-            this.pictureBox2.Location = new System.Drawing.Point(1200, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 53);
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
+            this.HomePicBox.BackColor = System.Drawing.Color.Transparent;
+            this.HomePicBox.Image = global::Final_Project.Properties.Resources.Home;
+            this.HomePicBox.Location = new System.Drawing.Point(1200, 12);
+            this.HomePicBox.Name = "HomePicBox";
+            this.HomePicBox.Size = new System.Drawing.Size(52, 53);
+            this.HomePicBox.TabIndex = 7;
+            this.HomePicBox.TabStop = false;
             // 
-            // label1
+            // ID_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(113, 470);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 31);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "AN4116039";
+            this.ID_Label.AutoSize = true;
+            this.ID_Label.BackColor = System.Drawing.Color.Transparent;
+            this.ID_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID_Label.Location = new System.Drawing.Point(113, 470);
+            this.ID_Label.Name = "ID_Label";
+            this.ID_Label.Size = new System.Drawing.Size(166, 31);
+            this.ID_Label.TabIndex = 8;
+            this.ID_Label.Text = "AN4116039";
             // 
-            // label2
+            // NameLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(149, 504);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 31);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "張亨利";
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Location = new System.Drawing.Point(149, 504);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(98, 31);
+            this.NameLabel.TabIndex = 9;
+            this.NameLabel.Text = "張亨利";
             // 
-            // pictureBox3
+            // Star1
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Final_Project.Properties.Resources.star;
-            this.pictureBox3.Location = new System.Drawing.Point(173, 574);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox3.TabIndex = 10;
-            this.pictureBox3.TabStop = false;
+            this.Star1.BackColor = System.Drawing.Color.Transparent;
+            this.Star1.Image = global::Final_Project.Properties.Resources.star;
+            this.Star1.Location = new System.Drawing.Point(173, 574);
+            this.Star1.Name = "Star1";
+            this.Star1.Size = new System.Drawing.Size(28, 26);
+            this.Star1.TabIndex = 10;
+            this.Star1.TabStop = false;
             // 
-            // pictureBox4
+            // Star2
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::Final_Project.Properties.Resources.star;
-            this.pictureBox4.Location = new System.Drawing.Point(207, 574);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox4.TabIndex = 11;
-            this.pictureBox4.TabStop = false;
+            this.Star2.BackColor = System.Drawing.Color.Transparent;
+            this.Star2.Image = global::Final_Project.Properties.Resources.star;
+            this.Star2.Location = new System.Drawing.Point(207, 574);
+            this.Star2.Name = "Star2";
+            this.Star2.Size = new System.Drawing.Size(28, 26);
+            this.Star2.TabIndex = 11;
+            this.Star2.TabStop = false;
             // 
-            // pictureBox5
+            // Star3
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::Final_Project.Properties.Resources.star;
-            this.pictureBox5.Location = new System.Drawing.Point(241, 574);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox5.TabIndex = 12;
-            this.pictureBox5.TabStop = false;
+            this.Star3.BackColor = System.Drawing.Color.Transparent;
+            this.Star3.Image = global::Final_Project.Properties.Resources.star;
+            this.Star3.Location = new System.Drawing.Point(241, 574);
+            this.Star3.Name = "Star3";
+            this.Star3.Size = new System.Drawing.Size(28, 26);
+            this.Star3.TabIndex = 12;
+            this.Star3.TabStop = false;
             // 
-            // pictureBox6
+            // Star4
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::Final_Project.Properties.Resources.star;
-            this.pictureBox6.Location = new System.Drawing.Point(275, 574);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox6.TabIndex = 13;
-            this.pictureBox6.TabStop = false;
+            this.Star4.BackColor = System.Drawing.Color.Transparent;
+            this.Star4.Image = global::Final_Project.Properties.Resources.star;
+            this.Star4.Location = new System.Drawing.Point(275, 574);
+            this.Star4.Name = "Star4";
+            this.Star4.Size = new System.Drawing.Size(28, 26);
+            this.Star4.TabIndex = 13;
+            this.Star4.TabStop = false;
             // 
-            // pictureBox7
+            // Star5
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Image = global::Final_Project.Properties.Resources.emptystar;
-            this.pictureBox7.Location = new System.Drawing.Point(309, 574);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(28, 26);
-            this.pictureBox7.TabIndex = 14;
-            this.pictureBox7.TabStop = false;
+            this.Star5.BackColor = System.Drawing.Color.Transparent;
+            this.Star5.Image = global::Final_Project.Properties.Resources.emptystar;
+            this.Star5.Location = new System.Drawing.Point(309, 574);
+            this.Star5.Name = "Star5";
+            this.Star5.Size = new System.Drawing.Size(28, 26);
+            this.Star5.TabIndex = 14;
+            this.Star5.TabStop = false;
             // 
             // profile_photo
             // 
@@ -217,37 +218,47 @@
             this.profile_photo.TabIndex = 15;
             this.profile_photo.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 15);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Dev Branch";
+            // 
             // MyProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::Final_Project.Properties.Resources.Group_28;
             this.ClientSize = new System.Drawing.Size(1264, 711);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.profile_photo);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Star5);
+            this.Controls.Add(this.Star4);
+            this.Controls.Add(this.Star3);
+            this.Controls.Add(this.Star2);
+            this.Controls.Add(this.Star1);
+            this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.ID_Label);
+            this.Controls.Add(this.HomePicBox);
+            this.Controls.Add(this.ModifyPicBox);
+            this.Controls.Add(this.SelfTextBox);
             this.Controls.Add(this.PreferTimeComboBox);
             this.Controls.Add(this.BudgetComboBox);
             this.Controls.Add(this.GenderTextBox);
             this.Controls.Add(this.MajorTextBox);
             this.Name = "MyProfileForm";
-            this.Text = " ";
+            this.Text = " My Profile";
             this.Load += new System.EventHandler(this.MyProfileForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ModifyPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HomePicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Star5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile_photo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -260,16 +271,17 @@
         private System.Windows.Forms.TextBox GenderTextBox;
         private System.Windows.Forms.ComboBox BudgetComboBox;
         private System.Windows.Forms.ComboBox PreferTimeComboBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.TextBox SelfTextBox;
+        private System.Windows.Forms.PictureBox ModifyPicBox;
+        private System.Windows.Forms.Label ID_Label;
+        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.PictureBox Star1;
+        private System.Windows.Forms.PictureBox Star2;
+        private System.Windows.Forms.PictureBox Star3;
+        private System.Windows.Forms.PictureBox Star4;
+        private System.Windows.Forms.PictureBox Star5;
         private System.Windows.Forms.PictureBox profile_photo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox HomePicBox;
     }
 }
