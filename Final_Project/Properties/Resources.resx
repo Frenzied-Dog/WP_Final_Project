@@ -133,6 +133,9 @@
   <data name="初次登入填寫資料" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\初次登入填寫資料.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mainLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mainLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="emptystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\emptystar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,11 +151,11 @@
   <data name="mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cutedog1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cutedog1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,7 +169,28 @@
   <data name="BackGround_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackGround_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mainLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mainLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MyProfileBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MyProfileBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreatEventBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreatEventBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreatEventBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreatEventBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MyEventBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MyEventBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MyEventBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MyEventBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MyProfileBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MyProfileBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotiticationBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotiticationBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotiticationBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotiticationBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

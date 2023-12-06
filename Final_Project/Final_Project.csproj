@@ -292,6 +292,14 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\NotiticationBtn_2.png" />
+    <None Include="Resources\NotiticationBtn.png" />
+    <None Include="Resources\MyProfileBtn_2.png" />
+    <None Include="Resources\MyEventBtn_2.png" />
+    <None Include="Resources\MyEventBtn.png" />
+    <None Include="Resources\CreatEventBtn_2.png" />
+    <None Include="Resources\CreatEventBtn.png" />
+    <None Include="Resources\MyProfileBtn.png" />
     <None Include="Resources\mainLabel.png" />
     <None Include="Resources\mark.png" />
     <None Include="Resources\HomePhoto.png" />

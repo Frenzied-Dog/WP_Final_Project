@@ -93,6 +93,26 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap CreatEventBtn {
+            get {
+                object obj = ResourceManager.GetObject("CreatEventBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CreatEventBtn_2 {
+            get {
+                object obj = ResourceManager.GetObject("CreatEventBtn_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap cutedog1 {
             get {
                 object obj = ResourceManager.GetObject("cutedog1", resourceCulture);
@@ -176,6 +196,66 @@ namespace Final_Project.Properties {
         internal static System.Drawing.Bitmap mark {
             get {
                 object obj = ResourceManager.GetObject("mark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap MyEventBtn {
+            get {
+                object obj = ResourceManager.GetObject("MyEventBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap MyEventBtn_2 {
+            get {
+                object obj = ResourceManager.GetObject("MyEventBtn_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap MyProfileBtn {
+            get {
+                object obj = ResourceManager.GetObject("MyProfileBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap MyProfileBtn_2 {
+            get {
+                object obj = ResourceManager.GetObject("MyProfileBtn_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap NotiticationBtn {
+            get {
+                object obj = ResourceManager.GetObject("NotiticationBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap NotiticationBtn_2 {
+            get {
+                object obj = ResourceManager.GetObject("NotiticationBtn_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
