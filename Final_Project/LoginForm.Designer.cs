@@ -27,6 +27,7 @@
             this.TextBox_ID = new System.Windows.Forms.TextBox();
             this.LoginPicBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LoginPicBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -34,7 +35,7 @@
             // 
             this.TextBox_ID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBox_ID.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextBox_ID.Location = new System.Drawing.Point(499, 300);
+            this.TextBox_ID.Location = new System.Drawing.Point(499, 313);
             this.TextBox_ID.Margin = new System.Windows.Forms.Padding(4);
             this.TextBox_ID.Name = "TextBox_ID";
             this.TextBox_ID.Size = new System.Drawing.Size(267, 33);
@@ -45,7 +46,7 @@
             // 
             this.LoginPicBox.BackColor = System.Drawing.Color.Transparent;
             this.LoginPicBox.Image = global::Final_Project.Properties.Resources.Btn1_2;
-            this.LoginPicBox.Location = new System.Drawing.Point(561, 359);
+            this.LoginPicBox.Location = new System.Drawing.Point(560, 376);
             this.LoginPicBox.Margin = new System.Windows.Forms.Padding(4);
             this.LoginPicBox.Name = "LoginPicBox";
             this.LoginPicBox.Size = new System.Drawing.Size(143, 58);
@@ -65,13 +66,24 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Dev Branch";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(987, 171);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = global::Final_Project.Properties.Resources.BackGround_3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1264, 711);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginPicBox);
             this.Controls.Add(this.TextBox_ID);
@@ -94,6 +106,7 @@
         private System.Windows.Forms.TextBox TextBox_ID;
         private System.Windows.Forms.PictureBox LoginPicBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

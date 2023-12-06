@@ -145,6 +145,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "NewUserForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personal Info";
             ((System.ComponentModel.ISupportInitialize)(this.CommitPicBox)).EndInit();
             this.ResumeLayout(false);

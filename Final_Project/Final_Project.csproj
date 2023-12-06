@@ -207,6 +207,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenuForm.Designer.cs">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenuForm.resx">
+      <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyProfileForm.resx">
       <DependentUpon>MyProfileForm.cs</DependentUpon>
@@ -283,6 +292,9 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\mainLabel.png" />
+    <None Include="Resources\mark.png" />
+    <None Include="Resources\HomePhoto.png" />
     <None Include="Resources\報名Btn_2.png" />
     <None Include="Resources\cutedog1.png" />
     <None Include="Resources\emptystar.png" />

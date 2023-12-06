@@ -91,10 +91,15 @@ namespace Final_Project {
                 (new NewUserForm(db)).Show();
             } else {
                 MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                (new NewUserForm(db)).Show();
+                (new MainMenuForm(db)).Show();
             }
 
             Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            (new MainMenuForm(db)).Show();
+
         }
     }
 }
