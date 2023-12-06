@@ -29,7 +29,7 @@
             this.NicknameTextBox = new System.Windows.Forms.TextBox();
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
             this.PreferTimeComboBox = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AboutMeTextBox = new System.Windows.Forms.TextBox();
             this.CommitPicBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CommitPicBox)).BeginInit();
@@ -39,35 +39,46 @@
             // 
             this.MajorTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.MajorTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MajorTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.MajorTextBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.MajorTextBox.Location = new System.Drawing.Point(460, 237);
             this.MajorTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.MajorTextBox.Name = "MajorTextBox";
             this.MajorTextBox.Size = new System.Drawing.Size(435, 33);
             this.MajorTextBox.TabIndex = 0;
+            this.MajorTextBox.Text = "Ex: 電機115";
             this.MajorTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MajorTextBox.Enter += new System.EventHandler(this.TextBoxHint_Enter);
+            this.MajorTextBox.Leave += new System.EventHandler(this.TextBoxHint_Leave);
             // 
             // GenderTextBox
             // 
+            this.GenderTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.GenderTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenderTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.GenderTextBox.ForeColor = System.Drawing.Color.DimGray;
             this.GenderTextBox.Location = new System.Drawing.Point(460, 285);
             this.GenderTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.GenderTextBox.Name = "GenderTextBox";
             this.GenderTextBox.Size = new System.Drawing.Size(435, 33);
             this.GenderTextBox.TabIndex = 0;
+            this.GenderTextBox.Text = "Ex: 男";
             this.GenderTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.GenderTextBox.Enter += new System.EventHandler(this.TextBoxHint_Enter);
+            this.GenderTextBox.Leave += new System.EventHandler(this.TextBoxHint_Leave);
             // 
             // NicknameTextBox
             // 
+            this.NicknameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.NicknameTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NicknameTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.NicknameTextBox.ForeColor = System.Drawing.Color.DimGray;
             this.NicknameTextBox.Location = new System.Drawing.Point(460, 339);
             this.NicknameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NicknameTextBox.Name = "NicknameTextBox";
             this.NicknameTextBox.Size = new System.Drawing.Size(435, 33);
             this.NicknameTextBox.TabIndex = 0;
+            this.NicknameTextBox.Text = "( 選填 )";
             this.NicknameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.NicknameTextBox.Enter += new System.EventHandler(this.TextBoxHint_Enter);
+            this.NicknameTextBox.Leave += new System.EventHandler(this.TextBoxHint_Leave);
             // 
             // BudgetComboBox
             // 
@@ -89,17 +100,17 @@
             this.PreferTimeComboBox.Size = new System.Drawing.Size(435, 32);
             this.PreferTimeComboBox.TabIndex = 1;
             // 
-            // textBox1
+            // AboutMeTextBox
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(460, 526);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(435, 82);
-            this.textBox1.TabIndex = 0;
+            this.AboutMeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.AboutMeTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutMeTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.AboutMeTextBox.Location = new System.Drawing.Point(460, 526);
+            this.AboutMeTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.AboutMeTextBox.Multiline = true;
+            this.AboutMeTextBox.Name = "AboutMeTextBox";
+            this.AboutMeTextBox.Size = new System.Drawing.Size(435, 82);
+            this.AboutMeTextBox.TabIndex = 0;
             // 
             // CommitPicBox
             // 
@@ -135,7 +146,7 @@
             this.Controls.Add(this.CommitPicBox);
             this.Controls.Add(this.PreferTimeComboBox);
             this.Controls.Add(this.BudgetComboBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AboutMeTextBox);
             this.Controls.Add(this.NicknameTextBox);
             this.Controls.Add(this.GenderTextBox);
             this.Controls.Add(this.MajorTextBox);
@@ -160,7 +171,7 @@
         private System.Windows.Forms.TextBox NicknameTextBox;
         private System.Windows.Forms.ComboBox BudgetComboBox;
         private System.Windows.Forms.ComboBox PreferTimeComboBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox AboutMeTextBox;
         private System.Windows.Forms.PictureBox CommitPicBox;
         private System.Windows.Forms.Label label1;
     }

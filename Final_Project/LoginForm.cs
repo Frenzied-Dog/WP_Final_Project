@@ -98,8 +98,14 @@ namespace Final_Project {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            (new MainMenuForm(db)).Show();
+            //(new MainMenuForm(db)).Show();
 
+            (new NewUserForm(db)).Show();
+            Close();
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
+            if(Application.OpenForms.Count == 0) Application.Exit();
         }
     }
 }
