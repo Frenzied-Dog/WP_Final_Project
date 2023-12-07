@@ -27,5 +27,16 @@ namespace Final_Project {
 
             Close();
         }
+
+        async private void button2_Click(object sender, EventArgs e) {
+            await webView21.ExecuteScriptAsync("document.querySelector(\"#passive-assist\").remove()");
+            await webView21.ExecuteScriptAsync("document.querySelector(\"#minimap\").remove()");
+            await webView21.ExecuteScriptAsync("document.querySelector(\"#vasquette\").remove()");
+            await webView21.ExecuteScriptAsync("document.querySelector('div[class=\"app-horizontal-widget-holder Hk4XGb\"]').remove()");
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            webView21.Reload();
+        }
     }
 }

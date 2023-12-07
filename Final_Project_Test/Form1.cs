@@ -19,6 +19,8 @@ namespace Final_Project {
     public partial class Form1 : Form { 
         public static IPublicClientApplication PublicClientApp;
         static string graphAPI_Me = "https://graph.microsoft.com/v1.0/me";
+        Form3 f3 = new Form3();
+        Form2 f2 = new Form2();
 
 
         public Form1() {
@@ -84,7 +86,6 @@ namespace Final_Project {
         }
 
         private void button3_Click(object sender, EventArgs e) {
-            Form2 f2 = new Form2();
             f2.ShowDialog();
 
             label2.Text = f2.ShopName + "\r\n" + f2.Address;
@@ -97,7 +98,6 @@ namespace Final_Project {
         }
 
         private void button5_Click(object sender, EventArgs e) {
-            Form3 f3 = new Form3();
             f3.ShowDialog();
         }
     }

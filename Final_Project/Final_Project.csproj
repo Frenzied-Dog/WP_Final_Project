@@ -196,6 +196,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEventForm.Designer.cs">
+      <DependentUpon>CreateEventForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiscussionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiscussionForm.Designer.cs">
+      <DependentUpon>DiscussionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Final_ProjectDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,11 +225,29 @@
     <Compile Include="MainMenuForm.Designer.cs">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapForm.Designer.cs">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyEventForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyEventForm.Designer.cs">
+      <DependentUpon>MyEventForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyProfileForm.Designer.cs">
       <DependentUpon>MyProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewPostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewPostForm.Designer.cs">
+      <DependentUpon>NewPostForm.cs</DependentUpon>
     </Compile>
     <Compile Include="NewUserForm.cs">
       <SubType>Form</SubType>
@@ -225,19 +255,43 @@
     <Compile Include="NewUserForm.Designer.cs">
       <DependentUpon>NewUserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotificationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotificationForm.Designer.cs">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateEventForm.resx">
+      <DependentUpon>CreateEventForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiscussionForm.resx">
+      <DependentUpon>DiscussionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MapForm.resx">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyEventForm.resx">
+      <DependentUpon>MyEventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyProfileForm.resx">
       <DependentUpon>MyProfileForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewPostForm.resx">
+      <DependentUpon>NewPostForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewUserForm.resx">
       <DependentUpon>NewUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotificationForm.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
