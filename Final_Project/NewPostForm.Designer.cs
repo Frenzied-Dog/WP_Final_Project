@@ -33,6 +33,8 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewPostForm";
             this.Text = "New Post";
             this.ResumeLayout(false);

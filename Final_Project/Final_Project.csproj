@@ -346,6 +346,7 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\HomePhoto 1.png" />
     <None Include="Resources\NotiticationBtn_2.png" />
     <None Include="Resources\NotiticationBtn.png" />
     <None Include="Resources\MyProfileBtn_2.png" />
