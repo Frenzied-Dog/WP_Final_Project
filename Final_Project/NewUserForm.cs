@@ -60,7 +60,7 @@ namespace Final_Project {
 				MessageBox.Show("註冊成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			};
 
-            (new MainMenuForm(db)).Show();
+            new MainMenuForm(db).Show();
             Close();
         }
 

@@ -88,22 +88,22 @@ namespace Final_Project {
 
             MeAdapter.Fill(db.Me, ID);
             if (db.Me.Count == 0) {
-                (new NewUserForm(db, TextBox_ID.Text, name)).Show();
+                new NewUserForm(db, TextBox_ID.Text, name).Show();
             } else {
                 MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                (new MainMenuForm(db)).Show();
+                new MainMenuForm(db).Show();
             }
 
             Close();
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            (new MainMenuForm(db)).Show();
+            new MainMenuForm(db).Show();
             Close();
         }
 
         private void button2_Click(object sender, EventArgs e) {
-            (new NewUserForm(db, TextBox_ID.Text, textBox1.Text)).Show();
+            new NewUserForm(db, TextBox_ID.Text, textBox1.Text).Show();
             Close();
         }
 
@@ -120,6 +120,10 @@ namespace Final_Project {
                 MeAdapter.Update(db.Me);
                 MessageBox.Show($"已刪除{name}的資料", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e) {
+            new NewPostForm().Show();
         }
     }
 }
