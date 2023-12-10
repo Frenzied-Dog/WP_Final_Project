@@ -13,5 +13,17 @@ namespace Final_Project {
         public NewPostForm() {
             InitializeComponent();
         }
+
+        private void PostPicBox_Click(object sender, EventArgs e) {
+
+        }
+
+        private void PostPicBox_MouseEnter(object sender, EventArgs e) {
+            PostPicBox.Image = Properties.Resources.發佈貼文Btn_2;
+        }
+
+        private void PostPicBox_MouseLeave(object sender, EventArgs e) {
+            PostPicBox.Image = Properties.Resources.發佈貼文Btn;
+        }
     }
 }
