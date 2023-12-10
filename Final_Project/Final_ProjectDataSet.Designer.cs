@@ -1353,6 +1353,10 @@ namespace Final_Project {
             
             private global::System.Data.DataColumn columnPic;
             
+            private global::System.Data.DataColumn columnAboutMe;
+            
+            private global::System.Data.DataColumn columnGender;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UsersDataTable() {
@@ -1444,6 +1448,22 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AboutMeColumn {
+                get {
+                    return this.columnAboutMe;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GenderColumn {
+                get {
+                    return this.columnGender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1479,7 +1499,7 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UsersRow AddUsersRow(string Id, string Name, string NickName, string Major, int Budget, int PreferTime, byte[] Pic) {
+            public UsersRow AddUsersRow(string Id, string Name, string NickName, string Major, int Budget, int PreferTime, byte[] Pic, string AboutMe, string Gender) {
                 UsersRow rowUsersRow = ((UsersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -1488,7 +1508,9 @@ namespace Final_Project {
                         Major,
                         Budget,
                         PreferTime,
-                        Pic};
+                        Pic,
+                        AboutMe,
+                        Gender};
                 rowUsersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUsersRow);
                 return rowUsersRow;
@@ -1525,6 +1547,8 @@ namespace Final_Project {
                 this.columnBudget = base.Columns["Budget"];
                 this.columnPreferTime = base.Columns["PreferTime"];
                 this.columnPic = base.Columns["Pic"];
+                this.columnAboutMe = base.Columns["AboutMe"];
+                this.columnGender = base.Columns["Gender"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1544,6 +1568,10 @@ namespace Final_Project {
                 base.Columns.Add(this.columnPreferTime);
                 this.columnPic = new global::System.Data.DataColumn("Pic", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPic);
+                this.columnAboutMe = new global::System.Data.DataColumn("AboutMe", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAboutMe);
+                this.columnGender = new global::System.Data.DataColumn("Gender", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGender);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
@@ -1553,6 +1581,8 @@ namespace Final_Project {
                 this.columnName.MaxLength = 10;
                 this.columnNickName.MaxLength = 50;
                 this.columnMajor.MaxLength = 20;
+                this.columnAboutMe.MaxLength = 200;
+                this.columnGender.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1700,6 +1730,10 @@ namespace Final_Project {
             
             private global::System.Data.DataColumn columnPic;
             
+            private global::System.Data.DataColumn columnAboutMe;
+            
+            private global::System.Data.DataColumn columnGender;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MeDataTable() {
@@ -1791,6 +1825,22 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AboutMeColumn {
+                get {
+                    return this.columnAboutMe;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GenderColumn {
+                get {
+                    return this.columnGender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1826,7 +1876,7 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MeRow AddMeRow(string Id, string Name, string NickName, string Major, int Budget, int PreferTime, byte[] Pic) {
+            public MeRow AddMeRow(string Id, string Name, string NickName, string Major, int Budget, int PreferTime, byte[] Pic, string AboutMe, string Gender) {
                 MeRow rowMeRow = ((MeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id,
@@ -1835,7 +1885,9 @@ namespace Final_Project {
                         Major,
                         Budget,
                         PreferTime,
-                        Pic};
+                        Pic,
+                        AboutMe,
+                        Gender};
                 rowMeRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMeRow);
                 return rowMeRow;
@@ -1872,6 +1924,8 @@ namespace Final_Project {
                 this.columnBudget = base.Columns["Budget"];
                 this.columnPreferTime = base.Columns["PreferTime"];
                 this.columnPic = base.Columns["Pic"];
+                this.columnAboutMe = base.Columns["AboutMe"];
+                this.columnGender = base.Columns["Gender"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1891,6 +1945,10 @@ namespace Final_Project {
                 base.Columns.Add(this.columnPreferTime);
                 this.columnPic = new global::System.Data.DataColumn("Pic", typeof(byte[]), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPic);
+                this.columnAboutMe = new global::System.Data.DataColumn("AboutMe", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAboutMe);
+                this.columnGender = new global::System.Data.DataColumn("Gender", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGender);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AllowDBNull = false;
@@ -1900,6 +1958,8 @@ namespace Final_Project {
                 this.columnName.MaxLength = 10;
                 this.columnNickName.MaxLength = 50;
                 this.columnMajor.MaxLength = 20;
+                this.columnAboutMe.MaxLength = 200;
+                this.columnGender.MaxLength = 20;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2332,6 +2392,38 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string AboutMe {
+                get {
+                    try {
+                        return ((string)(this[this.tableUsers.AboutMeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'Users\' 中資料行 \'AboutMe\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableUsers.AboutMeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Gender {
+                get {
+                    try {
+                        return ((string)(this[this.tableUsers.GenderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'Users\' 中資料行 \'Gender\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableUsers.GenderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNickNameNull() {
                 return this.IsNull(this.tableUsers.NickNameColumn);
             }
@@ -2388,6 +2480,30 @@ namespace Final_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPicNull() {
                 this[this.tableUsers.PicColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAboutMeNull() {
+                return this.IsNull(this.tableUsers.AboutMeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAboutMeNull() {
+                this[this.tableUsers.AboutMeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGenderNull() {
+                return this.IsNull(this.tableUsers.GenderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGenderNull() {
+                this[this.tableUsers.GenderColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2509,6 +2625,38 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string AboutMe {
+                get {
+                    try {
+                        return ((string)(this[this.tableMe.AboutMeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'Me\' 中資料行 \'AboutMe\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableMe.AboutMeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Gender {
+                get {
+                    try {
+                        return ((string)(this[this.tableMe.GenderColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'Me\' 中資料行 \'Gender\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableMe.GenderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNickNameNull() {
                 return this.IsNull(this.tableMe.NickNameColumn);
             }
@@ -2565,6 +2713,30 @@ namespace Final_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPicNull() {
                 this[this.tableMe.PicColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAboutMeNull() {
+                return this.IsNull(this.tableMe.AboutMeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAboutMeNull() {
+                this[this.tableMe.AboutMeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGenderNull() {
+                return this.IsNull(this.tableMe.GenderColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGenderNull() {
+                this[this.tableMe.GenderColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3865,10 +4037,12 @@ SELECT ActivityID, SenderID, Time, [Content] FROM Chat WHERE (ActivityID = @Acti
             tableMapping.ColumnMappings.Add("Budget", "Budget");
             tableMapping.ColumnMappings.Add("PreferTime", "PreferTime");
             tableMapping.ColumnMappings.Add("Pic", "Pic");
+            tableMapping.ColumnMappings.Add("AboutMe", "AboutMe");
+            tableMapping.ColumnMappings.Add("Gender", "Gender");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Users] WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ((@IsNull_NickName = 1 AND [NickName] IS NULL) OR ([NickName] = @Original_NickName)) AND ((@IsNull_Major = 1 AND [Major] IS NULL) OR ([Major] = @Original_Major)) AND ((@IsNull_Budget = 1 AND [Budget] IS NULL) OR ([Budget] = @Original_Budget)) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Users] WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ((@IsNull_NickName = 1 AND [NickName] IS NULL) OR ([NickName] = @Original_NickName)) AND ((@IsNull_Major = 1 AND [Major] IS NULL) OR ([Major] = @Original_Major)) AND ((@IsNull_Budget = 1 AND [Budget] IS NULL) OR ([Budget] = @Original_Budget)) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)) AND ((@IsNull_AboutMe = 1 AND [AboutMe] IS NULL) OR ([AboutMe] = @Original_AboutMe)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3880,12 +4054,14 @@ SELECT ActivityID, SenderID, Time, [Content] FROM Chat WHERE (ActivityID = @Acti
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AboutMe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AboutMe", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Users] ([Id], [Name], [NickName], [Major], [Budget], [PreferTi" +
-                "me], [Pic]) VALUES (@Id, @Name, @NickName, @Major, @Budget, @PreferTime, @Pic);\r" +
-                "\nSELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id " +
-                "= @Id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Users] ([Id], [Name], [NickName], [Major], [Budget], [PreferTime], [Pic], [AboutMe], [Gender]) VALUES (@Id, @Name, @NickName, @Major, @Budget, @PreferTime, @Pic, @AboutMe, @Gender);
+SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gender FROM Users WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3894,10 +4070,12 @@ SELECT ActivityID, SenderID, Time, [Content] FROM Chat WHERE (ActivityID = @Acti
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pic", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AboutMe", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [Id] = @Id, [Name] = @Name, [NickName] = @NickName, [Major] = @Major, [Budget] = @Budget, [PreferTime] = @PreferTime, [Pic] = @Pic WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ((@IsNull_NickName = 1 AND [NickName] IS NULL) OR ([NickName] = @Original_NickName)) AND ((@IsNull_Major = 1 AND [Major] IS NULL) OR ([Major] = @Original_Major)) AND ((@IsNull_Budget = 1 AND [Budget] IS NULL) OR ([Budget] = @Original_Budget)) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)));
-SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Users] SET [Id] = @Id, [Name] = @Name, [NickName] = @NickName, [Major] = @Major, [Budget] = @Budget, [PreferTime] = @PreferTime, [Pic] = @Pic, [AboutMe] = @AboutMe, [Gender] = @Gender WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ((@IsNull_NickName = 1 AND [NickName] IS NULL) OR ([NickName] = @Original_NickName)) AND ((@IsNull_Major = 1 AND [Major] IS NULL) OR ([Major] = @Original_Major)) AND ((@IsNull_Budget = 1 AND [Budget] IS NULL) OR ([Budget] = @Original_Budget)) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)) AND ((@IsNull_AboutMe = 1 AND [AboutMe] IS NULL) OR ([AboutMe] = @Original_AboutMe)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)));
+SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gender FROM Users WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3906,6 +4084,8 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pic", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AboutMe", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NickName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NickName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3916,6 +4096,10 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AboutMe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AboutMe", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3931,7 +4115,7 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM dbo.Users";
+            this._commandCollection[0].CommandText = "SELECT *\r\nFROM dbo.Users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3992,7 +4176,7 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Id, string Original_Name, string Original_NickName, string Original_Major, global::System.Nullable<int> Original_Budget, global::System.Nullable<int> Original_PreferTime) {
+        public virtual int Delete(string Original_Id, string Original_Name, string Original_NickName, string Original_Major, global::System.Nullable<int> Original_Budget, global::System.Nullable<int> Original_PreferTime, string Original_AboutMe, string Original_Gender) {
             if ((Original_Id == null)) {
                 throw new global::System.ArgumentNullException("Original_Id");
             }
@@ -4037,6 +4221,22 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
+            if ((Original_AboutMe == null)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_AboutMe));
+            }
+            if ((Original_Gender == null)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_Gender));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4057,7 +4257,7 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Id, string Name, string NickName, string Major, global::System.Nullable<int> Budget, global::System.Nullable<int> PreferTime, byte[] Pic) {
+        public virtual int Insert(string Id, string Name, string NickName, string Major, global::System.Nullable<int> Budget, global::System.Nullable<int> PreferTime, byte[] Pic, string AboutMe, string Gender) {
             if ((Id == null)) {
                 throw new global::System.ArgumentNullException("Id");
             }
@@ -4100,6 +4300,18 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((byte[])(Pic));
             }
+            if ((AboutMe == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(AboutMe));
+            }
+            if ((Gender == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Gender));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4120,7 +4332,24 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Id, string Name, string NickName, string Major, global::System.Nullable<int> Budget, global::System.Nullable<int> PreferTime, byte[] Pic, string Original_Id, string Original_Name, string Original_NickName, string Original_Major, global::System.Nullable<int> Original_Budget, global::System.Nullable<int> Original_PreferTime) {
+        public virtual int Update(
+                    string Id, 
+                    string Name, 
+                    string NickName, 
+                    string Major, 
+                    global::System.Nullable<int> Budget, 
+                    global::System.Nullable<int> PreferTime, 
+                    byte[] Pic, 
+                    string AboutMe, 
+                    string Gender, 
+                    string Original_Id, 
+                    string Original_Name, 
+                    string Original_NickName, 
+                    string Original_Major, 
+                    global::System.Nullable<int> Original_Budget, 
+                    global::System.Nullable<int> Original_PreferTime, 
+                    string Original_AboutMe, 
+                    string Original_Gender) {
             if ((Id == null)) {
                 throw new global::System.ArgumentNullException("Id");
             }
@@ -4163,49 +4392,77 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((byte[])(Pic));
             }
+            if ((AboutMe == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(AboutMe));
+            }
+            if ((Gender == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Gender));
+            }
             if ((Original_Id == null)) {
                 throw new global::System.ArgumentNullException("Original_Id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Id));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Id));
             }
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Name));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Name));
             }
             if ((Original_NickName == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_NickName));
-            }
-            if ((Original_Major == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Major));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_NickName));
             }
-            if ((Original_Budget.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Budget.Value));
-            }
-            else {
+            if ((Original_Major == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_PreferTime.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Major));
+            }
+            if ((Original_Budget.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_PreferTime.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Budget.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PreferTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_PreferTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Original_AboutMe == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_AboutMe));
+            }
+            if ((Original_Gender == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Gender));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4227,8 +4484,24 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string NickName, string Major, global::System.Nullable<int> Budget, global::System.Nullable<int> PreferTime, byte[] Pic, string Original_Id, string Original_Name, string Original_NickName, string Original_Major, global::System.Nullable<int> Original_Budget, global::System.Nullable<int> Original_PreferTime) {
-            return this.Update(Original_Id, Name, NickName, Major, Budget, PreferTime, Pic, Original_Id, Original_Name, Original_NickName, Original_Major, Original_Budget, Original_PreferTime);
+        public virtual int Update(
+                    string Name, 
+                    string NickName, 
+                    string Major, 
+                    global::System.Nullable<int> Budget, 
+                    global::System.Nullable<int> PreferTime, 
+                    byte[] Pic, 
+                    string AboutMe, 
+                    string Gender, 
+                    string Original_Id, 
+                    string Original_Name, 
+                    string Original_NickName, 
+                    string Original_Major, 
+                    global::System.Nullable<int> Original_Budget, 
+                    global::System.Nullable<int> Original_PreferTime, 
+                    string Original_AboutMe, 
+                    string Original_Gender) {
+            return this.Update(Original_Id, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gender, Original_Id, Original_Name, Original_NickName, Original_Major, Original_Budget, Original_PreferTime, Original_AboutMe, Original_Gender);
         }
     }
     
@@ -4360,10 +4633,12 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             tableMapping.ColumnMappings.Add("Budget", "Budget");
             tableMapping.ColumnMappings.Add("PreferTime", "PreferTime");
             tableMapping.ColumnMappings.Add("Pic", "Pic");
+            tableMapping.ColumnMappings.Add("AboutMe", "AboutMe");
+            tableMapping.ColumnMappings.Add("Gender", "Gender");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Users] WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ((@IsNull_NickName = 1 AND [NickName] IS NULL) OR ([NickName] = @Original_NickName)) AND ((@IsNull_Major = 1 AND [Major] IS NULL) OR ([Major] = @Original_Major)) AND ((@IsNull_Budget = 1 AND [Budget] IS NULL) OR ([Budget] = @Original_Budget)) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Users] WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ((@IsNull_NickName = 1 AND [NickName] IS NULL) OR ([NickName] = @Original_NickName)) AND ((@IsNull_Major = 1 AND [Major] IS NULL) OR ([Major] = @Original_Major)) AND ((@IsNull_Budget = 1 AND [Budget] IS NULL) OR ([Budget] = @Original_Budget)) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)) AND ((@IsNull_AboutMe = 1 AND [AboutMe] IS NULL) OR ([AboutMe] = @Original_AboutMe)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4375,12 +4650,14 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AboutMe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AboutMe", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Users] ([Id], [Name], [NickName], [Major], [Budget], [PreferTime], [" +
-                "Pic]) VALUES (@Id, @Name, @NickName, @Major, @Budget, @PreferTime, @Pic);\r\nSELEC" +
-                "T Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id = @Id)" +
-                "";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Users] ([Id], [Name], [NickName], [Major], [Budget], [PreferTime], [Pic], [AboutMe], [Gender]) VALUES (@Id, @Name, @NickName, @Major, @Budget, @PreferTime, @Pic, @AboutMe, @Gender);
+SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gender FROM Users WHERE (Id = @Id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4389,10 +4666,12 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pic", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AboutMe", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Users] SET [Id] = @Id, [Name] = @Name, [NickName] = @NickName, [Major] = @Major, [Budget] = @Budget, [PreferTime] = @PreferTime, [Pic] = @Pic WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ((@IsNull_NickName = 1 AND [NickName] IS NULL) OR ([NickName] = @Original_NickName)) AND ((@IsNull_Major = 1 AND [Major] IS NULL) OR ([Major] = @Original_Major)) AND ((@IsNull_Budget = 1 AND [Budget] IS NULL) OR ([Budget] = @Original_Budget)) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)));
-SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Users] SET [Id] = @Id, [Name] = @Name, [NickName] = @NickName, [Major] = @Major, [Budget] = @Budget, [PreferTime] = @PreferTime, [Pic] = @Pic, [AboutMe] = @AboutMe, [Gender] = @Gender WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ((@IsNull_NickName = 1 AND [NickName] IS NULL) OR ([NickName] = @Original_NickName)) AND ((@IsNull_Major = 1 AND [Major] IS NULL) OR ([Major] = @Original_Major)) AND ((@IsNull_Budget = 1 AND [Budget] IS NULL) OR ([Budget] = @Original_Budget)) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)) AND ((@IsNull_AboutMe = 1 AND [AboutMe] IS NULL) OR ([AboutMe] = @Original_AboutMe)) AND ((@IsNull_Gender = 1 AND [Gender] IS NULL) OR ([Gender] = @Original_Gender)));
+SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gender FROM Users WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4401,6 +4680,8 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pic", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AboutMe", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NickName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NickName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4411,6 +4692,10 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_AboutMe", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AboutMe", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AboutMe", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gender", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4426,8 +4711,8 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT           Id, Name, NickName, Major, Budget, PreferTime, Pic\r\nFROM        " +
-                "         Users\r\nWHERE            (Id = @ID)";
+            this._commandCollection[0].CommandText = "SELECT          Id, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gend" +
+                "er\r\nFROM               Users\r\nWHERE           (Id = @ID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.NVarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -4501,7 +4786,7 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Id, string Original_Name, string Original_NickName, string Original_Major, global::System.Nullable<int> Original_Budget, global::System.Nullable<int> Original_PreferTime) {
+        public virtual int Delete(string Original_Id, string Original_Name, string Original_NickName, string Original_Major, global::System.Nullable<int> Original_Budget, global::System.Nullable<int> Original_PreferTime, string Original_AboutMe, string Original_Gender) {
             if ((Original_Id == null)) {
                 throw new global::System.ArgumentNullException("Original_Id");
             }
@@ -4546,6 +4831,22 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
+            if ((Original_AboutMe == null)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_AboutMe));
+            }
+            if ((Original_Gender == null)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_Gender));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4566,7 +4867,7 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Id, string Name, string NickName, string Major, global::System.Nullable<int> Budget, global::System.Nullable<int> PreferTime, byte[] Pic) {
+        public virtual int Insert(string Id, string Name, string NickName, string Major, global::System.Nullable<int> Budget, global::System.Nullable<int> PreferTime, byte[] Pic, string AboutMe, string Gender) {
             if ((Id == null)) {
                 throw new global::System.ArgumentNullException("Id");
             }
@@ -4609,6 +4910,18 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = ((byte[])(Pic));
             }
+            if ((AboutMe == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(AboutMe));
+            }
+            if ((Gender == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Gender));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4629,7 +4942,24 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Id, string Name, string NickName, string Major, global::System.Nullable<int> Budget, global::System.Nullable<int> PreferTime, byte[] Pic, string Original_Id, string Original_Name, string Original_NickName, string Original_Major, global::System.Nullable<int> Original_Budget, global::System.Nullable<int> Original_PreferTime) {
+        public virtual int Update(
+                    string Id, 
+                    string Name, 
+                    string NickName, 
+                    string Major, 
+                    global::System.Nullable<int> Budget, 
+                    global::System.Nullable<int> PreferTime, 
+                    byte[] Pic, 
+                    string AboutMe, 
+                    string Gender, 
+                    string Original_Id, 
+                    string Original_Name, 
+                    string Original_NickName, 
+                    string Original_Major, 
+                    global::System.Nullable<int> Original_Budget, 
+                    global::System.Nullable<int> Original_PreferTime, 
+                    string Original_AboutMe, 
+                    string Original_Gender) {
             if ((Id == null)) {
                 throw new global::System.ArgumentNullException("Id");
             }
@@ -4672,49 +5002,77 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((byte[])(Pic));
             }
+            if ((AboutMe == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(AboutMe));
+            }
+            if ((Gender == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Gender));
+            }
             if ((Original_Id == null)) {
                 throw new global::System.ArgumentNullException("Original_Id");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Id));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Id));
             }
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Name));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Name));
             }
             if ((Original_NickName == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_NickName));
-            }
-            if ((Original_Major == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Major));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_NickName));
             }
-            if ((Original_Budget.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Budget.Value));
-            }
-            else {
+            if ((Original_Major == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_PreferTime.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Major));
+            }
+            if ((Original_Budget.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_PreferTime.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Budget.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PreferTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_PreferTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((Original_AboutMe == null)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_AboutMe));
+            }
+            if ((Original_Gender == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Gender));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4736,8 +5094,24 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic FROM Users WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string NickName, string Major, global::System.Nullable<int> Budget, global::System.Nullable<int> PreferTime, byte[] Pic, string Original_Id, string Original_Name, string Original_NickName, string Original_Major, global::System.Nullable<int> Original_Budget, global::System.Nullable<int> Original_PreferTime) {
-            return this.Update(Original_Id, Name, NickName, Major, Budget, PreferTime, Pic, Original_Id, Original_Name, Original_NickName, Original_Major, Original_Budget, Original_PreferTime);
+        public virtual int Update(
+                    string Name, 
+                    string NickName, 
+                    string Major, 
+                    global::System.Nullable<int> Budget, 
+                    global::System.Nullable<int> PreferTime, 
+                    byte[] Pic, 
+                    string AboutMe, 
+                    string Gender, 
+                    string Original_Id, 
+                    string Original_Name, 
+                    string Original_NickName, 
+                    string Original_Major, 
+                    global::System.Nullable<int> Original_Budget, 
+                    global::System.Nullable<int> Original_PreferTime, 
+                    string Original_AboutMe, 
+                    string Original_Gender) {
+            return this.Update(Original_Id, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gender, Original_Id, Original_Name, Original_NickName, Original_Major, Original_Budget, Original_PreferTime, Original_AboutMe, Original_Gender);
         }
     }
     

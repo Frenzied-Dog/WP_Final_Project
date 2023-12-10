@@ -208,6 +208,9 @@
     <Compile Include="DiscussionForm.Designer.cs">
       <DependentUpon>DiscussionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Final_ProjectDataSet.cs">
+      <DependentUpon>Final_ProjectDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Final_ProjectDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

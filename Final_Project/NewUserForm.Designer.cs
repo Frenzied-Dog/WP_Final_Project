@@ -32,7 +32,10 @@
             this.AboutMeTextBox = new System.Windows.Forms.TextBox();
             this.CommitPicBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.db = new Final_Project.Final_ProjectDataSet();
+            this.MeAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.MeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.CommitPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
             // 
             // MajorTextBox
@@ -59,8 +62,8 @@
             this.GenderTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.GenderTextBox.Name = "GenderTextBox";
             this.GenderTextBox.Size = new System.Drawing.Size(435, 33);
-            this.GenderTextBox.TabIndex = 0;
-            this.GenderTextBox.Text = "Ex: 男";
+            this.GenderTextBox.TabIndex = 1;
+            this.GenderTextBox.Text = "Ex: 男 ( 選填 )";
             this.GenderTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.GenderTextBox.Enter += new System.EventHandler(this.TextBoxHint_Enter);
             this.GenderTextBox.Leave += new System.EventHandler(this.TextBoxHint_Leave);
@@ -74,7 +77,7 @@
             this.NicknameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.NicknameTextBox.Name = "NicknameTextBox";
             this.NicknameTextBox.Size = new System.Drawing.Size(435, 33);
-            this.NicknameTextBox.TabIndex = 0;
+            this.NicknameTextBox.TabIndex = 2;
             this.NicknameTextBox.Text = "( 選填 )";
             this.NicknameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.NicknameTextBox.Enter += new System.EventHandler(this.TextBoxHint_Enter);
@@ -84,33 +87,49 @@
             // 
             this.BudgetComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BudgetComboBox.FormattingEnabled = true;
+            this.BudgetComboBox.Items.AddRange(new object[] {
+            "50~100",
+            "100~200",
+            "200~300",
+            "300~400",
+            "400以上"});
             this.BudgetComboBox.Location = new System.Drawing.Point(460, 396);
             this.BudgetComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.BudgetComboBox.Name = "BudgetComboBox";
             this.BudgetComboBox.Size = new System.Drawing.Size(435, 32);
-            this.BudgetComboBox.TabIndex = 1;
+            this.BudgetComboBox.TabIndex = 3;
             // 
             // PreferTimeComboBox
             // 
             this.PreferTimeComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.PreferTimeComboBox.FormattingEnabled = true;
+            this.PreferTimeComboBox.Items.AddRange(new object[] {
+            "早上",
+            "中午",
+            "下午",
+            "晚上",
+            "半夜",
+            "凌晨"});
             this.PreferTimeComboBox.Location = new System.Drawing.Point(460, 455);
             this.PreferTimeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.PreferTimeComboBox.Name = "PreferTimeComboBox";
             this.PreferTimeComboBox.Size = new System.Drawing.Size(435, 32);
-            this.PreferTimeComboBox.TabIndex = 1;
+            this.PreferTimeComboBox.TabIndex = 4;
             // 
             // AboutMeTextBox
             // 
             this.AboutMeTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AboutMeTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AboutMeTextBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.AboutMeTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutMeTextBox.ForeColor = System.Drawing.Color.DimGray;
             this.AboutMeTextBox.Location = new System.Drawing.Point(460, 526);
             this.AboutMeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.AboutMeTextBox.Multiline = true;
             this.AboutMeTextBox.Name = "AboutMeTextBox";
             this.AboutMeTextBox.Size = new System.Drawing.Size(435, 82);
-            this.AboutMeTextBox.TabIndex = 0;
+            this.AboutMeTextBox.TabIndex = 5;
+            this.AboutMeTextBox.Text = "可以說說您的興趣與喜歡吃的食物等等，讓大家\r\n能夠更認識你！ ( 選填 )";
+            this.AboutMeTextBox.Enter += new System.EventHandler(this.TextBoxHint_Enter);
+            this.AboutMeTextBox.Leave += new System.EventHandler(this.TextBoxHint_Leave);
             // 
             // CommitPicBox
             // 
@@ -131,9 +150,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 15);
+            this.label1.Size = new System.Drawing.Size(61, 12);
             this.label1.TabIndex = 3;
             this.label1.Text = "Dev Branch";
+            // 
+            // db
+            // 
+            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // MeAdapter
+            // 
+            this.MeAdapter.ClearBeforeFill = true;
             // 
             // NewUserForm
             // 
@@ -158,7 +186,9 @@
             this.Name = "NewUserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Personal Info";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewUserForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.CommitPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +204,7 @@
         private System.Windows.Forms.TextBox AboutMeTextBox;
         private System.Windows.Forms.PictureBox CommitPicBox;
         private System.Windows.Forms.Label label1;
+        private Final_ProjectDataSet db;
+        private Final_ProjectDataSetTableAdapters.MeTableAdapter MeAdapter;
     }
 }

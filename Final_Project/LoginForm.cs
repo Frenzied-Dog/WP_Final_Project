@@ -18,8 +18,8 @@ namespace Final_Project {
         static string graphAPI_Me = "https://graph.microsoft.com/v1.0/me";
         string name = "";
         string ID = "";
-        Final_ProjectDataSet db;
-        Final_ProjectDataSetTableAdapters.MeTableAdapter MeAdapter = new Final_ProjectDataSetTableAdapters.MeTableAdapter();
+        //Final_ProjectDataSet db;
+        //Final_ProjectDataSetTableAdapters.MeTableAdapter MeAdapter = new Final_ProjectDataSetTableAdapters.MeTableAdapter();
 
         public LoginForm(Final_ProjectDataSet db) {
             InitializeComponent();
@@ -88,7 +88,7 @@ namespace Final_Project {
 
             MeAdapter.Fill(db.Me, ID);
             if (db.Me.Count == 0) {
-                (new NewUserForm(db)).Show();
+                (new NewUserForm(db, TextBox_ID.Text, name)).Show();
             } else {
                 MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 (new MainMenuForm(db)).Show();
@@ -98,14 +98,28 @@ namespace Final_Project {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            //(new MainMenuForm(db)).Show();
+            (new MainMenuForm(db)).Show();
+            Close();
+        }
 
-            (new NewUserForm(db)).Show();
+        private void button2_Click(object sender, EventArgs e) {
+            (new NewUserForm(db, TextBox_ID.Text, textBox1.Text)).Show();
             Close();
         }
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
-            if(Application.OpenForms.Count == 0) Application.Exit();
+            if (Application.OpenForms.Count == 0) Application.Exit();
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            MeAdapter.Fill(db.Me,TextBox_ID.Text);
+            if (db.Me.Count == 0) MessageBox.Show("查無此人", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else {
+                string name = db.Me[0].Name;
+                db.Me[0].Delete();
+                MeAdapter.Update(db.Me);
+                MessageBox.Show($"已刪除{name}的資料", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

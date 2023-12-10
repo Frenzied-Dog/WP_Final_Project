@@ -28,7 +28,14 @@
             this.LoginPicBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.MeAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.MeTableAdapter();
+            this.db = new Final_Project.Final_ProjectDataSet();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LoginPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
             // 
             // TextBox_ID
@@ -68,13 +75,58 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(987, 171);
+            this.button1.Location = new System.Drawing.Point(968, 122);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.button1.Text = "MainMenu";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(968, 188);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "NewUser";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(968, 229);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 4;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(499, 283);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "DeleteUser";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // MeAdapter
+            // 
+            this.MeAdapter.ClearBeforeFill = true;
+            // 
+            // db
+            // 
+            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(966, 214);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 12);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Name";
             // 
             // LoginForm
             // 
@@ -83,6 +135,10 @@
             this.BackgroundImage = global::Final_Project.Properties.Resources.BackGround_3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 711);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LoginPicBox);
@@ -97,6 +153,7 @@
             this.Text = "CK Connect";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.LoginPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +165,12 @@
         private System.Windows.Forms.PictureBox LoginPicBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
+        private Final_ProjectDataSetTableAdapters.MeTableAdapter MeAdapter;
+        private Final_ProjectDataSet db;
+        private System.Windows.Forms.Label label2;
     }
 }
 
