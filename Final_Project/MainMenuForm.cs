@@ -73,5 +73,20 @@ namespace Final_Project {
                 break;
             }
         }
+
+        private void HomePicBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -346,6 +346,15 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\ellipsis 1.png" />
+    <None Include="Resources\ellipsis.png" />
+    <None Include="Resources\RightArrow1.png" />
+    <None Include="Resources\RightArrow.png" />
+    <None Include="Resources\LeftArrow.png" />
+    <None Include="Resources\EventInfoBackground.png" />
+    <None Include="Resources\JoinEventLabel.png" />
+    <None Include="Resources\HomePhotoFinal.png" />
+    <None Include="Resources\HomePhoto1.png" />
     <None Include="Resources\HomePhoto 1.png" />
     <None Include="Resources\NotiticationBtn_2.png" />
     <None Include="Resources\NotiticationBtn.png" />
