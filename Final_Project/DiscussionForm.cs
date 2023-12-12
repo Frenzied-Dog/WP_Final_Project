@@ -10,8 +10,9 @@ using System.Windows.Forms;
 
 namespace Final_Project {
     public partial class DiscussionForm : Form {
-        public DiscussionForm() {
+        public DiscussionForm(Final_ProjectDataSet db) {
             InitializeComponent();
+            this.db = db;
         }
     }
 }

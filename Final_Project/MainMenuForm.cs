@@ -11,15 +11,23 @@ using System.Windows.Forms;
 
 namespace Final_Project {
     public partial class MainMenuForm : Form {
-        Final_ProjectDataSet db;
+        //Final_ProjectDataSet db;
+        MyProfileForm profileForm;
+        MyEventForm eventForm;
+        CreateEventForm createEventForm;
+        NotificationForm notifyForm;
 
         public MainMenuForm(Final_ProjectDataSet db) {
             InitializeComponent();
             this.db = db;
+            profileForm = new MyProfileForm(db);
+            eventForm = new MyEventForm(db);
+            createEventForm = new CreateEventForm(db);
+            notifyForm = new NotificationForm(db);
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e) {
-            Application.Exit();
+            if (Application.OpenForms.Count == 0) Application.Exit();
         }
 
         private void MainMenuForm_Load(object sender, EventArgs e) {
@@ -29,9 +37,22 @@ namespace Final_Project {
 
         private void MenuPicBox_Click(object sender, EventArgs e) {
             PictureBox picBox = (PictureBox)sender;
-            //switch (picBox.Name) {
-            //    break;
-            //}
+            switch (picBox.Name.Substring(0, picBox.Name.Length - 6)) {
+            case "MyProfile":
+                profileForm.ShowDialog();
+                break;
+            case "MyEvent":
+                eventForm.ShowDialog();
+                break;
+            case "CreateEvent":
+                createEventForm.ShowDialog();
+                break;
+            case "Notify":
+                notifyForm.ShowDialog();
+                break;
+            default:
+                break;
+            }
         }
 
         private void MenuPicBox_MouseEnter(object sender, EventArgs e) {

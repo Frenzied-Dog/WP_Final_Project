@@ -45,6 +45,7 @@
             this.Star5 = new System.Windows.Forms.PictureBox();
             this.profile_photo = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.db = new Final_Project.Final_ProjectDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.ModifyPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Star1)).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Star4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Star5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile_photo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
             // 
             // MajorTextBox
@@ -228,6 +230,11 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Dev Branch";
             // 
+            // db
+            // 
+            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // MyProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -267,6 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Star4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Star5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profile_photo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +298,6 @@
         private System.Windows.Forms.PictureBox profile_photo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox HomePicBox;
+        private Final_ProjectDataSet db;
     }
 }

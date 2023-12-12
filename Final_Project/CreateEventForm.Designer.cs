@@ -23,7 +23,14 @@
         /// 這個方法的內容。
         /// </summary>
         private void InitializeComponent() {
+            this.db = new Final_Project.Final_ProjectDataSet();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
+            // 
+            // db
+            // 
+            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CreateEventForm
             // 
@@ -31,10 +38,13 @@
             this.ClientSize = new System.Drawing.Size(1264, 711);
             this.Name = "CreateEventForm";
             this.Text = "Create Event";
+            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Final_ProjectDataSet db;
     }
 }

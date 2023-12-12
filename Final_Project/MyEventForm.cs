@@ -10,8 +10,9 @@ using System.Windows.Forms;
 
 namespace Final_Project {
     public partial class MyEventForm : Form {
-        public MyEventForm() {
+        public MyEventForm(Final_ProjectDataSet db) {
             InitializeComponent();
+            this.db = db;
         }
     }
 }

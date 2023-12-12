@@ -24,7 +24,14 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiscussionForm));
+            this.db = new Final_Project.Final_ProjectDataSet();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
+            // 
+            // db
+            // 
+            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // DiscussionForm
             // 
@@ -36,10 +43,13 @@
             this.MaximizeBox = false;
             this.Name = "DiscussionForm";
             this.Text = "Discussion";
+            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Final_ProjectDataSet db;
     }
 }
