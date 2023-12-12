@@ -125,5 +125,9 @@ namespace Final_Project {
         private void button4_Click(object sender, EventArgs e) {
             new NewPostForm().Show();
         }
+
+        private void button5_Click(object sender, EventArgs e) {
+            new MapForm().Show();
+        }
     }
 }

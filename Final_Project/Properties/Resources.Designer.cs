@@ -383,6 +383,26 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 地點確認Btn {
+            get {
+                object obj = ResourceManager.GetObject("地點確認Btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 地點確認Btn_2 {
+            get {
+                object obj = ResourceManager.GetObject("地點確認Btn_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 報名Btn {
             get {
                 object obj = ResourceManager.GetObject("報名Btn", resourceCulture);
@@ -436,6 +456,26 @@ namespace Final_Project.Properties {
         internal static System.Drawing.Bitmap 編輯資料Btn {
             get {
                 object obj = ResourceManager.GetObject("編輯資料Btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 重設地圖Btn {
+            get {
+                object obj = ResourceManager.GetObject("重設地圖Btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 重設地圖Btn_2 {
+            get {
+                object obj = ResourceManager.GetObject("重設地圖Btn_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

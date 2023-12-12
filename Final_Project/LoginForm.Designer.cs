@@ -35,6 +35,7 @@
             this.db = new Final_Project.Final_ProjectDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LoginPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
@@ -54,10 +55,10 @@
             // 
             this.LoginPicBox.BackColor = System.Drawing.Color.Transparent;
             this.LoginPicBox.Image = global::Final_Project.Properties.Resources.Btn1_2;
-            this.LoginPicBox.Location = new System.Drawing.Point(560, 376);
+            this.LoginPicBox.Location = new System.Drawing.Point(576, 379);
             this.LoginPicBox.Margin = new System.Windows.Forms.Padding(4);
             this.LoginPicBox.Name = "LoginPicBox";
-            this.LoginPicBox.Size = new System.Drawing.Size(143, 58);
+            this.LoginPicBox.Size = new System.Drawing.Size(111, 49);
             this.LoginPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.LoginPicBox.TabIndex = 1;
             this.LoginPicBox.TabStop = false;
@@ -139,6 +140,16 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(968, 344);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Map";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -146,6 +157,7 @@
             this.BackgroundImage = global::Final_Project.Properties.Resources.BackGround_3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 711);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
@@ -184,6 +196,7 @@
         private Final_ProjectDataSet db;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

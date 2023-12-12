@@ -349,6 +349,10 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\重設地圖Btn_2.png" />
+    <None Include="Resources\重設地圖Btn.png" />
+    <None Include="Resources\地點確認Btn_2.png" />
+    <None Include="Resources\地點確認Btn.png" />
     <None Include="Resources\發佈貼文Btn_2.png" />
     <None Include="Resources\發佈貼文Btn.png" />
     <None Include="Resources\發佈貼文.png" />
