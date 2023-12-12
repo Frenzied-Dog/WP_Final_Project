@@ -423,6 +423,16 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap 報名Btn__1_ {
+            get {
+                object obj = ResourceManager.GetObject("報名Btn (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap 報名Btn_2 {
             get {
                 object obj = ResourceManager.GetObject("報名Btn_2", resourceCulture);

@@ -27,10 +27,13 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.db = new Final_Project.Final_ProjectDataSet();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.NotifyPicBox = new System.Windows.Forms.PictureBox();
             this.CreateEventPicBox = new System.Windows.Forms.PictureBox();
             this.MyEventPicBox = new System.Windows.Forms.PictureBox();
             this.MyProfilePicBox = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.RightPicBox = new System.Windows.Forms.PictureBox();
             this.LeftPicBox = new System.Windows.Forms.PictureBox();
@@ -40,14 +43,13 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.MarkPicBox = new System.Windows.Forms.PictureBox();
             this.LogoPicBox = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NotifyPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateEventPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyEventPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyProfilePicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftPicBox)).BeginInit();
@@ -62,6 +64,7 @@
             // MainPanel
             // 
             this.MainPanel.AutoScroll = true;
+            this.MainPanel.Controls.Add(this.pictureBox3);
             this.MainPanel.Controls.Add(this.comboBox2);
             this.MainPanel.Controls.Add(this.comboBox1);
             this.MainPanel.Controls.Add(this.pictureBox1);
@@ -92,6 +95,28 @@
             // 
             this.db.DataSetName = "Final_ProjectDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.Snow;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(429, 740);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(111, 26);
+            this.comboBox1.TabIndex = 32;
+            this.comboBox1.Text = "Budget";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.Snow;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(546, 740);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(111, 26);
+            this.comboBox2.TabIndex = 33;
+            this.comboBox2.Text = "Time";
             // 
             // NotifyPicBox
             // 
@@ -145,10 +170,20 @@
             this.MyProfilePicBox.MouseEnter += new System.EventHandler(this.MenuPicBox_MouseEnter);
             this.MyProfilePicBox.MouseLeave += new System.EventHandler(this.MenuPicBox_MouseLeave);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pictureBox3.Image = global::Final_Project.Properties.Resources.報名Btn__1_;
+            this.pictureBox3.Location = new System.Drawing.Point(773, 1084);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(186, 52);
+            this.pictureBox3.TabIndex = 34;
+            this.pictureBox3.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Final_Project.Properties.Resources.CustomizeLabel;
-            this.pictureBox1.Location = new System.Drawing.Point(277, 735);
+            this.pictureBox1.Location = new System.Drawing.Point(277, 740);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(146, 23);
             this.pictureBox1.TabIndex = 31;
@@ -157,7 +192,7 @@
             // RightPicBox
             // 
             this.RightPicBox.Image = global::Final_Project.Properties.Resources.RightArrow1;
-            this.RightPicBox.Location = new System.Drawing.Point(1098, 936);
+            this.RightPicBox.Location = new System.Drawing.Point(1098, 941);
             this.RightPicBox.Name = "RightPicBox";
             this.RightPicBox.Size = new System.Drawing.Size(40, 40);
             this.RightPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -167,7 +202,7 @@
             // LeftPicBox
             // 
             this.LeftPicBox.Image = global::Final_Project.Properties.Resources.LeftArrow;
-            this.LeftPicBox.Location = new System.Drawing.Point(180, 936);
+            this.LeftPicBox.Location = new System.Drawing.Point(180, 941);
             this.LeftPicBox.Name = "LeftPicBox";
             this.LeftPicBox.Size = new System.Drawing.Size(40, 40);
             this.LeftPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -177,7 +212,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Final_Project.Properties.Resources.EventInfoBackground;
-            this.pictureBox2.Location = new System.Drawing.Point(277, 764);
+            this.pictureBox2.Location = new System.Drawing.Point(277, 769);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(764, 385);
             this.pictureBox2.TabIndex = 26;
@@ -207,7 +242,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.Image = global::Final_Project.Properties.Resources.ellipsis_1;
-            this.pictureBox5.Location = new System.Drawing.Point(618, 1135);
+            this.pictureBox5.Location = new System.Drawing.Point(618, 1140);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(80, 80);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -234,26 +269,6 @@
             this.LogoPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoPicBox.TabIndex = 3;
             this.LogoPicBox.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(429, 735);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(111, 26);
-            this.comboBox1.TabIndex = 32;
-            this.comboBox1.Text = "Budget";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(546, 735);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(111, 26);
-            this.comboBox2.TabIndex = 33;
-            this.comboBox2.Text = "Time";
             // 
             // MainMenuForm
             // 
@@ -284,6 +299,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CreateEventPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyEventPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyProfilePicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftPicBox)).EndInit();
@@ -316,5 +332,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
