@@ -123,7 +123,8 @@ namespace Final_Project {
         }
 
         private void button4_Click(object sender, EventArgs e) {
-            new NewPostForm().Show();
+            MeAdapter.Fill(db.Me, TextBox_ID.Text);
+            new NewPostForm(db, 156154).Show();
         }
 
         private void button5_Click(object sender, EventArgs e) {
