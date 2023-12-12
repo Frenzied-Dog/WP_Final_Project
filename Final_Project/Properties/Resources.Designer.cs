@@ -113,6 +113,16 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap CustomizeLabel {
+            get {
+                object obj = ResourceManager.GetObject("CustomizeLabel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap cutedog1 {
             get {
                 object obj = ResourceManager.GetObject("cutedog1", resourceCulture);
