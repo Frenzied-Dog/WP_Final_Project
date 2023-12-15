@@ -43,7 +43,7 @@
             this.Star3 = new System.Windows.Forms.PictureBox();
             this.Star4 = new System.Windows.Forms.PictureBox();
             this.Star5 = new System.Windows.Forms.PictureBox();
-            this.profile_photo = new System.Windows.Forms.PictureBox();
+            this.ProfilePhoto = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.db = new Final_Project.Final_ProjectDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.ModifyPicBox)).BeginInit();
@@ -53,7 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Star3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Star4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Star5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profile_photo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,16 +210,16 @@
             this.Star5.TabIndex = 14;
             this.Star5.TabStop = false;
             // 
-            // profile_photo
+            // ProfilePhoto
             // 
-            this.profile_photo.BackColor = System.Drawing.Color.Transparent;
-            this.profile_photo.Image = global::Final_Project.Properties.Resources.cutedog1;
-            this.profile_photo.Location = new System.Drawing.Point(83, 232);
-            this.profile_photo.Name = "profile_photo";
-            this.profile_photo.Size = new System.Drawing.Size(220, 220);
-            this.profile_photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.profile_photo.TabIndex = 15;
-            this.profile_photo.TabStop = false;
+            this.ProfilePhoto.BackColor = System.Drawing.Color.Transparent;
+            this.ProfilePhoto.Image = global::Final_Project.Properties.Resources.cutedog1;
+            this.ProfilePhoto.Location = new System.Drawing.Point(83, 232);
+            this.ProfilePhoto.Name = "ProfilePhoto";
+            this.ProfilePhoto.Size = new System.Drawing.Size(220, 220);
+            this.ProfilePhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ProfilePhoto.TabIndex = 15;
+            this.ProfilePhoto.TabStop = false;
             // 
             // label3
             // 
@@ -243,7 +243,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 711);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.profile_photo);
+            this.Controls.Add(this.ProfilePhoto);
             this.Controls.Add(this.Star5);
             this.Controls.Add(this.Star4);
             this.Controls.Add(this.Star3);
@@ -263,8 +263,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MyProfileForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = " My Profile";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MyProfileForm_FormClosed);
             this.Load += new System.EventHandler(this.MyProfileForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ModifyPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePicBox)).EndInit();
@@ -273,7 +274,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Star3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Star4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Star5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.profile_photo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProfilePhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -295,7 +296,7 @@
         private System.Windows.Forms.PictureBox Star3;
         private System.Windows.Forms.PictureBox Star4;
         private System.Windows.Forms.PictureBox Star5;
-        private System.Windows.Forms.PictureBox profile_photo;
+        private System.Windows.Forms.PictureBox ProfilePhoto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox HomePicBox;
         private Final_ProjectDataSet db;

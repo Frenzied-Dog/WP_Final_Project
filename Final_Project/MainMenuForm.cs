@@ -30,11 +30,6 @@ namespace Final_Project {
             if (Application.OpenForms.Count == 0) Application.Exit();
         }
 
-        private void MainMenuForm_Load(object sender, EventArgs e) {
-            MainPanel.AutoScrollPosition = new Point(0, 0);
-        }
-
-
         private void MenuPicBox_Click(object sender, EventArgs e) {
             PictureBox picBox = (PictureBox)sender;
             switch (picBox.Name.Substring(0, picBox.Name.Length - 6)) {

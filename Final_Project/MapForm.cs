@@ -26,7 +26,12 @@ namespace Final_Project {
             res = await Map.ExecuteScriptAsync("document.querySelector('div[class=\"Io6YTe fontBodyMedium kR99db \"]').textContent");
             if (!res.Equals("null")) Address = res.Substring(1, res.Length - 2);
 
-            Close();
+            if (ShopName != "" && Address != "" ) {
+                if ( MessageBox.Show($"請確認以下資訊是否正確 ?\n\r店家名稱: {ShopName}\n\r地址: {Address}", "地點確認", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes )
+                    Close();
+            } else {
+                MessageBox.Show("請先選擇地點!\n\r有問題請洽作者", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void PicBox_Enter(object sender, EventArgs e) {

@@ -349,6 +349,11 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\使用地圖Btn_2.png" />
+    <None Include="Resources\使用地圖Btn.png" />
+    <None Include="Resources\發布活動btn_2.png" />
+    <None Include="Resources\發布活動btn.png" />
+    <None Include="Resources\CreateEventBg.png" />
     <None Include="Resources\報名Btn %281%29.png" />
     <None Include="Resources\CustomizeLabel.png" />
     <None Include="Resources\重設地圖Btn_2.png" />

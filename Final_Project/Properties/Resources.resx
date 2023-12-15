@@ -124,6 +124,9 @@
   <data name="MyProfileBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MyProfileBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="發布活動btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\發布活動btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LeftArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LeftArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,6 +142,9 @@
   <data name="MyEventBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MyEventBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="報名Btn (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\報名Btn (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,20 +154,17 @@
   <data name="emptystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\emptystar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo5_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CustomizeLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomizeLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CreatEventBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CreatEventBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HomePhoto 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePhoto 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ellipsis 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ellipsis 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CreatEventBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CreatEventBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Btn1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Btn1_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,9 +181,6 @@
   <data name="HomePhoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HomePhoto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CustomizeLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CustomizeLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="FirstLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FirstLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -190,8 +190,11 @@
   <data name="重設地圖Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\重設地圖Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HomePhoto 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HomePhoto 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MyProfileBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MyProfileBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreatEventBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreatEventBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HomePhoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HomePhoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,6 +220,9 @@
   <data name="發佈貼文" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\發佈貼文.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo5_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="編輯資料Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\編輯資料Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -228,6 +234,12 @@
   </data>
   <data name="RightArrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RightArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreateEventBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreateEventBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="發布活動btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\發布活動btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BackGround_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackGround_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,10 +256,13 @@
   <data name="MyEventBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MyEventBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MyProfileBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MyProfileBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CreatEventBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreatEventBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="報名Btn (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\報名Btn (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="使用地圖Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\使用地圖Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="使用地圖Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\使用地圖Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
