@@ -349,6 +349,14 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\ReUpload_2.png" />
+    <None Include="Resources\ReUpload.png" />
+    <None Include="Resources\ChangeNickName_2.png" />
+    <None Include="Resources\ChangeNickName.png" />
+    <None Include="Resources\MyProfileBg.png" />
+    <None Include="Resources\儲存更動Btn_2.png" />
+    <None Include="Resources\儲存更動Btn.png" />
+    <None Include="Resources\編輯資料Btn_2.png" />
     <None Include="Resources\使用地圖Btn_2.png" />
     <None Include="Resources\使用地圖Btn.png" />
     <None Include="Resources\發布活動btn_2.png" />
@@ -392,7 +400,6 @@
     <None Include="Resources\編輯資料Btn.png" />
     <None Include="Resources\報名Btn.png" />
     <None Include="Resources\初次登入填寫資料.png" />
-    <None Include="Resources\Group 28.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.2151.40\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.2151.40\build\Microsoft.Web.WebView2.targets')" />

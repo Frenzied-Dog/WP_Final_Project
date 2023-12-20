@@ -30,9 +30,11 @@
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
             this.TimeComboBox = new System.Windows.Forms.ComboBox();
-            this.AboutTextBox = new System.Windows.Forms.TextBox();
+            this.IntroTextBox = new System.Windows.Forms.TextBox();
             this.ShopTextBox = new System.Windows.Forms.TextBox();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
+            this.ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter();
+            this.User_ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.User_ActivityTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreatePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UseMapPicBox)).BeginInit();
@@ -107,16 +109,16 @@
             this.TimeComboBox.Size = new System.Drawing.Size(268, 30);
             this.TimeComboBox.TabIndex = 4;
             // 
-            // AboutTextBox
+            // IntroTextBox
             // 
-            this.AboutTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.AboutTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.AboutTextBox.Font = new System.Drawing.Font("新細明體", 12F);
-            this.AboutTextBox.Location = new System.Drawing.Point(312, 389);
-            this.AboutTextBox.Multiline = true;
-            this.AboutTextBox.Name = "AboutTextBox";
-            this.AboutTextBox.Size = new System.Drawing.Size(268, 181);
-            this.AboutTextBox.TabIndex = 5;
+            this.IntroTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.IntroTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IntroTextBox.Font = new System.Drawing.Font("新細明體", 12F);
+            this.IntroTextBox.Location = new System.Drawing.Point(312, 389);
+            this.IntroTextBox.Multiline = true;
+            this.IntroTextBox.Name = "IntroTextBox";
+            this.IntroTextBox.Size = new System.Drawing.Size(268, 181);
+            this.IntroTextBox.TabIndex = 5;
             // 
             // ShopTextBox
             // 
@@ -138,6 +140,14 @@
             this.AddressTextBox.Size = new System.Drawing.Size(268, 29);
             this.AddressTextBox.TabIndex = 7;
             // 
+            // ActivityAdapter
+            // 
+            this.ActivityAdapter.ClearBeforeFill = true;
+            // 
+            // User_ActivityAdapter
+            // 
+            this.User_ActivityAdapter.ClearBeforeFill = true;
+            // 
             // CreateEventForm
             // 
             this.BackgroundImage = global::Final_Project.Properties.Resources.CreateEventBg;
@@ -145,7 +155,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 711);
             this.Controls.Add(this.AddressTextBox);
             this.Controls.Add(this.ShopTextBox);
-            this.Controls.Add(this.AboutTextBox);
+            this.Controls.Add(this.IntroTextBox);
             this.Controls.Add(this.TimeComboBox);
             this.Controls.Add(this.DatePicker);
             this.Controls.Add(this.BudgetComboBox);
@@ -174,8 +184,10 @@
         private System.Windows.Forms.ComboBox BudgetComboBox;
         private System.Windows.Forms.DateTimePicker DatePicker;
         private System.Windows.Forms.ComboBox TimeComboBox;
-        private System.Windows.Forms.TextBox AboutTextBox;
+        private System.Windows.Forms.TextBox IntroTextBox;
         private System.Windows.Forms.TextBox ShopTextBox;
         private System.Windows.Forms.TextBox AddressTextBox;
+        private Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
+        private Final_ProjectDataSetTableAdapters.User_ActivityTableAdapter User_ActivityAdapter;
     }
 }

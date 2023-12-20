@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
+using Final_Project.Final_ProjectDataSetTableAdapters;
 
 namespace Final_Project {
     public partial class LoginForm : Form {
@@ -97,7 +99,12 @@ namespace Final_Project {
             Close();
         }
 
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
+            if (Application.OpenForms.Count == 0) Application.Exit();
+        }
+
         private void button1_Click(object sender, EventArgs e) {
+            MeAdapter.Fill(db.Me, "E24116128");
             new MainMenuForm(db).Show();
             Close();
         }
@@ -105,10 +112,6 @@ namespace Final_Project {
         private void button2_Click(object sender, EventArgs e) {
             new NewUserForm(db, TextBox_ID.Text, textBox1.Text).Show();
             Close();
-        }
-
-        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
-            if (Application.OpenForms.Count == 0) Application.Exit();
         }
 
         private void button3_Click(object sender, EventArgs e) {

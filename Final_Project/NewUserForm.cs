@@ -45,6 +45,7 @@ namespace Final_Project {
 			}
 
 			if (gender == "Ex: 男 ( 選填 )") gender = "";
+			if (nickname == "( 選填 )") nickname = name;
 			if (aboutMe == "可以說說您的興趣與喜歡吃的食物等等，讓大家\r\n能夠更認識你！ ( 選填 )")
 				aboutMe = "這傢伙人狠話不多...啥都沒留:(";
 

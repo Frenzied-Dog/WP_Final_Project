@@ -135,9 +135,9 @@
             // 
             this.CommitPicBox.BackColor = System.Drawing.Color.Transparent;
             this.CommitPicBox.Image = global::Final_Project.Properties.Resources.報名Btn;
-            this.CommitPicBox.Location = new System.Drawing.Point(958, 574);
+            this.CommitPicBox.Location = new System.Drawing.Point(970, 582);
             this.CommitPicBox.Name = "CommitPicBox";
-            this.CommitPicBox.Size = new System.Drawing.Size(167, 62);
+            this.CommitPicBox.Size = new System.Drawing.Size(143, 46);
             this.CommitPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.CommitPicBox.TabIndex = 2;
             this.CommitPicBox.TabStop = false;
