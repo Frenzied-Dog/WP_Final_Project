@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,28 @@ namespace Final_Project {
         string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
         string[] times = { "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
         bool modifying = false;
+        PictureBox[] EditPicBoxs;
+
+        // https://stackoverflow.com/a/24199315
+        public static Bitmap Resize_img(Image image, int width, int height) {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage)) {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (ImageAttributes wrapMode = new ImageAttributes()) { 
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                };
+            }
+            return destImage;
+        }
 
         public MyProfileForm(Final_ProjectDataSet db) {
             InitializeComponent();
@@ -27,6 +50,7 @@ namespace Final_Project {
             PreferTimeComboBox.DataSource = times;
 
             ProfilePhoto.Region = new Region(gp);
+            EditPicBoxs = new PictureBox[] { EditPicBox1, EditPicBox2, EditPicBox3, EditPicBox4, EditPicBox5 };
 
             ID_Label.Text = db.Me[0].Id;
             NickNameLabel.Text = db.Me[0].NickName;
@@ -48,17 +72,36 @@ namespace Final_Project {
                 MajorTextBox.ReadOnly = false;
                 GenderTextBox.ReadOnly = false;
                 SelfTextBox.ReadOnly = false;
-                BudgetComboBox.DropDownStyle = ComboBoxStyle.DropDown;
-                PreferTimeComboBox.DropDownStyle = ComboBoxStyle.DropDown;
+                BudgetComboBox.Enabled = true;
+                PreferTimeComboBox.Enabled = true;
                 ModifyPicBox.Image = Properties.Resources.儲存更動Btn_2;
+                ReUploadPicBox.Visible = true;
+                NickTextBox.Text = NickNameLabel.Text;
+                NickTextBox.Visible = true;
+                foreach (PictureBox picBox in EditPicBoxs) picBox.Visible = true;
             } else {
                 MajorTextBox.ReadOnly = true;
                 GenderTextBox.ReadOnly = true;
                 SelfTextBox.ReadOnly = true;
-                BudgetComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-                PreferTimeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+                BudgetComboBox.Enabled = false;
+                PreferTimeComboBox.Enabled = false;
                 ModifyPicBox.Image = Properties.Resources.編輯資料Btn_2;
-
+                ReUploadPicBox.Visible = false;
+                NickNameLabel.Text = NickTextBox.Text;
+                NickTextBox.Visible = false;
+                foreach (PictureBox picBox in EditPicBoxs) picBox.Visible = false;
+                
+                db.Me[0].NickName = NickNameLabel.Text;
+                db.Me[0].Major = MajorTextBox.Text;
+                db.Me[0].Gender = GenderTextBox.Text;
+                db.Me[0].Budget = BudgetComboBox.SelectedIndex;
+                db.Me[0].PreferTime = PreferTimeComboBox.SelectedIndex;
+                db.Me[0].AboutMe = SelfTextBox.Text;
+                using (MemoryStream mStream = new MemoryStream()) {
+                    ProfilePhoto.Image.Save(mStream, ImageFormat.Bmp);
+                    db.Me[0].Pic = mStream.ToArray();
+                };
+                MeAdapter.Update(db.Me);
             }
         }
 
@@ -72,14 +115,9 @@ namespace Final_Project {
             case "ReUpload":
                 picBox.Image = Properties.Resources.ReUpload_2;
                 break;
-            case "ChangeNick":
-                picBox.Image = Properties.Resources.ChangeNickName_2;
-                break;
             default:
                 break;
             }
-
-
         }
 
         private void PicBox_MouseLeave(object sender, EventArgs e) {
@@ -92,12 +130,27 @@ namespace Final_Project {
             case "ReUpload":
                 picBox.Image = Properties.Resources.ReUpload;
                 break;
-            case "ChangeNick":
-                picBox.Image = Properties.Resources.ChangeNickName;
-                break;
             default:
                 break;
             }
+        }
+
+        private void ReUploadPicBox_Click(object sender, EventArgs e) {
+            using (OpenFileDialog OFD = new OpenFileDialog()) {
+                OFD.Filter = "圖片檔案 (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif|所有檔案 (*.*)|*.*";
+                OFD.Title = "選擇圖片";
+                OFD.Multiselect = false;
+                OFD.InitialDirectory = ".";
+
+                if (OFD.ShowDialog() == DialogResult.OK) {
+                    string path = OFD.FileName;
+                    ProfilePhoto.Image = Resize_img(Image.FromFile(path), 220, 220);
+                }            
+            };
+        }
+
+        private void ChangeNickPicBox_Click(object sender, EventArgs e) {
+
         }
     }
 }

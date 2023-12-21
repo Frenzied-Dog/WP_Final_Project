@@ -68,5 +68,9 @@ namespace Final_Project {
         private void ResetPicBox_Click(object sender, EventArgs e) {
             Map.Source = new Uri("https://www.google.com.tw/maps");
         }
+
+        async private void MapForm_Load(object sender, EventArgs e) {
+            await Map.EnsureCoreWebView2Async(null);
+        }
     }
 }

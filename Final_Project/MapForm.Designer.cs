@@ -85,6 +85,7 @@
             this.MaximizeBox = false;
             this.Name = "MapForm";
             this.Text = "Maps";
+            this.Load += new System.EventHandler(this.MapForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ResetPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConfirmPicBox)).EndInit();

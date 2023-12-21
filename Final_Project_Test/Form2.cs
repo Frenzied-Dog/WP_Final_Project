@@ -38,5 +38,9 @@ namespace Final_Project {
         private void button3_Click(object sender, EventArgs e) {
             webView21.Reload();
         }
+
+        async private void Form2_Load(object sender, EventArgs e) {
+            await webView21.EnsureCoreWebView2Async(null);
+        }
     }
 }
