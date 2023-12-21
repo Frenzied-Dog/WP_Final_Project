@@ -501,41 +501,41 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Activities" msprop:Generator_RowClassName="ActivitiesRow" msprop:Generator_RowEvHandlerName="ActivitiesRowChangeEventHandler" msprop:Generator_RowDeletedName="ActivitiesRowDeleted" msprop:Generator_RowDeletingName="ActivitiesRowDeleting" msprop:Generator_RowEvArgName="ActivitiesRowChangeEvent" msprop:Generator_TablePropName="Activities" msprop:Generator_RowChangedName="ActivitiesRowChanged" msprop:Generator_UserTableName="Activities" msprop:Generator_RowChangingName="ActivitiesRowChanging" msprop:Generator_TableClassName="ActivitiesDataTable" msprop:Generator_TableVarName="tableActivities">
+        <xs:element name="Activities" msprop:Generator_RowEvHandlerName="ActivitiesRowChangeEventHandler" msprop:Generator_RowDeletedName="ActivitiesRowDeleted" msprop:Generator_RowDeletingName="ActivitiesRowDeleting" msprop:Generator_RowEvArgName="ActivitiesRowChangeEvent" msprop:Generator_TablePropName="Activities" msprop:Generator_RowChangedName="ActivitiesRowChanged" msprop:Generator_UserTableName="Activities" msprop:Generator_RowChangingName="ActivitiesRowChanging" msprop:Generator_RowClassName="ActivitiesRow" msprop:Generator_TableClassName="ActivitiesDataTable" msprop:Generator_TableVarName="tableActivities">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
-              <xs:element name="Place" msprop:Generator_UserColumnName="Place" msprop:Generator_ColumnPropNameInTable="PlaceColumn" msprop:Generator_ColumnPropNameInRow="Place" msprop:Generator_ColumnVarNameInTable="columnPlace">
+              <xs:element name="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:int" />
+              <xs:element name="Place" msprop:Generator_ColumnPropNameInTable="PlaceColumn" msprop:Generator_ColumnPropNameInRow="Place" msprop:Generator_UserColumnName="Place" msprop:Generator_ColumnVarNameInTable="columnPlace">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnVarNameInTable="columnAddress">
+              <xs:element name="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="60" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MainUserId" msprop:Generator_UserColumnName="MainUserId" msprop:Generator_ColumnPropNameInTable="MainUserIdColumn" msprop:Generator_ColumnPropNameInRow="MainUserId" msprop:Generator_ColumnVarNameInTable="columnMainUserId">
+              <xs:element name="MainUserId" msprop:Generator_ColumnPropNameInTable="MainUserIdColumn" msprop:Generator_ColumnPropNameInRow="MainUserId" msprop:Generator_UserColumnName="MainUserId" msprop:Generator_ColumnVarNameInTable="columnMainUserId">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Budget" msprop:Generator_ColumnPropNameInRow="Budget" msprop:Generator_ColumnPropNameInTable="BudgetColumn" msprop:Generator_ColumnVarNameInTable="columnBudget" msprop:Generator_UserColumnName="Budget" type="xs:int" />
-              <xs:element name="EstimateTime" msprop:Generator_UserColumnName="EstimateTime" msprop:Generator_ColumnPropNameInTable="EstimateTimeColumn" msprop:Generator_ColumnPropNameInRow="EstimateTime" msprop:Generator_ColumnVarNameInTable="columnEstimateTime" type="xs:dateTime" />
-              <xs:element name="Intro" msprop:Generator_UserColumnName="Intro" msprop:Generator_ColumnPropNameInTable="IntroColumn" msprop:Generator_ColumnPropNameInRow="Intro" msprop:Generator_ColumnVarNameInTable="columnIntro">
+              <xs:element name="Budget" msprop:Generator_UserColumnName="Budget" msprop:Generator_ColumnPropNameInTable="BudgetColumn" msprop:Generator_ColumnPropNameInRow="Budget" msprop:Generator_ColumnVarNameInTable="columnBudget" type="xs:int" />
+              <xs:element name="EstimateTime" msprop:Generator_ColumnPropNameInTable="EstimateTimeColumn" msprop:Generator_ColumnPropNameInRow="EstimateTime" msprop:Generator_UserColumnName="EstimateTime" msprop:Generator_ColumnVarNameInTable="columnEstimateTime" type="xs:dateTime" />
+              <xs:element name="Intro" msprop:Generator_ColumnPropNameInTable="IntroColumn" msprop:Generator_ColumnPropNameInRow="Intro" msprop:Generator_UserColumnName="Intro" msprop:Generator_ColumnVarNameInTable="columnIntro">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="160" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Stamp" msprop:Generator_ColumnPropNameInRow="Stamp" msprop:Generator_ColumnPropNameInTable="StampColumn" msprop:Generator_ColumnVarNameInTable="columnStamp" msprop:Generator_UserColumnName="Stamp" type="xs:dateTime" />
+              <xs:element name="Stamp" msprop:Generator_UserColumnName="Stamp" msprop:Generator_ColumnPropNameInTable="StampColumn" msprop:Generator_ColumnPropNameInRow="Stamp" msprop:Generator_ColumnVarNameInTable="columnStamp" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

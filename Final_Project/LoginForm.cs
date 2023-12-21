@@ -133,5 +133,22 @@ namespace Final_Project {
         private void button5_Click(object sender, EventArgs e) {
             new MapForm().Show();
         }
+
+        private void button6_Click(object sender, EventArgs e) {
+            // hot fix avatar
+
+            //using (MemoryStream mStream = new MemoryStream()) {
+            //    Bitmap img = Properties.Resources.cutedog1;
+            //    img.Save(mStream, img.RawFormat);
+            //    var defaultAvatar = mStream.ToArray();
+
+            //    UsersTableAdapter UserAdapter = new UsersTableAdapter();
+            //    UserAdapter.Fill(db.Users);
+            //    foreach (var user in db.Users) {
+            //        user.Pic = defaultAvatar;
+            //    }  
+            //    UserAdapter.Update(db.Users);
+            //};
+        }
     }
 }

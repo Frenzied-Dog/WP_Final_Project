@@ -224,6 +224,7 @@
             this.EditPicBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.EditPicBox1.TabIndex = 20;
             this.EditPicBox1.TabStop = false;
+            this.EditPicBox1.Visible = false;
             // 
             // EditPicBox2
             // 
@@ -235,6 +236,7 @@
             this.EditPicBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.EditPicBox2.TabIndex = 21;
             this.EditPicBox2.TabStop = false;
+            this.EditPicBox2.Visible = false;
             // 
             // EditPicBox3
             // 
@@ -246,6 +248,7 @@
             this.EditPicBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.EditPicBox3.TabIndex = 21;
             this.EditPicBox3.TabStop = false;
+            this.EditPicBox3.Visible = false;
             // 
             // EditPicBox4
             // 
@@ -257,6 +260,7 @@
             this.EditPicBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.EditPicBox4.TabIndex = 21;
             this.EditPicBox4.TabStop = false;
+            this.EditPicBox4.Visible = false;
             // 
             // EditPicBox5
             // 
@@ -268,6 +272,7 @@
             this.EditPicBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.EditPicBox5.TabIndex = 21;
             this.EditPicBox5.TabStop = false;
+            this.EditPicBox5.Visible = false;
             // 
             // MyProfileForm
             // 

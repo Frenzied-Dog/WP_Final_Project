@@ -148,9 +148,5 @@ namespace Final_Project {
                 }            
             };
         }
-
-        private void ChangeNickPicBox_Click(object sender, EventArgs e) {
-
-        }
     }
 }
