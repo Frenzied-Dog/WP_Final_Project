@@ -87,12 +87,6 @@
             // 
             this.BudgetComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BudgetComboBox.FormattingEnabled = true;
-            this.BudgetComboBox.Items.AddRange(new object[] {
-            "50~100",
-            "100~200",
-            "200~300",
-            "300~400",
-            "400以上"});
             this.BudgetComboBox.Location = new System.Drawing.Point(460, 396);
             this.BudgetComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.BudgetComboBox.Name = "BudgetComboBox";
@@ -103,13 +97,6 @@
             // 
             this.PreferTimeComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.PreferTimeComboBox.FormattingEnabled = true;
-            this.PreferTimeComboBox.Items.AddRange(new object[] {
-            "早上",
-            "中午",
-            "下午",
-            "晚上",
-            "半夜",
-            "凌晨"});
             this.PreferTimeComboBox.Location = new System.Drawing.Point(460, 455);
             this.PreferTimeComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.PreferTimeComboBox.Name = "PreferTimeComboBox";

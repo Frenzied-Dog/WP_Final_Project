@@ -10,11 +10,15 @@ using System.Windows.Forms;
 namespace Final_Project {
     public partial class CreateEventForm : Form {
         MapForm Maps;
+        string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
 
         public CreateEventForm(Final_ProjectDataSet db) {
             InitializeComponent();
             this.db = db;
             Maps = new MapForm();
+            BudgetComboBox.DataSource = budgets;
+            DatePicker.Value = DateTime.Now;
+            TimePicker.Value = DateTime.Now;
         }
 
         private void CreatePicBox_Click(object sender, EventArgs e) {
@@ -23,8 +27,27 @@ namespace Final_Project {
                 MessageBox.Show("請輸入店名及地址", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            
+            DateTime est = DatePicker.Value.Date.Add(TimePicker.Value.TimeOfDay);
+            string intro = IntroTextBox.Text;
+            // check if est is in the past
+            if (est.CompareTo(DateTime.Now) < 0) {
+                MessageBox.Show("活動時間不得為過去時間", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // check if est is in the future
+            if (est.CompareTo(DateTime.Now.AddMonths(1)) > 0) {
+                MessageBox.Show("活動時間不得超過一個月", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            
+            if (intro == "") {
+                intro = "好吧看來有人不想介紹@@";
+            }
+
             int id = rnd.Next();
-            //db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, db.Me[0].Id, , IntroTextBox.Text, DateTime.Now);
+            db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, db.Me[0].Id, BudgetComboBox.SelectedIndex, est, intro, DateTime.Now);
             db.User_Activity.AddUser_ActivityRow(db.Me[0].Id, id);
             ActivityAdapter.Update(db.Activities);
             User_ActivityAdapter.Update(db.User_Activity);

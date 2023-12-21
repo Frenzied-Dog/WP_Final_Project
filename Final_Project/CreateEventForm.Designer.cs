@@ -24,26 +24,21 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateEventForm));
-            this.db = new Final_Project.Final_ProjectDataSet();
             this.CreatePicBox = new System.Windows.Forms.PictureBox();
             this.UseMapPicBox = new System.Windows.Forms.PictureBox();
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
             this.DatePicker = new System.Windows.Forms.DateTimePicker();
-            this.TimeComboBox = new System.Windows.Forms.ComboBox();
             this.IntroTextBox = new System.Windows.Forms.TextBox();
             this.ShopTextBox = new System.Windows.Forms.TextBox();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
+            this.TimePicker = new System.Windows.Forms.DateTimePicker();
+            this.db = new Final_Project.Final_ProjectDataSet();
             this.ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter();
             this.User_ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.User_ActivityTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreatePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UseMapPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
-            // 
-            // db
-            // 
-            this.db.DataSetName = "Final_ProjectDataSet";
-            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // CreatePicBox
             // 
@@ -88,32 +83,22 @@
             this.DatePicker.CalendarFont = new System.Drawing.Font("微軟正黑體", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatePicker.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.DatePicker.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.DatePicker.Font = new System.Drawing.Font("新細明體", 13F);
+            this.DatePicker.Font = new System.Drawing.Font("微軟正黑體", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DatePicker.Location = new System.Drawing.Point(312, 265);
+            this.DatePicker.Location = new System.Drawing.Point(312, 264);
             this.DatePicker.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.DatePicker.MinDate = new System.DateTime(2023, 12, 10, 0, 0, 0, 0);
             this.DatePicker.Name = "DatePicker";
             this.DatePicker.ShowUpDown = true;
-            this.DatePicker.Size = new System.Drawing.Size(268, 28);
+            this.DatePicker.Size = new System.Drawing.Size(268, 30);
             this.DatePicker.TabIndex = 3;
             this.DatePicker.Value = new System.DateTime(2023, 12, 15, 0, 0, 0, 0);
-            // 
-            // TimeComboBox
-            // 
-            this.TimeComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.TimeComboBox.Font = new System.Drawing.Font("微軟正黑體", 13F);
-            this.TimeComboBox.FormattingEnabled = true;
-            this.TimeComboBox.Location = new System.Drawing.Point(312, 327);
-            this.TimeComboBox.Name = "TimeComboBox";
-            this.TimeComboBox.Size = new System.Drawing.Size(268, 30);
-            this.TimeComboBox.TabIndex = 4;
             // 
             // IntroTextBox
             // 
             this.IntroTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.IntroTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IntroTextBox.Font = new System.Drawing.Font("新細明體", 12F);
+            this.IntroTextBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IntroTextBox.Location = new System.Drawing.Point(312, 389);
             this.IntroTextBox.Multiline = true;
             this.IntroTextBox.Name = "IntroTextBox";
@@ -140,6 +125,28 @@
             this.AddressTextBox.Size = new System.Drawing.Size(268, 29);
             this.AddressTextBox.TabIndex = 7;
             // 
+            // TimePicker
+            // 
+            this.TimePicker.CalendarFont = new System.Drawing.Font("微軟正黑體", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimePicker.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.TimePicker.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.TimePicker.CustomFormat = "tt hh:mm";
+            this.TimePicker.Font = new System.Drawing.Font("微軟正黑體", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.TimePicker.Location = new System.Drawing.Point(312, 326);
+            this.TimePicker.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.TimePicker.MinDate = new System.DateTime(2023, 12, 10, 0, 0, 0, 0);
+            this.TimePicker.Name = "TimePicker";
+            this.TimePicker.ShowUpDown = true;
+            this.TimePicker.Size = new System.Drawing.Size(268, 30);
+            this.TimePicker.TabIndex = 8;
+            this.TimePicker.Value = new System.DateTime(2023, 12, 21, 0, 0, 0, 0);
+            // 
+            // db
+            // 
+            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ActivityAdapter
             // 
             this.ActivityAdapter.ClearBeforeFill = true;
@@ -153,10 +160,10 @@
             this.BackgroundImage = global::Final_Project.Properties.Resources.CreateEventBg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 711);
+            this.Controls.Add(this.TimePicker);
             this.Controls.Add(this.AddressTextBox);
             this.Controls.Add(this.ShopTextBox);
             this.Controls.Add(this.IntroTextBox);
-            this.Controls.Add(this.TimeComboBox);
             this.Controls.Add(this.DatePicker);
             this.Controls.Add(this.BudgetComboBox);
             this.Controls.Add(this.UseMapPicBox);
@@ -168,9 +175,9 @@
             this.Name = "CreateEventForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Create Event";
-            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreatePicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UseMapPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,11 +190,11 @@
         private System.Windows.Forms.PictureBox UseMapPicBox;
         private System.Windows.Forms.ComboBox BudgetComboBox;
         private System.Windows.Forms.DateTimePicker DatePicker;
-        private System.Windows.Forms.ComboBox TimeComboBox;
         private System.Windows.Forms.TextBox IntroTextBox;
         private System.Windows.Forms.TextBox ShopTextBox;
         private System.Windows.Forms.TextBox AddressTextBox;
         private Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
         private Final_ProjectDataSetTableAdapters.User_ActivityTableAdapter User_ActivityAdapter;
+        private System.Windows.Forms.DateTimePicker TimePicker;
     }
 }

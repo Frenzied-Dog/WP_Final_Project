@@ -187,10 +187,10 @@
             // ReUploadPicBox
             // 
             this.ReUploadPicBox.BackColor = System.Drawing.Color.Transparent;
-            this.ReUploadPicBox.Image = global::Final_Project.Properties.Resources.ReUpload;
-            this.ReUploadPicBox.Location = new System.Drawing.Point(119, 428);
+            this.ReUploadPicBox.Image = global::Final_Project.Properties.Resources.ReUpload_2;
+            this.ReUploadPicBox.Location = new System.Drawing.Point(119, 433);
             this.ReUploadPicBox.Name = "ReUploadPicBox";
-            this.ReUploadPicBox.Size = new System.Drawing.Size(154, 39);
+            this.ReUploadPicBox.Size = new System.Drawing.Size(152, 36);
             this.ReUploadPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.ReUploadPicBox.TabIndex = 17;
             this.ReUploadPicBox.TabStop = false;
@@ -206,7 +206,7 @@
             // NickTextBox
             // 
             this.NickTextBox.Font = new System.Drawing.Font("微軟正黑體", 22F, System.Drawing.FontStyle.Bold);
-            this.NickTextBox.Location = new System.Drawing.Point(96, 501);
+            this.NickTextBox.Location = new System.Drawing.Point(96, 504);
             this.NickTextBox.Name = "NickTextBox";
             this.NickTextBox.Size = new System.Drawing.Size(198, 47);
             this.NickTextBox.TabIndex = 19;
