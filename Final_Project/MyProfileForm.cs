@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,7 +57,7 @@ namespace Final_Project {
             NickNameLabel.Text = db.Me[0].NickName;
             MajorTextBox.Text = db.Me[0]["Major"] != DBNull.Value ? db.Me[0].Major : "";
             GenderTextBox.Text = db.Me[0]["Gender"] != DBNull.Value ? db.Me[0].Gender : "";
-            SelfTextBox.Text = db.Me[0]["AboutMe"] != DBNull.Value ? db.Me[0].AboutMe : "";
+            SelfTextBox.Text = db.Me[0].AboutMe;
             BudgetComboBox.SelectedIndex = db.Me[0].Budget;
             PreferTimeComboBox.SelectedIndex = db.Me[0].PreferTime;
             ProfilePhoto.Image = Image.FromStream(new MemoryStream(db.Me[0].Pic));
@@ -67,8 +68,7 @@ namespace Final_Project {
         }
 
         private void ModifyPicBox_Click(object sender, EventArgs e) {
-            modifying = !modifying;
-            if (modifying) {
+            if (!modifying) {
                 MajorTextBox.ReadOnly = false;
                 GenderTextBox.ReadOnly = false;
                 SelfTextBox.ReadOnly = false;
@@ -79,18 +79,28 @@ namespace Final_Project {
                 NickTextBox.Text = NickNameLabel.Text;
                 NickTextBox.Visible = true;
                 foreach (PictureBox picBox in EditPicBoxs) picBox.Visible = true;
+                modifying = true;
             } else {
+                if (string.IsNullOrWhiteSpace(MajorTextBox.Text)) {
+                    MessageBox.Show("請輸入系級!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(NickTextBox.Text))
+                    NickTextBox.Text = db.Me[0].Name;
+                if (string.IsNullOrWhiteSpace(SelfTextBox.Text))
+                    SelfTextBox.Text = "這傢伙人狠話不多...啥都沒留:(";
+
                 MajorTextBox.ReadOnly = true;
                 GenderTextBox.ReadOnly = true;
                 SelfTextBox.ReadOnly = true;
                 BudgetComboBox.Enabled = false;
                 PreferTimeComboBox.Enabled = false;
-                ModifyPicBox.Image = Properties.Resources.編輯資料Btn_2;
                 ReUploadPicBox.Visible = false;
                 NickNameLabel.Text = NickTextBox.Text;
                 NickTextBox.Visible = false;
                 foreach (PictureBox picBox in EditPicBoxs) picBox.Visible = false;
-                
+                ModifyPicBox.Image = Properties.Resources.編輯資料Btn_2;
+
                 db.Me[0].NickName = NickNameLabel.Text;
                 db.Me[0].Major = MajorTextBox.Text;
                 db.Me[0].Gender = GenderTextBox.Text;
@@ -102,6 +112,7 @@ namespace Final_Project {
                     db.Me[0].Pic = mStream.ToArray();
                 };
                 MeAdapter.Update(db.Me);
+                modifying = false;
             }
         }
 

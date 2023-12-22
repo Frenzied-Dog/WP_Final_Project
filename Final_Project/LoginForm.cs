@@ -20,8 +20,6 @@ namespace Final_Project {
         static string graphAPI_Me = "https://graph.microsoft.com/v1.0/me";
         string name = "";
         string ID = "";
-        //Final_ProjectDataSet db;
-        //Final_ProjectDataSetTableAdapters.MeTableAdapter MeAdapter = new Final_ProjectDataSetTableAdapters.MeTableAdapter();
 
         public LoginForm(Final_ProjectDataSet db) {
             InitializeComponent();

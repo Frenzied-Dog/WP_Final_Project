@@ -28,37 +28,38 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.TimeComboBox = new System.Windows.Forms.ComboBox();
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.CustomizePicBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.RightPicBox = new System.Windows.Forms.PictureBox();
             this.LeftPicBox = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.PicBox1 = new System.Windows.Forms.PictureBox();
+            this.SloganPicBox = new System.Windows.Forms.PictureBox();
             this.HomePicBox = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.db = new Final_Project.Final_ProjectDataSet();
             this.NotifyPicBox = new System.Windows.Forms.PictureBox();
             this.CreateEventPicBox = new System.Windows.Forms.PictureBox();
             this.MyEventPicBox = new System.Windows.Forms.PictureBox();
             this.MyProfilePicBox = new System.Windows.Forms.PictureBox();
             this.MarkPicBox = new System.Windows.Forms.PictureBox();
             this.LogoPicBox = new System.Windows.Forms.PictureBox();
+            this.db = new Final_Project.Final_ProjectDataSet();
+            this.ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomizePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SloganPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NotifyPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateEventPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyEventPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyProfilePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarkPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
             // 
             // MainPanel
@@ -67,12 +68,12 @@
             this.MainPanel.Controls.Add(this.pictureBox3);
             this.MainPanel.Controls.Add(this.TimeComboBox);
             this.MainPanel.Controls.Add(this.BudgetComboBox);
-            this.MainPanel.Controls.Add(this.pictureBox1);
+            this.MainPanel.Controls.Add(this.CustomizePicBox);
             this.MainPanel.Controls.Add(this.label1);
             this.MainPanel.Controls.Add(this.RightPicBox);
             this.MainPanel.Controls.Add(this.LeftPicBox);
             this.MainPanel.Controls.Add(this.pictureBox2);
-            this.MainPanel.Controls.Add(this.PicBox1);
+            this.MainPanel.Controls.Add(this.SloganPicBox);
             this.MainPanel.Controls.Add(this.HomePicBox);
             this.MainPanel.Controls.Add(this.pictureBox5);
             this.MainPanel.Location = new System.Drawing.Point(0, 88);
@@ -115,14 +116,14 @@
             this.BudgetComboBox.TabStop = false;
             this.BudgetComboBox.Text = "Budget";
             // 
-            // pictureBox1
+            // CustomizePicBox
             // 
-            this.pictureBox1.Image = global::Final_Project.Properties.Resources.CustomizeLabel;
-            this.pictureBox1.Location = new System.Drawing.Point(277, 740);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 23);
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
+            this.CustomizePicBox.Image = global::Final_Project.Properties.Resources.CustomizeLabel;
+            this.CustomizePicBox.Location = new System.Drawing.Point(277, 740);
+            this.CustomizePicBox.Name = "CustomizePicBox";
+            this.CustomizePicBox.Size = new System.Drawing.Size(146, 23);
+            this.CustomizePicBox.TabIndex = 31;
+            this.CustomizePicBox.TabStop = false;
             // 
             // label1
             // 
@@ -143,6 +144,8 @@
             this.RightPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.RightPicBox.TabIndex = 28;
             this.RightPicBox.TabStop = false;
+            this.RightPicBox.MouseEnter += new System.EventHandler(this.MenuPicBox_MouseEnter);
+            this.RightPicBox.MouseLeave += new System.EventHandler(this.MenuPicBox_MouseLeave);
             // 
             // LeftPicBox
             // 
@@ -153,6 +156,8 @@
             this.LeftPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.LeftPicBox.TabIndex = 27;
             this.LeftPicBox.TabStop = false;
+            this.LeftPicBox.MouseEnter += new System.EventHandler(this.MenuPicBox_MouseEnter);
+            this.LeftPicBox.MouseLeave += new System.EventHandler(this.MenuPicBox_MouseLeave);
             // 
             // pictureBox2
             // 
@@ -163,14 +168,14 @@
             this.pictureBox2.TabIndex = 26;
             this.pictureBox2.TabStop = false;
             // 
-            // PicBox1
+            // SloganPicBox
             // 
-            this.PicBox1.Image = global::Final_Project.Properties.Resources.JoinEventLabel;
-            this.PicBox1.Location = new System.Drawing.Point(101, 654);
-            this.PicBox1.Name = "PicBox1";
-            this.PicBox1.Size = new System.Drawing.Size(493, 50);
-            this.PicBox1.TabIndex = 25;
-            this.PicBox1.TabStop = false;
+            this.SloganPicBox.Image = global::Final_Project.Properties.Resources.JoinEventLabel;
+            this.SloganPicBox.Location = new System.Drawing.Point(101, 654);
+            this.SloganPicBox.Name = "SloganPicBox";
+            this.SloganPicBox.Size = new System.Drawing.Size(493, 50);
+            this.SloganPicBox.TabIndex = 25;
+            this.SloganPicBox.TabStop = false;
             // 
             // HomePicBox
             // 
@@ -181,7 +186,6 @@
             this.HomePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.HomePicBox.TabIndex = 0;
             this.HomePicBox.TabStop = false;
-            this.HomePicBox.Click += new System.EventHandler(this.HomePicBox_Click);
             // 
             // pictureBox5
             // 
@@ -193,11 +197,6 @@
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox5.TabIndex = 29;
             this.pictureBox5.TabStop = false;
-            // 
-            // db
-            // 
-            this.db.DataSetName = "Final_ProjectDataSet";
-            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // NotifyPicBox
             // 
@@ -272,6 +271,15 @@
             this.LogoPicBox.TabIndex = 3;
             this.LogoPicBox.TabStop = false;
             // 
+            // db
+            // 
+            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ActivityAdapter
+            // 
+            this.ActivityAdapter.ClearBeforeFill = true;
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -296,20 +304,20 @@
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomizePicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PicBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SloganPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NotifyPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateEventPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyEventPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyProfilePicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarkPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -322,7 +330,7 @@
         private System.Windows.Forms.PictureBox CreateEventPicBox;
         private System.Windows.Forms.PictureBox NotifyPicBox;
         private System.Windows.Forms.PictureBox HomePicBox;
-        private System.Windows.Forms.PictureBox PicBox1;
+        private System.Windows.Forms.PictureBox SloganPicBox;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.PictureBox RightPicBox;
@@ -330,9 +338,10 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
         private Final_ProjectDataSet db;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox CustomizePicBox;
         private System.Windows.Forms.ComboBox BudgetComboBox;
         private System.Windows.Forms.ComboBox TimeComboBox;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
     }
 }

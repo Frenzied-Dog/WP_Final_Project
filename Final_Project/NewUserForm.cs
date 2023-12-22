@@ -133,7 +133,7 @@ namespace Final_Project {
 			case "AboutMe":
 				if (box.Text == "") {
 					box.Text = "可以說說您的興趣與喜歡吃的食物等等，讓大家\r\n能夠更認識你！ ( 選填 )";
-					box.ForeColor = Color.Black;
+					box.ForeColor = Color.DimGray;
 				}
 				break;
 			default:

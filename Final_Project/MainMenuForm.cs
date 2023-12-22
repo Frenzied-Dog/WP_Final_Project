@@ -16,6 +16,8 @@ namespace Final_Project {
         MyEventForm eventForm;
         CreateEventForm createEventForm;
         NotificationForm notifyForm;
+        string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
+        string[] times = { "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
 
         public MainMenuForm(Final_ProjectDataSet db) {
             InitializeComponent();
@@ -24,6 +26,8 @@ namespace Final_Project {
             eventForm = new MyEventForm(db);
             createEventForm = new CreateEventForm(db);
             notifyForm = new NotificationForm(db);
+            BudgetComboBox.DataSource = budgets;
+            TimeComboBox.DataSource = times;
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -65,6 +69,12 @@ namespace Final_Project {
             case "Notify":
                 picBox.Image = Properties.Resources.NotiticationBtn_2;
                 break;
+            case "Left":
+                //picBox.Image = Properties.Resources.LeftBtn_2;
+                break;
+            case "Right":
+                //picBox.Image = Properties.Resources.RightBtn_2;
+                break;
             default:
                 break;
         }
@@ -85,24 +95,15 @@ namespace Final_Project {
             case "Notify":
                 picBox.Image = Properties.Resources.NotiticationBtn;
                 break;
+            case "Left":
+                //picBox.Image = Properties.Resources.LeftBtn;
+                break;
+            case "Right":
+                //picBox.Image = Properties.Resources.RightBtn;
+                break;
             default:
                 break;
             }
-        }
-
-        private void HomePicBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
