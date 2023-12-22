@@ -349,6 +349,10 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\一鍵報名Btn.png" />
+    <None Include="Resources\一鍵報名Btn_2.png" />
+    <None Include="Resources\LeftBtn_2.png" />
+    <None Include="Resources\RightBtn_2.png" />
     <None Include="Resources\Note_Pencil.png" />
     <None Include="Resources\ReUpload_2.png" />
     <None Include="Resources\ReUpload.png" />

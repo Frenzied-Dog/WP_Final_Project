@@ -121,7 +121,7 @@
             // CommitPicBox
             // 
             this.CommitPicBox.BackColor = System.Drawing.Color.Transparent;
-            this.CommitPicBox.Image = global::Final_Project.Properties.Resources.報名Btn;
+            this.CommitPicBox.Image = global::Final_Project.Properties.Resources.完成註冊Btn;
             this.CommitPicBox.Location = new System.Drawing.Point(970, 582);
             this.CommitPicBox.Name = "CommitPicBox";
             this.CommitPicBox.Size = new System.Drawing.Size(143, 46);

@@ -25,17 +25,19 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.TimeLabel = new System.Windows.Forms.Label();
+            this.BudgetLabel = new System.Windows.Forms.Label();
+            this.SignPicBox = new System.Windows.Forms.PictureBox();
             this.TimeComboBox = new System.Windows.Forms.ComboBox();
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
             this.CustomizePicBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.PlaceHolder = new System.Windows.Forms.Label();
             this.RightPicBox = new System.Windows.Forms.PictureBox();
             this.LeftPicBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.EventPicBox = new System.Windows.Forms.PictureBox();
             this.SloganPicBox = new System.Windows.Forms.PictureBox();
             this.HomePicBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.DotsPicBox = new System.Windows.Forms.PictureBox();
             this.NotifyPicBox = new System.Windows.Forms.PictureBox();
             this.CreateEventPicBox = new System.Windows.Forms.PictureBox();
             this.MyEventPicBox = new System.Windows.Forms.PictureBox();
@@ -44,15 +46,21 @@
             this.LogoPicBox = new System.Windows.Forms.PictureBox();
             this.db = new Final_Project.Final_ProjectDataSet();
             this.ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SignPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomizePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftPicBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SloganPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePicBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DotsPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NotifyPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateEventPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyEventPicBox)).BeginInit();
@@ -65,56 +73,87 @@
             // MainPanel
             // 
             this.MainPanel.AutoScroll = true;
-            this.MainPanel.Controls.Add(this.pictureBox3);
+            this.MainPanel.Controls.Add(this.label6);
+            this.MainPanel.Controls.Add(this.label5);
+            this.MainPanel.Controls.Add(this.label4);
+            this.MainPanel.Controls.Add(this.label3);
+            this.MainPanel.Controls.Add(this.label2);
+            this.MainPanel.Controls.Add(this.label1);
+            this.MainPanel.Controls.Add(this.TimeLabel);
+            this.MainPanel.Controls.Add(this.BudgetLabel);
+            this.MainPanel.Controls.Add(this.SignPicBox);
             this.MainPanel.Controls.Add(this.TimeComboBox);
             this.MainPanel.Controls.Add(this.BudgetComboBox);
             this.MainPanel.Controls.Add(this.CustomizePicBox);
-            this.MainPanel.Controls.Add(this.label1);
+            this.MainPanel.Controls.Add(this.PlaceHolder);
             this.MainPanel.Controls.Add(this.RightPicBox);
             this.MainPanel.Controls.Add(this.LeftPicBox);
-            this.MainPanel.Controls.Add(this.pictureBox2);
+            this.MainPanel.Controls.Add(this.EventPicBox);
             this.MainPanel.Controls.Add(this.SloganPicBox);
             this.MainPanel.Controls.Add(this.HomePicBox);
-            this.MainPanel.Controls.Add(this.pictureBox5);
+            this.MainPanel.Controls.Add(this.DotsPicBox);
             this.MainPanel.Location = new System.Drawing.Point(0, 88);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(1265, 585);
             this.MainPanel.TabIndex = 1;
             // 
-            // pictureBox3
+            // TimeLabel
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox3.Image = global::Final_Project.Properties.Resources.報名Btn__1_;
-            this.pictureBox3.Location = new System.Drawing.Point(773, 1084);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(186, 52);
-            this.pictureBox3.TabIndex = 34;
-            this.pictureBox3.TabStop = false;
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TimeLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TimeLabel.Location = new System.Drawing.Point(610, 742);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(50, 20);
+            this.TimeLabel.TabIndex = 35;
+            this.TimeLabel.Text = "Time:";
+            // 
+            // BudgetLabel
+            // 
+            this.BudgetLabel.AutoSize = true;
+            this.BudgetLabel.BackColor = System.Drawing.Color.Transparent;
+            this.BudgetLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BudgetLabel.Location = new System.Drawing.Point(425, 742);
+            this.BudgetLabel.Name = "BudgetLabel";
+            this.BudgetLabel.Size = new System.Drawing.Size(68, 20);
+            this.BudgetLabel.TabIndex = 35;
+            this.BudgetLabel.Text = "Budget:";
+            // 
+            // SignPicBox
+            // 
+            this.SignPicBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SignPicBox.Image = global::Final_Project.Properties.Resources.一鍵報名Btn;
+            this.SignPicBox.Location = new System.Drawing.Point(765, 1084);
+            this.SignPicBox.Name = "SignPicBox";
+            this.SignPicBox.Size = new System.Drawing.Size(186, 62);
+            this.SignPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.SignPicBox.TabIndex = 34;
+            this.SignPicBox.TabStop = false;
+            this.SignPicBox.MouseEnter += new System.EventHandler(this.MenuPicBox_MouseEnter);
+            this.SignPicBox.MouseLeave += new System.EventHandler(this.MenuPicBox_MouseLeave);
             // 
             // TimeComboBox
             // 
-            this.TimeComboBox.BackColor = System.Drawing.Color.Snow;
+            this.TimeComboBox.BackColor = System.Drawing.Color.White;
             this.TimeComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeComboBox.FormattingEnabled = true;
-            this.TimeComboBox.Location = new System.Drawing.Point(546, 740);
+            this.TimeComboBox.Location = new System.Drawing.Point(663, 739);
             this.TimeComboBox.Name = "TimeComboBox";
             this.TimeComboBox.Size = new System.Drawing.Size(111, 26);
             this.TimeComboBox.TabIndex = 1;
             this.TimeComboBox.TabStop = false;
-            this.TimeComboBox.Text = "Time";
             // 
             // BudgetComboBox
             // 
-            this.BudgetComboBox.BackColor = System.Drawing.Color.Snow;
+            this.BudgetComboBox.BackColor = System.Drawing.Color.White;
             this.BudgetComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BudgetComboBox.FormattingEnabled = true;
-            this.BudgetComboBox.Location = new System.Drawing.Point(429, 740);
+            this.BudgetComboBox.Location = new System.Drawing.Point(495, 739);
             this.BudgetComboBox.Name = "BudgetComboBox";
             this.BudgetComboBox.Size = new System.Drawing.Size(111, 26);
             this.BudgetComboBox.TabIndex = 0;
             this.BudgetComboBox.TabStop = false;
-            this.BudgetComboBox.Text = "Budget";
             // 
             // CustomizePicBox
             // 
@@ -125,22 +164,22 @@
             this.CustomizePicBox.TabIndex = 31;
             this.CustomizePicBox.TabStop = false;
             // 
-            // label1
+            // PlaceHolder
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(780, 1219);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 12);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "--PlaceHolder--";
+            this.PlaceHolder.AutoSize = true;
+            this.PlaceHolder.BackColor = System.Drawing.Color.Transparent;
+            this.PlaceHolder.Location = new System.Drawing.Point(780, 1219);
+            this.PlaceHolder.Name = "PlaceHolder";
+            this.PlaceHolder.Size = new System.Drawing.Size(77, 12);
+            this.PlaceHolder.TabIndex = 30;
+            this.PlaceHolder.Text = "--PlaceHolder--";
             // 
             // RightPicBox
             // 
-            this.RightPicBox.Image = global::Final_Project.Properties.Resources.RightArrow1;
-            this.RightPicBox.Location = new System.Drawing.Point(1098, 941);
+            this.RightPicBox.Image = global::Final_Project.Properties.Resources.RightBtn;
+            this.RightPicBox.Location = new System.Drawing.Point(1073, 941);
             this.RightPicBox.Name = "RightPicBox";
-            this.RightPicBox.Size = new System.Drawing.Size(40, 40);
+            this.RightPicBox.Size = new System.Drawing.Size(37, 53);
             this.RightPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.RightPicBox.TabIndex = 28;
             this.RightPicBox.TabStop = false;
@@ -149,24 +188,24 @@
             // 
             // LeftPicBox
             // 
-            this.LeftPicBox.Image = global::Final_Project.Properties.Resources.LeftArrow;
-            this.LeftPicBox.Location = new System.Drawing.Point(180, 941);
+            this.LeftPicBox.Image = global::Final_Project.Properties.Resources.LeftBtn;
+            this.LeftPicBox.Location = new System.Drawing.Point(204, 941);
             this.LeftPicBox.Name = "LeftPicBox";
-            this.LeftPicBox.Size = new System.Drawing.Size(40, 40);
+            this.LeftPicBox.Size = new System.Drawing.Size(37, 53);
             this.LeftPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.LeftPicBox.TabIndex = 27;
             this.LeftPicBox.TabStop = false;
             this.LeftPicBox.MouseEnter += new System.EventHandler(this.MenuPicBox_MouseEnter);
             this.LeftPicBox.MouseLeave += new System.EventHandler(this.MenuPicBox_MouseLeave);
             // 
-            // pictureBox2
+            // EventPicBox
             // 
-            this.pictureBox2.Image = global::Final_Project.Properties.Resources.EventInfoBackground;
-            this.pictureBox2.Location = new System.Drawing.Point(277, 769);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(764, 385);
-            this.pictureBox2.TabIndex = 26;
-            this.pictureBox2.TabStop = false;
+            this.EventPicBox.Image = global::Final_Project.Properties.Resources.EventInfoBackground;
+            this.EventPicBox.Location = new System.Drawing.Point(277, 769);
+            this.EventPicBox.Name = "EventPicBox";
+            this.EventPicBox.Size = new System.Drawing.Size(764, 385);
+            this.EventPicBox.TabIndex = 26;
+            this.EventPicBox.TabStop = false;
             // 
             // SloganPicBox
             // 
@@ -187,16 +226,16 @@
             this.HomePicBox.TabIndex = 0;
             this.HomePicBox.TabStop = false;
             // 
-            // pictureBox5
+            // DotsPicBox
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::Final_Project.Properties.Resources.ellipsis_1;
-            this.pictureBox5.Location = new System.Drawing.Point(618, 1140);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox5.TabIndex = 29;
-            this.pictureBox5.TabStop = false;
+            this.DotsPicBox.BackColor = System.Drawing.Color.Transparent;
+            this.DotsPicBox.Image = global::Final_Project.Properties.Resources.ellipsis_1;
+            this.DotsPicBox.Location = new System.Drawing.Point(618, 1140);
+            this.DotsPicBox.Name = "DotsPicBox";
+            this.DotsPicBox.Size = new System.Drawing.Size(80, 80);
+            this.DotsPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.DotsPicBox.TabIndex = 29;
+            this.DotsPicBox.TabStop = false;
             // 
             // NotifyPicBox
             // 
@@ -280,6 +319,60 @@
             // 
             this.ActivityAdapter.ClearBeforeFill = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(427, 805);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 12);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(445, 867);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 12);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(445, 923);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 12);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(445, 981);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 12);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(526, 1033);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 12);
+            this.label5.TabIndex = 40;
+            this.label5.Text = "label5";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(714, 837);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 12);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "label6";
+            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -303,14 +396,14 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainMenuForm_FormClosed);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SignPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomizePicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeftPicBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.EventPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SloganPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePicBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DotsPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NotifyPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateEventPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyEventPicBox)).EndInit();
@@ -331,17 +424,25 @@
         private System.Windows.Forms.PictureBox NotifyPicBox;
         private System.Windows.Forms.PictureBox HomePicBox;
         private System.Windows.Forms.PictureBox SloganPicBox;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox EventPicBox;
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.PictureBox RightPicBox;
         private System.Windows.Forms.PictureBox LeftPicBox;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox DotsPicBox;
+        private System.Windows.Forms.Label PlaceHolder;
         private Final_ProjectDataSet db;
         private System.Windows.Forms.PictureBox CustomizePicBox;
         private System.Windows.Forms.ComboBox BudgetComboBox;
         private System.Windows.Forms.ComboBox TimeComboBox;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox SignPicBox;
         private Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
+        private System.Windows.Forms.Label TimeLabel;
+        private System.Windows.Forms.Label BudgetLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
     }
 }

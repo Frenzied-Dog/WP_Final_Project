@@ -4866,10 +4866,11 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gender FROM 
             tableMapping.ColumnMappings.Add("EstimateTime", "EstimateTime");
             tableMapping.ColumnMappings.Add("Intro", "Intro");
             tableMapping.ColumnMappings.Add("Stamp", "Stamp");
+            tableMapping.ColumnMappings.Add("Budget", "Budget");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Activities] WHERE (([ID] = @Original_ID) AND ([Place] = @Original_Place) AND ([Address] = @Original_Address) AND ([MainUserId] = @Original_MainUserId) AND ([EstimateTime] = @Original_EstimateTime) AND ([Intro] = @Original_Intro) AND ([Stamp] = @Original_Stamp))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Activities] WHERE (([ID] = @Original_ID) AND ([Place] = @Original_Place) AND ([Address] = @Original_Address) AND ([MainUserId] = @Original_MainUserId) AND ([EstimateTime] = @Original_EstimateTime) AND ([Intro] = @Original_Intro) AND ([Budget] = @Original_Budget) AND ([Stamp] = @Original_Stamp))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4877,11 +4878,12 @@ SELECT Id, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gender FROM 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MainUserId", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MainUserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstimateTime", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimateTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stamp", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stamp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Activities] ([ID], [Place], [Address], [MainUserId], [EstimateTime], [Intro], [Stamp]) VALUES (@ID, @Place, @Address, @MainUserId, @EstimateTime, @Intro, @Stamp);
-SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activities WHERE (MainUserId = @MainUserId)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Activities] ([ID], [Place], [Address], [MainUserId], [EstimateTime], [Intro], [Budget], [Stamp]) VALUES (@ID, @Place, @Address, @MainUserId, @EstimateTime, @Intro, @Budget, @Stamp);
+SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM Activities WHERE (MainUserId = @MainUserId)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4889,11 +4891,12 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MainUserId", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MainUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstimateTime", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimateTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stamp", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Activities] SET [ID] = @ID, [Place] = @Place, [Address] = @Address, [MainUserId] = @MainUserId, [EstimateTime] = @EstimateTime, [Intro] = @Intro, [Stamp] = @Stamp WHERE (([ID] = @Original_ID) AND ([Place] = @Original_Place) AND ([Address] = @Original_Address) AND ([MainUserId] = @Original_MainUserId) AND ([EstimateTime] = @Original_EstimateTime) AND ([Intro] = @Original_Intro) AND ([Stamp] = @Original_Stamp));
-SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activities WHERE (MainUserId = @MainUserId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Activities] SET [ID] = @ID, [Place] = @Place, [Address] = @Address, [MainUserId] = @MainUserId, [EstimateTime] = @EstimateTime, [Intro] = @Intro, [Budget] = @Budget, [Stamp] = @Stamp WHERE (([ID] = @Original_ID) AND ([Place] = @Original_Place) AND ([Address] = @Original_Address) AND ([MainUserId] = @Original_MainUserId) AND ([EstimateTime] = @Original_EstimateTime) AND ([Intro] = @Original_Intro) AND ([Budget] = @Original_Budget) AND ([Stamp] = @Original_Stamp));
+SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM Activities WHERE (MainUserId = @MainUserId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4901,6 +4904,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MainUserId", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MainUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstimateTime", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimateTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stamp", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4908,6 +4912,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MainUserId", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MainUserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstimateTime", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimateTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stamp", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stamp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -4924,8 +4929,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activities" +
-                "";
+            this._commandCollection[0].CommandText = "SELECT Activities.* FROM Activities";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4986,7 +4990,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Place, string Original_Address, string Original_MainUserId, System.DateTime Original_EstimateTime, string Original_Intro, System.DateTime Original_Stamp) {
+        public virtual int Delete(int Original_ID, string Original_Place, string Original_Address, string Original_MainUserId, System.DateTime Original_EstimateTime, string Original_Intro, int Original_Budget, System.DateTime Original_Stamp) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Place == null)) {
                 throw new global::System.ArgumentNullException("Original_Place");
@@ -5013,7 +5017,8 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Intro));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_Stamp));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Budget));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_Stamp));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5034,7 +5039,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string Place, string Address, string MainUserId, System.DateTime EstimateTime, string Intro, System.DateTime Stamp) {
+        public virtual int Insert(int ID, string Place, string Address, string MainUserId, System.DateTime EstimateTime, string Intro, int Budget, System.DateTime Stamp) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
             if ((Place == null)) {
                 throw new global::System.ArgumentNullException("Place");
@@ -5061,7 +5066,8 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Intro));
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Stamp));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Budget));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Stamp));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5082,7 +5088,23 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string Place, string Address, string MainUserId, System.DateTime EstimateTime, string Intro, System.DateTime Stamp, int Original_ID, string Original_Place, string Original_Address, string Original_MainUserId, System.DateTime Original_EstimateTime, string Original_Intro, System.DateTime Original_Stamp) {
+        public virtual int Update(
+                    int ID, 
+                    string Place, 
+                    string Address, 
+                    string MainUserId, 
+                    System.DateTime EstimateTime, 
+                    string Intro, 
+                    int Budget, 
+                    System.DateTime Stamp, 
+                    int Original_ID, 
+                    string Original_Place, 
+                    string Original_Address, 
+                    string Original_MainUserId, 
+                    System.DateTime Original_EstimateTime, 
+                    string Original_Intro, 
+                    int Original_Budget, 
+                    System.DateTime Original_Stamp) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
             if ((Place == null)) {
                 throw new global::System.ArgumentNullException("Place");
@@ -5109,34 +5131,36 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Intro));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Stamp));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Budget));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Stamp));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID));
             if ((Original_Place == null)) {
                 throw new global::System.ArgumentNullException("Original_Place");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Place));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Place));
             }
             if ((Original_Address == null)) {
                 throw new global::System.ArgumentNullException("Original_Address");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Address));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Address));
             }
             if ((Original_MainUserId == null)) {
                 throw new global::System.ArgumentNullException("Original_MainUserId");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_MainUserId));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_MainUserId));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_EstimateTime));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_EstimateTime));
             if ((Original_Intro == null)) {
                 throw new global::System.ArgumentNullException("Original_Intro");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Intro));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Intro));
             }
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Stamp));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Budget));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Stamp));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5157,8 +5181,8 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Stamp FROM Activitie
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string Place, string Address, System.DateTime EstimateTime, string Intro, System.DateTime Stamp, int Original_ID, string Original_Place, string Original_Address, string Original_MainUserId, System.DateTime Original_EstimateTime, string Original_Intro, System.DateTime Original_Stamp) {
-            return this.Update(ID, Place, Address, Original_MainUserId, EstimateTime, Intro, Stamp, Original_ID, Original_Place, Original_Address, Original_MainUserId, Original_EstimateTime, Original_Intro, Original_Stamp);
+        public virtual int Update(int ID, string Place, string Address, System.DateTime EstimateTime, string Intro, int Budget, System.DateTime Stamp, int Original_ID, string Original_Place, string Original_Address, string Original_MainUserId, System.DateTime Original_EstimateTime, string Original_Intro, int Original_Budget, System.DateTime Original_Stamp) {
+            return this.Update(ID, Place, Address, Original_MainUserId, EstimateTime, Intro, Budget, Stamp, Original_ID, Original_Place, Original_Address, Original_MainUserId, Original_EstimateTime, Original_Intro, Original_Budget, Original_Stamp);
         }
     }
     

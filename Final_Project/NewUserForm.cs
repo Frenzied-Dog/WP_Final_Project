@@ -70,11 +70,11 @@ namespace Final_Project {
         }
 
 		private void CommitPicBox_MouseEnter(object sender, EventArgs e) {
-			CommitPicBox.Image = Properties.Resources.報名Btn_2;
+			CommitPicBox.Image = Properties.Resources.完成註冊Btn_2;
 		}
 
 		private void CommitPicBox_MouseLeave(object sender, EventArgs e) {
-			CommitPicBox.Image = Properties.Resources.報名Btn;
+			CommitPicBox.Image = Properties.Resources.完成註冊Btn;
 		}
 
 		private void TextBoxHint_Enter(object sender, EventArgs e) {

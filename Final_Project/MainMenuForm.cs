@@ -16,6 +16,8 @@ namespace Final_Project {
         MyEventForm eventForm;
         CreateEventForm createEventForm;
         NotificationForm notifyForm;
+        DataRow[] Acts;
+        int ActIndex = 0;
         string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
         string[] times = { "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
 
@@ -28,6 +30,25 @@ namespace Final_Project {
             notifyForm = new NotificationForm(db);
             BudgetComboBox.DataSource = budgets;
             TimeComboBox.DataSource = times;
+
+            ReloadEvent();
+            PlaceHolder.Text = "";
+        }
+
+        void ReloadEvent() {
+            string filter = "";
+            ActivityAdapter.Fill(db.Activities);
+            if (BudgetComboBox.SelectedIndex != -1 && TimeComboBox.SelectedIndex != -1) {
+                filter = $"Budget = {BudgetComboBox.SelectedIndex} AND PreferTime = {TimeComboBox.SelectedIndex}";
+            } else if (BudgetComboBox.SelectedIndex != -1) {
+                filter = $"Budget = {BudgetComboBox.SelectedIndex}";
+            } else if (TimeComboBox.SelectedIndex != -1) {
+                filter = $"PreferTime = {TimeComboBox.SelectedIndex}";
+            }
+            Acts = db.Activities.Select(filter);
+            ActIndex = 0;
+
+
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -70,10 +91,13 @@ namespace Final_Project {
                 picBox.Image = Properties.Resources.NotiticationBtn_2;
                 break;
             case "Left":
-                //picBox.Image = Properties.Resources.LeftBtn_2;
+                picBox.Image = Properties.Resources.LeftBtn_2;
                 break;
             case "Right":
-                //picBox.Image = Properties.Resources.RightBtn_2;
+                picBox.Image = Properties.Resources.RightBtn_2;
+                break;
+            case "Sign":
+                picBox.Image = Properties.Resources.一鍵報名Btn_2;
                 break;
             default:
                 break;
@@ -96,14 +120,19 @@ namespace Final_Project {
                 picBox.Image = Properties.Resources.NotiticationBtn;
                 break;
             case "Left":
-                //picBox.Image = Properties.Resources.LeftBtn;
+                picBox.Image = Properties.Resources.LeftBtn;
                 break;
             case "Right":
-                //picBox.Image = Properties.Resources.RightBtn;
+                picBox.Image = Properties.Resources.RightBtn;
+                break;
+            case "Sign":
+                picBox.Image = Properties.Resources.一鍵報名Btn;
                 break;
             default:
                 break;
             }
         }
+
+
     }
 }

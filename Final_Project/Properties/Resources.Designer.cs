@@ -273,9 +273,19 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap LeftArrow {
+        internal static System.Drawing.Bitmap LeftBtn {
             get {
-                object obj = ResourceManager.GetObject("LeftArrow", resourceCulture);
+                object obj = ResourceManager.GetObject("LeftBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap LeftBtn_2 {
+            get {
+                object obj = ResourceManager.GetObject("LeftBtn_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +423,9 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap RightArrow {
+        internal static System.Drawing.Bitmap RightBtn {
             get {
-                object obj = ResourceManager.GetObject("RightArrow", resourceCulture);
+                object obj = ResourceManager.GetObject("RightBtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +433,9 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap RightArrow1 {
+        internal static System.Drawing.Bitmap RightBtn_2 {
             get {
-                object obj = ResourceManager.GetObject("RightArrow1", resourceCulture);
+                object obj = ResourceManager.GetObject("RightBtn_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,6 +446,26 @@ namespace Final_Project.Properties {
         internal static System.Drawing.Bitmap star {
             get {
                 object obj = ResourceManager.GetObject("star", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 一鍵報名Btn {
+            get {
+                object obj = ResourceManager.GetObject("一鍵報名Btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap 一鍵報名Btn_2 {
+            get {
+                object obj = ResourceManager.GetObject("一鍵報名Btn_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,9 +543,9 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap 報名Btn {
+        internal static System.Drawing.Bitmap 完成註冊Btn {
             get {
-                object obj = ResourceManager.GetObject("報名Btn", resourceCulture);
+                object obj = ResourceManager.GetObject("完成註冊Btn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,19 +553,9 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap 報名Btn__1_ {
+        internal static System.Drawing.Bitmap 完成註冊Btn_2 {
             get {
-                object obj = ResourceManager.GetObject("報名Btn (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
-        /// </summary>
-        internal static System.Drawing.Bitmap 報名Btn_2 {
-            get {
-                object obj = ResourceManager.GetObject("報名Btn_2", resourceCulture);
+                object obj = ResourceManager.GetObject("完成註冊Btn_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
