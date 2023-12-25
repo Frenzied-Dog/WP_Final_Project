@@ -25,8 +25,14 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.CountLabel = new System.Windows.Forms.Label();
+            this.AddressLabel = new System.Windows.Forms.Label();
+            this.ShopLabel = new System.Windows.Forms.Label();
             this.TimeLabel = new System.Windows.Forms.Label();
-            this.BudgetLabel = new System.Windows.Forms.Label();
+            this.DateLabel = new System.Windows.Forms.Label();
+            this.IntroLabel = new System.Windows.Forms.Label();
+            this.TimeFilterLabel = new System.Windows.Forms.Label();
+            this.BudgetFilterLabel = new System.Windows.Forms.Label();
             this.SignPicBox = new System.Windows.Forms.PictureBox();
             this.TimeComboBox = new System.Windows.Forms.ComboBox();
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
@@ -46,12 +52,7 @@
             this.LogoPicBox = new System.Windows.Forms.PictureBox();
             this.db = new Final_Project.Final_ProjectDataSet();
             this.ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.UAA_Adapter = new Final_Project.Final_ProjectDataSetTableAdapters.User_Activity_ATableAdapter();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SignPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomizePicBox)).BeginInit();
@@ -73,14 +74,14 @@
             // MainPanel
             // 
             this.MainPanel.AutoScroll = true;
-            this.MainPanel.Controls.Add(this.label6);
-            this.MainPanel.Controls.Add(this.label5);
-            this.MainPanel.Controls.Add(this.label4);
-            this.MainPanel.Controls.Add(this.label3);
-            this.MainPanel.Controls.Add(this.label2);
-            this.MainPanel.Controls.Add(this.label1);
+            this.MainPanel.Controls.Add(this.CountLabel);
+            this.MainPanel.Controls.Add(this.AddressLabel);
+            this.MainPanel.Controls.Add(this.ShopLabel);
             this.MainPanel.Controls.Add(this.TimeLabel);
-            this.MainPanel.Controls.Add(this.BudgetLabel);
+            this.MainPanel.Controls.Add(this.DateLabel);
+            this.MainPanel.Controls.Add(this.IntroLabel);
+            this.MainPanel.Controls.Add(this.TimeFilterLabel);
+            this.MainPanel.Controls.Add(this.BudgetFilterLabel);
             this.MainPanel.Controls.Add(this.SignPicBox);
             this.MainPanel.Controls.Add(this.TimeComboBox);
             this.MainPanel.Controls.Add(this.BudgetComboBox);
@@ -98,27 +99,92 @@
             this.MainPanel.Size = new System.Drawing.Size(1265, 585);
             this.MainPanel.TabIndex = 1;
             // 
+            // CountLabel
+            // 
+            this.CountLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CountLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CountLabel.Location = new System.Drawing.Point(500, 1021);
+            this.CountLabel.Name = "CountLabel";
+            this.CountLabel.Size = new System.Drawing.Size(133, 39);
+            this.CountLabel.TabIndex = 36;
+            this.CountLabel.Text = "PlaceHolder";
+            this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressLabel
+            // 
+            this.AddressLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AddressLabel.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.AddressLabel.Location = new System.Drawing.Point(424, 952);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(209, 67);
+            this.AddressLabel.TabIndex = 36;
+            this.AddressLabel.Text = "PlaceHolder";
+            this.AddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ShopLabel
+            // 
+            this.ShopLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ShopLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ShopLabel.Location = new System.Drawing.Point(424, 908);
+            this.ShopLabel.Name = "ShopLabel";
+            this.ShopLabel.Size = new System.Drawing.Size(209, 47);
+            this.ShopLabel.TabIndex = 36;
+            this.ShopLabel.Text = "PlaceHolder";
+            this.ShopLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // TimeLabel
             // 
-            this.TimeLabel.AutoSize = true;
-            this.TimeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.TimeLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TimeLabel.Location = new System.Drawing.Point(610, 742);
+            this.TimeLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TimeLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TimeLabel.Location = new System.Drawing.Point(423, 850);
             this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(50, 20);
-            this.TimeLabel.TabIndex = 35;
-            this.TimeLabel.Text = "Time:";
+            this.TimeLabel.Size = new System.Drawing.Size(209, 42);
+            this.TimeLabel.TabIndex = 36;
+            this.TimeLabel.Text = "PlaceHolder";
+            this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // BudgetLabel
+            // DateLabel
             // 
-            this.BudgetLabel.AutoSize = true;
-            this.BudgetLabel.BackColor = System.Drawing.Color.Transparent;
-            this.BudgetLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.BudgetLabel.Location = new System.Drawing.Point(425, 742);
-            this.BudgetLabel.Name = "BudgetLabel";
-            this.BudgetLabel.Size = new System.Drawing.Size(68, 20);
-            this.BudgetLabel.TabIndex = 35;
-            this.BudgetLabel.Text = "Budget:";
+            this.DateLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DateLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DateLabel.Location = new System.Drawing.Point(424, 793);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(209, 40);
+            this.DateLabel.TabIndex = 36;
+            this.DateLabel.Text = "PlaceHolder";
+            this.DateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IntroLabel
+            // 
+            this.IntroLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.IntroLabel.Font = new System.Drawing.Font("微軟正黑體", 16F);
+            this.IntroLabel.Location = new System.Drawing.Point(713, 828);
+            this.IntroLabel.Name = "IntroLabel";
+            this.IntroLabel.Size = new System.Drawing.Size(293, 253);
+            this.IntroLabel.TabIndex = 41;
+            this.IntroLabel.Text = "PlaceHolder";
+            // 
+            // TimeFilterLabel
+            // 
+            this.TimeFilterLabel.AutoSize = true;
+            this.TimeFilterLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TimeFilterLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TimeFilterLabel.Location = new System.Drawing.Point(610, 742);
+            this.TimeFilterLabel.Name = "TimeFilterLabel";
+            this.TimeFilterLabel.Size = new System.Drawing.Size(50, 20);
+            this.TimeFilterLabel.TabIndex = 35;
+            this.TimeFilterLabel.Text = "Time:";
+            // 
+            // BudgetFilterLabel
+            // 
+            this.BudgetFilterLabel.AutoSize = true;
+            this.BudgetFilterLabel.BackColor = System.Drawing.Color.Transparent;
+            this.BudgetFilterLabel.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.BudgetFilterLabel.Location = new System.Drawing.Point(425, 742);
+            this.BudgetFilterLabel.Name = "BudgetFilterLabel";
+            this.BudgetFilterLabel.Size = new System.Drawing.Size(68, 20);
+            this.BudgetFilterLabel.TabIndex = 35;
+            this.BudgetFilterLabel.Text = "Budget:";
             // 
             // SignPicBox
             // 
@@ -130,6 +196,7 @@
             this.SignPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.SignPicBox.TabIndex = 34;
             this.SignPicBox.TabStop = false;
+            this.SignPicBox.Click += new System.EventHandler(this.SignPicBox_Click);
             this.SignPicBox.MouseEnter += new System.EventHandler(this.MenuPicBox_MouseEnter);
             this.SignPicBox.MouseLeave += new System.EventHandler(this.MenuPicBox_MouseLeave);
             // 
@@ -183,6 +250,7 @@
             this.RightPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.RightPicBox.TabIndex = 28;
             this.RightPicBox.TabStop = false;
+            this.RightPicBox.Click += new System.EventHandler(this.ArrowPicBox_Click);
             this.RightPicBox.MouseEnter += new System.EventHandler(this.MenuPicBox_MouseEnter);
             this.RightPicBox.MouseLeave += new System.EventHandler(this.MenuPicBox_MouseLeave);
             // 
@@ -195,6 +263,7 @@
             this.LeftPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.LeftPicBox.TabIndex = 27;
             this.LeftPicBox.TabStop = false;
+            this.LeftPicBox.Click += new System.EventHandler(this.ArrowPicBox_Click);
             this.LeftPicBox.MouseEnter += new System.EventHandler(this.MenuPicBox_MouseEnter);
             this.LeftPicBox.MouseLeave += new System.EventHandler(this.MenuPicBox_MouseLeave);
             // 
@@ -319,59 +388,9 @@
             // 
             this.ActivityAdapter.ClearBeforeFill = true;
             // 
-            // label1
+            // UAA_Adapter
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(427, 805);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 12);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(445, 867);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 12);
-            this.label2.TabIndex = 37;
-            this.label2.Text = "label2";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(445, 923);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 12);
-            this.label3.TabIndex = 38;
-            this.label3.Text = "label3";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(445, 981);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 12);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "label4";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(526, 1033);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 12);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "label5";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(714, 837);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 12);
-            this.label6.TabIndex = 41;
-            this.label6.Text = "label6";
+            this.UAA_Adapter.ClearBeforeFill = true;
             // 
             // MainMenuForm
             // 
@@ -436,13 +455,14 @@
         private System.Windows.Forms.ComboBox TimeComboBox;
         private System.Windows.Forms.PictureBox SignPicBox;
         private Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
+        private System.Windows.Forms.Label TimeFilterLabel;
+        private System.Windows.Forms.Label BudgetFilterLabel;
+        private System.Windows.Forms.Label DateLabel;
+        private System.Windows.Forms.Label IntroLabel;
+        private System.Windows.Forms.Label CountLabel;
+        private System.Windows.Forms.Label AddressLabel;
+        private System.Windows.Forms.Label ShopLabel;
         private System.Windows.Forms.Label TimeLabel;
-        private System.Windows.Forms.Label BudgetLabel;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label6;
+        private Final_ProjectDataSetTableAdapters.User_Activity_ATableAdapter UAA_Adapter;
     }
 }

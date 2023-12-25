@@ -46,7 +46,7 @@
             this.TextBox_ID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TextBox_ID.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBox_ID.Location = new System.Drawing.Point(499, 313);
-            this.TextBox_ID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBox_ID.Margin = new System.Windows.Forms.Padding(4);
             this.TextBox_ID.Name = "TextBox_ID";
             this.TextBox_ID.Size = new System.Drawing.Size(267, 33);
             this.TextBox_ID.TabIndex = 0;
@@ -57,7 +57,7 @@
             this.LoginPicBox.BackColor = System.Drawing.Color.Transparent;
             this.LoginPicBox.Image = global::Final_Project.Properties.Resources.Btn1_2;
             this.LoginPicBox.Location = new System.Drawing.Point(576, 379);
-            this.LoginPicBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LoginPicBox.Margin = new System.Windows.Forms.Padding(4);
             this.LoginPicBox.Name = "LoginPicBox";
             this.LoginPicBox.Size = new System.Drawing.Size(111, 49);
             this.LoginPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -154,7 +154,7 @@
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(968, 405);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 9;
@@ -183,7 +183,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

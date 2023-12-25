@@ -25,6 +25,7 @@ namespace Final_Project {
 			}
 
 			if (MessageBox.Show("確定要發佈貼文嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) {
+				//ChatAdapter.Insert(activityID, (string)db.Me.Rows[0]["ID"], DateTime.Now, PostTextBox.Text);
 				db.Chat.AddChatRow(activityID, (string)db.Me.Rows[0]["ID"], DateTime.Now, PostTextBox.Text);
 				ChatAdapter.Update(db.Chat);
 				Close();

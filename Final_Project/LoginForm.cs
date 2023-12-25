@@ -20,6 +20,7 @@ namespace Final_Project {
         static string graphAPI_Me = "https://graph.microsoft.com/v1.0/me";
         string name = "";
         string ID = "";
+        string DevID = "E24116128";
 
         public LoginForm(Final_ProjectDataSet db) {
             InitializeComponent();
@@ -102,7 +103,7 @@ namespace Final_Project {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            MeAdapter.Fill(db.Me, "E24116128");
+            MeAdapter.Fill(db.Me, DevID);
             new MainMenuForm(db).Show();
             Close();
         }
@@ -124,8 +125,9 @@ namespace Final_Project {
         }
 
         private void button4_Click(object sender, EventArgs e) {
-            MeAdapter.Fill(db.Me, TextBox_ID.Text);
-            new NewPostForm(db, 156154).Show();
+            //ActivityAdapter.Fill(db.Activities);
+            MeAdapter.Fill(db.Me, DevID);
+            new NewPostForm(db, 729138875).Show();
         }
 
         private void button5_Click(object sender, EventArgs e) {

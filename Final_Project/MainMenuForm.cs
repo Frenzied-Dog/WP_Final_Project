@@ -20,6 +20,7 @@ namespace Final_Project {
         int ActIndex = 0;
         string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
         string[] times = { "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
+        Label[] eventLabels = new Label[6];
 
         public MainMenuForm(Final_ProjectDataSet db) {
             InitializeComponent();
@@ -30,7 +31,13 @@ namespace Final_Project {
             notifyForm = new NotificationForm(db);
             BudgetComboBox.DataSource = budgets;
             TimeComboBox.DataSource = times;
-
+            BudgetComboBox.SelectedIndex = -1;
+            TimeComboBox.SelectedIndex = -1;
+            eventLabels = new Label[6] { DateLabel, TimeLabel, ShopLabel, AddressLabel, CountLabel, IntroLabel };
+            foreach (var label in eventLabels) {
+                label.Text = "";
+            }
+            
             ReloadEvent();
             PlaceHolder.Text = "";
         }
@@ -47,8 +54,19 @@ namespace Final_Project {
             }
             Acts = db.Activities.Select(filter);
             ActIndex = 0;
+            LoadEvent();
+        }
 
+        void LoadEvent() {
+            DateLabel.Text = ((DateTime)Acts[ActIndex]["EstimateTime"]).ToString("d");
+            TimeLabel.Text = ((DateTime)Acts[ActIndex]["EstimateTime"]).ToString("t");
+            ShopLabel.Text = (string)Acts[ActIndex]["Place"];
+            AddressLabel.Text = (string)Acts[ActIndex]["Address"];
+            IntroLabel.Text = (string)Acts[ActIndex]["Intro"];
 
+            UAA_Adapter.Fill(db.User_Activity_A, (int)Acts[ActIndex]["ID"]);
+            
+            CountLabel.Text = db.User_Activity_A.Count.ToString();
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -133,6 +151,26 @@ namespace Final_Project {
             }
         }
 
+        private void ArrowPicBox_Click(object sender, EventArgs e) {
+            PictureBox picBox = (PictureBox)sender;
+            switch (picBox.Name.Substring(0, picBox.Name.Length - 6)) {
+            case "Left":
+                if (ActIndex > 0) {
+                    ActIndex--;
+                    LoadEvent();
+                }
+                break;
+            case "Right":
+                if (ActIndex < Acts.Length - 1) {
+                    ActIndex++;
+                    LoadEvent();
+                }
+                break;
+            }
+        }
 
+        private void SignPicBox_Click(object sender, EventArgs e) {
+
+        }
     }
 }

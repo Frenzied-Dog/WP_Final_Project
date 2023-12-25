@@ -24,7 +24,11 @@ namespace Final_Project {
             if (!res.Equals("null")) ShopName = res.Substring(1, res.Length - 2);
 
             res = await Map.ExecuteScriptAsync("document.querySelector('div[class=\"Io6YTe fontBodyMedium kR99db \"]').textContent");
-            if (!res.Equals("null")) Address = res.Substring(1, res.Length - 2);
+            if (!res.Equals("null")) { 
+                int index = res.IndexOf("市");
+                if (index == -1) Address = res.Substring(1, res.Length - 2);
+                else Address = res.Substring(index+1, res.Length-index-2); 
+            }
 
             if (ShopName != "" && Address != "" ) {
                 if ( MessageBox.Show($"請確認以下資訊是否正確 ?\n\r店家名稱: {ShopName}\n\r地址: {Address}", "地點確認", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes )
