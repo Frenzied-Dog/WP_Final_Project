@@ -47,8 +47,8 @@ namespace Final_Project {
             }
 
             int id = rnd.Next();
-            db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, db.Me[0].Id, est, intro, BudgetComboBox.SelectedIndex, DateTime.Now);
-            db.User_Activity.AddUser_ActivityRow(db.Me[0].Id, id);
+            db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, db.Me[0].ID, est, intro, BudgetComboBox.SelectedIndex, DateTime.Now);
+            db.User_Activity.AddUser_ActivityRow(db.Me[0].ID, id);
             ActivityAdapter.Update(db.Activities);
             User_ActivityAdapter.Update(db.User_Activity);
 

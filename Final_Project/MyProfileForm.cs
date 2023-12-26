@@ -53,7 +53,7 @@ namespace Final_Project {
             ProfilePhoto.Region = new Region(gp);
             EditPicBoxs = new PictureBox[] { EditPicBox1, EditPicBox2, EditPicBox3, EditPicBox4, EditPicBox5 };
 
-            ID_Label.Text = db.Me[0].Id;
+            ID_Label.Text = db.Me[0].ID;
             NickNameLabel.Text = db.Me[0].NickName;
             MajorTextBox.Text = db.Me[0]["Major"] != DBNull.Value ? db.Me[0].Major : "";
             GenderTextBox.Text = db.Me[0]["Gender"] != DBNull.Value ? db.Me[0].Gender : "";

@@ -364,6 +364,11 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
+    <None Include="Resources\標題label.png" />
+    <None Include="Resources\取消報名Btn.png" />
+    <None Include="Resources\討論版Btn.png" />
+    <None Include="Resources\討論版Btn_2.png" />
+    <None Include="Resources\取消報名Btn_2.png" />
     <Content Include="Test_DB.mdf" />
     <Content Include="Test_DB_log.ldf">
       <DependentUpon>Test_DB.mdf</DependentUpon>

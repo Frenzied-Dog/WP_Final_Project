@@ -14,7 +14,7 @@ namespace Final_Project {
         //MainDataSet db;
         MyProfileForm profileForm;
         MyEventForm eventForm;
-        CreateEventForm createEventForm;
+        //CreateEventForm createEventForm;
         NotificationForm notifyForm;
         DataRow[] Acts;
         int ActIndex = 0;
@@ -27,7 +27,7 @@ namespace Final_Project {
             this.db = db;
             profileForm = new MyProfileForm(db);
             eventForm = new MyEventForm(db);
-            createEventForm = new CreateEventForm(db);
+            //createEventForm = new CreateEventForm(db);
             notifyForm = new NotificationForm(db);
             BudgetComboBox.DataSource = budgets;
             TimeComboBox.DataSource = times;
@@ -58,13 +58,14 @@ namespace Final_Project {
         }
 
         void LoadEvent() {
-            DateLabel.Text = ((DateTime)Acts[ActIndex]["EstimateTime"]).ToString("d");
-            TimeLabel.Text = ((DateTime)Acts[ActIndex]["EstimateTime"]).ToString("t");
-            ShopLabel.Text = (string)Acts[ActIndex]["Place"];
-            AddressLabel.Text = (string)Acts[ActIndex]["Address"];
-            IntroLabel.Text = (string)Acts[ActIndex]["Intro"];
+            var act = Acts[ActIndex];
+            DateLabel.Text = act.Field<DateTime>("EstimateTime").ToString("d");
+            TimeLabel.Text = act.Field<DateTime>("EstimateTime").ToString("t");
+            ShopLabel.Text = act.Field<string>("Place");
+            AddressLabel.Text = act.Field<string>("Address");
+            IntroLabel.Text = act.Field<string>("Intro");
 
-            UAA_Adapter.Fill(db.User_Activity_A, (int)Acts[ActIndex]["ID"]);
+            UAA_Adapter.Fill(db.User_Activity_A, act.Field<int>("ID"));
             CountLabel.Text = db.User_Activity_A.Count.ToString();
         }
 
@@ -80,9 +81,11 @@ namespace Final_Project {
                 break;
             case "MyEvent":
                 eventForm.ShowDialog();
+                ReloadEvent();
                 break;
             case "CreateEvent":
-                createEventForm.ShowDialog();
+                new CreateEventForm(db).ShowDialog();
+                ReloadEvent();
                 break;
             case "Notify":
                 notifyForm.ShowDialog();
@@ -160,14 +163,20 @@ namespace Final_Project {
         }
 
         private void SignPicBox_Click(object sender, EventArgs e) {
-            if (db.User_Activity_A.Select($"UserID = '{db.Me[0].Id}'").Count() != 0 ) {
+            if (db.Activities.FindByID(db.User_Activity_A[0].ActivityID).MainUserId.Trim(' ') == db.Me[0].ID.Trim(' ')) {
+                MessageBox.Show("你是主揪你還報啥XDD", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (db.User_Activity_A.Select($"UserID = '{db.Me[0].ID}'").Count() != 0 ) {
                 MessageBox.Show("你已經報名過了!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            db.User_Activity_A.AddUser_Activity_ARow(db.Me[0].Id, (int) Acts[ActIndex]["ID"]);
+            db.User_Activity_A.AddUser_Activity_ARow(db.Me[0].ID, (int) Acts[ActIndex]["ID"]);
             UAA_Adapter.Update(db.User_Activity_A);
             MessageBox.Show("報名成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LoadEvent();
         }
     }
 }
