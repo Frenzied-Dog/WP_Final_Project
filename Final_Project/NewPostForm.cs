@@ -12,7 +12,7 @@ namespace Final_Project {
 	public partial class NewPostForm : Form {
 		int activityID = 0;
 
-		public NewPostForm(Final_ProjectDataSet db, int ID) {
+		public NewPostForm(MainDataSet db, int ID) {
 			InitializeComponent();
 			activityID = ID;
 			this.db = db;

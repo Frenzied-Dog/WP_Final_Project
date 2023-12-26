@@ -26,8 +26,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewPostForm));
             this.PostPicBox = new System.Windows.Forms.PictureBox();
             this.PostTextBox = new System.Windows.Forms.TextBox();
-            this.db = new Final_Project.Final_ProjectDataSet();
-            this.ChatAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.ChatTableAdapter();
+            this.db = new Final_Project.MainDataSet();
+            this.ChatAdapter = new Final_Project.MainDataSetTableAdapters.ChatTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.PostPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             // db
             // 
-            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ChatAdapter
@@ -93,7 +93,7 @@
 
         private System.Windows.Forms.PictureBox PostPicBox;
         private System.Windows.Forms.TextBox PostTextBox;
-        private Final_ProjectDataSet db;
-        private Final_ProjectDataSetTableAdapters.ChatTableAdapter ChatAdapter;
+        private MainDataSet db;
+        private MainDataSetTableAdapters.ChatTableAdapter ChatAdapter;
     }
 }

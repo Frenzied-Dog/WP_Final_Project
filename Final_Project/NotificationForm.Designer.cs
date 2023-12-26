@@ -24,13 +24,13 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NotificationForm));
-            this.db = new Final_Project.Final_ProjectDataSet();
+            this.db = new Final_Project.MainDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
             // 
             // db
             // 
-            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // NotificationForm
@@ -51,6 +51,6 @@
 
         #endregion
 
-        private Final_ProjectDataSet db;
+        private MainDataSet db;
     }
 }

@@ -32,9 +32,9 @@
             this.ShopTextBox = new System.Windows.Forms.TextBox();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
             this.TimePicker = new System.Windows.Forms.DateTimePicker();
-            this.db = new Final_Project.Final_ProjectDataSet();
-            this.ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter();
-            this.User_ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.User_ActivityTableAdapter();
+            this.db = new Final_Project.MainDataSet();
+            this.ActivityAdapter = new Final_Project.MainDataSetTableAdapters.ActivitiesTableAdapter();
+            this.User_ActivityAdapter = new Final_Project.MainDataSetTableAdapters.User_ActivityTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.CreatePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UseMapPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
@@ -144,7 +144,7 @@
             // 
             // db
             // 
-            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ActivityAdapter
@@ -185,7 +185,7 @@
 
         #endregion
 
-        private Final_ProjectDataSet db;
+        private MainDataSet db;
         private System.Windows.Forms.PictureBox CreatePicBox;
         private System.Windows.Forms.PictureBox UseMapPicBox;
         private System.Windows.Forms.ComboBox BudgetComboBox;
@@ -193,8 +193,8 @@
         private System.Windows.Forms.TextBox IntroTextBox;
         private System.Windows.Forms.TextBox ShopTextBox;
         private System.Windows.Forms.TextBox AddressTextBox;
-        private Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
-        private Final_ProjectDataSetTableAdapters.User_ActivityTableAdapter User_ActivityAdapter;
+        private MainDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
+        private MainDataSetTableAdapters.User_ActivityTableAdapter User_ActivityAdapter;
         private System.Windows.Forms.DateTimePicker TimePicker;
     }
 }

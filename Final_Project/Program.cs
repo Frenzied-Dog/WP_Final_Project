@@ -14,7 +14,7 @@ namespace Final_Project {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Final_ProjectDataSet db = new Final_ProjectDataSet();
+            MainDataSet db = new MainDataSet();
             (new LoginForm(db)).Show();
             Application.Run();
         }

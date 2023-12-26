@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Final_Project {
     public partial class NotificationForm : Form {
-        public NotificationForm(Final_ProjectDataSet db) {
+        public NotificationForm(MainDataSet db) {
             InitializeComponent();
             this.db = db;
         }

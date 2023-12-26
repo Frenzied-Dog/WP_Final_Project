@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Final_Project {
     public partial class MainMenuForm : Form {
-        //Final_ProjectDataSet db;
+        //MainDataSet db;
         MyProfileForm profileForm;
         MyEventForm eventForm;
         CreateEventForm createEventForm;
@@ -22,7 +22,7 @@ namespace Final_Project {
         string[] times = { "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
         Label[] eventLabels = new Label[6];
 
-        public MainMenuForm(Final_ProjectDataSet db) {
+        public MainMenuForm(MainDataSet db) {
             InitializeComponent();
             this.db = db;
             profileForm = new MyProfileForm(db);
@@ -65,7 +65,6 @@ namespace Final_Project {
             IntroLabel.Text = (string)Acts[ActIndex]["Intro"];
 
             UAA_Adapter.Fill(db.User_Activity_A, (int)Acts[ActIndex]["ID"]);
-            
             CountLabel.Text = db.User_Activity_A.Count.ToString();
         }
 
@@ -153,20 +152,11 @@ namespace Final_Project {
 
         private void ArrowPicBox_Click(object sender, EventArgs e) {
             PictureBox picBox = (PictureBox)sender;
-            switch (picBox.Name.Substring(0, picBox.Name.Length - 6)) {
-            case "Left":
-                if (ActIndex > 0) {
-                    ActIndex--;
-                    LoadEvent();
-                }
-                break;
-            case "Right":
-                if (ActIndex < Acts.Length - 1) {
-                    ActIndex++;
-                    LoadEvent();
-                }
-                break;
-            }
+            string n = picBox.Name.Substring(0, picBox.Name.Length - 6);
+            if (n == "Left" && ActIndex > 0) ActIndex--;
+            else if (n == "Right" && ActIndex < Acts.Length - 1) ActIndex++;
+            else return;
+            LoadEvent();
         }
 
         private void SignPicBox_Click(object sender, EventArgs e) {

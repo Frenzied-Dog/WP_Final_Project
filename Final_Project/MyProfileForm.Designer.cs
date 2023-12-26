@@ -39,9 +39,9 @@
             this.NickNameLabel = new System.Windows.Forms.Label();
             this.ProfilePhoto = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.db = new Final_Project.Final_ProjectDataSet();
+            this.db = new Final_Project.MainDataSet();
             this.ReUploadPicBox = new System.Windows.Forms.PictureBox();
-            this.MeAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.MeTableAdapter();
+            this.MeAdapter = new Final_Project.MainDataSetTableAdapters.MeTableAdapter();
             this.NickTextBox = new System.Windows.Forms.TextBox();
             this.EditPicBox1 = new System.Windows.Forms.PictureBox();
             this.EditPicBox2 = new System.Windows.Forms.PictureBox();
@@ -181,7 +181,7 @@
             // 
             // db
             // 
-            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ReUploadPicBox
@@ -332,9 +332,9 @@
         private System.Windows.Forms.Label NickNameLabel;
         private System.Windows.Forms.PictureBox ProfilePhoto;
         private System.Windows.Forms.Label label3;
-        private Final_ProjectDataSet db;
+        private MainDataSet db;
         private System.Windows.Forms.PictureBox ReUploadPicBox;
-        private Final_ProjectDataSetTableAdapters.MeTableAdapter MeAdapter;
+        private MainDataSetTableAdapters.MeTableAdapter MeAdapter;
         private System.Windows.Forms.TextBox NickTextBox;
         private System.Windows.Forms.PictureBox EditPicBox1;
         private System.Windows.Forms.PictureBox EditPicBox2;

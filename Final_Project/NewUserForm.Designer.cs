@@ -32,8 +32,8 @@
             this.AboutMeTextBox = new System.Windows.Forms.TextBox();
             this.CommitPicBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.db = new Final_Project.Final_ProjectDataSet();
-            this.MeAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.MeTableAdapter();
+            this.db = new Final_Project.MainDataSet();
+            this.MeAdapter = new Final_Project.MainDataSetTableAdapters.MeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.CommitPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
@@ -143,7 +143,7 @@
             // 
             // db
             // 
-            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // MeAdapter
@@ -191,7 +191,7 @@
         private System.Windows.Forms.TextBox AboutMeTextBox;
         private System.Windows.Forms.PictureBox CommitPicBox;
         private System.Windows.Forms.Label label1;
-        private Final_ProjectDataSet db;
-        private Final_ProjectDataSetTableAdapters.MeTableAdapter MeAdapter;
+        private MainDataSet db;
+        private MainDataSetTableAdapters.MeTableAdapter MeAdapter;
     }
 }

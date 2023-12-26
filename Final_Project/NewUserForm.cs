@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Final_Project {
 	public partial class NewUserForm : Form {
-		//Final_ProjectDataSet db;
+		//MainDataSet db;
 		string ID, name;
         string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
         string[] times = { "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
 
-        public NewUserForm(Final_ProjectDataSet db, string ID, string name) {
+        public NewUserForm(MainDataSet db, string ID, string name) {
 			InitializeComponent();
 			this.db = db;
 			this.ID = ID;

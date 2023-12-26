@@ -31,8 +31,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.MeAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.MeTableAdapter();
-            this.db = new Final_Project.Final_ProjectDataSet();
+            this.MeAdapter = new Final_Project.MainDataSetTableAdapters.MeTableAdapter();
+            this.db = new Final_Project.MainDataSet();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -119,7 +119,7 @@
             // 
             // db
             // 
-            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label2
@@ -205,8 +205,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
-        private Final_ProjectDataSetTableAdapters.MeTableAdapter MeAdapter;
-        private Final_ProjectDataSet db;
+        private MainDataSetTableAdapters.MeTableAdapter MeAdapter;
+        private MainDataSet db;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;

@@ -50,9 +50,9 @@
             this.MyProfilePicBox = new System.Windows.Forms.PictureBox();
             this.MarkPicBox = new System.Windows.Forms.PictureBox();
             this.LogoPicBox = new System.Windows.Forms.PictureBox();
-            this.db = new Final_Project.Final_ProjectDataSet();
-            this.ActivityAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter();
-            this.UAA_Adapter = new Final_Project.Final_ProjectDataSetTableAdapters.User_Activity_ATableAdapter();
+            this.db = new Final_Project.MainDataSet();
+            this.ActivityAdapter = new Final_Project.MainDataSetTableAdapters.ActivitiesTableAdapter();
+            this.UAA_Adapter = new Final_Project.MainDataSetTableAdapters.User_Activity_ATableAdapter();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SignPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomizePicBox)).BeginInit();
@@ -381,7 +381,7 @@
             // 
             // db
             // 
-            this.db.DataSetName = "Final_ProjectDataSet";
+            this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ActivityAdapter
@@ -449,12 +449,12 @@
         private System.Windows.Forms.PictureBox LeftPicBox;
         private System.Windows.Forms.PictureBox DotsPicBox;
         private System.Windows.Forms.Label PlaceHolder;
-        private Final_ProjectDataSet db;
+        private MainDataSet db;
         private System.Windows.Forms.PictureBox CustomizePicBox;
         private System.Windows.Forms.ComboBox BudgetComboBox;
         private System.Windows.Forms.ComboBox TimeComboBox;
         private System.Windows.Forms.PictureBox SignPicBox;
-        private Final_ProjectDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
+        private MainDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
         private System.Windows.Forms.Label TimeFilterLabel;
         private System.Windows.Forms.Label BudgetFilterLabel;
         private System.Windows.Forms.Label DateLabel;
@@ -463,6 +463,6 @@
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.Label ShopLabel;
         private System.Windows.Forms.Label TimeLabel;
-        private Final_ProjectDataSetTableAdapters.User_Activity_ATableAdapter UAA_Adapter;
+        private MainDataSetTableAdapters.User_Activity_ATableAdapter UAA_Adapter;
     }
 }

@@ -40,7 +40,7 @@ namespace Final_Project {
             return destImage;
         }
 
-        public MyProfileForm(Final_ProjectDataSet db) {
+        public MyProfileForm(MainDataSet db) {
             InitializeComponent();
             this.db = db;
 

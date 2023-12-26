@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
-using Final_Project.Final_ProjectDataSetTableAdapters;
+using Final_Project.MainDataSetTableAdapters;
 
 namespace Final_Project {
     public partial class LoginForm : Form {
@@ -22,7 +22,7 @@ namespace Final_Project {
         string ID = "";
         string DevID = "E24116128";
 
-        public LoginForm(Final_ProjectDataSet db) {
+        public LoginForm(MainDataSet db) {
             InitializeComponent();
             PublicClientApp = PublicClientApplicationBuilder.Create("9cbbf580-d751-42ec-97d0-01d35df3fa7c")
                  .WithRedirectUri("https://login.microsoftonline.com/common/oauth2/nativeclient")

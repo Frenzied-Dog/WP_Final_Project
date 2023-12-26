@@ -1,4 +1,4 @@
-﻿using Final_Project.Final_ProjectDataSetTableAdapters;
+﻿using Final_Project.MainDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ namespace Final_Project {
         MapForm Maps;
         string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
 
-        public CreateEventForm(Final_ProjectDataSet db) {
+        public CreateEventForm(MainDataSet db) {
             InitializeComponent();
             this.db = db;
             Maps = new MapForm();

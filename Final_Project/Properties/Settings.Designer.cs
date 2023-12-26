@@ -29,9 +29,20 @@ namespace Final_Project.Properties {
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=project-database.database.windows.net;Initial Catalog=CK_connect;Pers" +
             "ist Security Info=True;User ID=FD_E24116128;Password=Hkku174174;Encrypt=True;Tru" +
             "stServerCertificate=True")]
-        public string DB_Connect_String {
+        public string MainDB_String {
             get {
-                return ((string)(this["DB_Connect_String"]));
+                return ((string)(this["MainDB_String"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Test_DB.mdf;I" +
+            "ntegrated Security=True")]
+        public string TestDB_String {
+            get {
+                return ((string)(this["TestDB_String"]));
             }
         }
     }
