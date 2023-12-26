@@ -499,6 +499,8 @@ namespace Final_Project {
             
             private global::System.Data.DataColumn columnEstimateTime;
             
+            private global::System.Data.DataColumn columnPreferTime;
+            
             private global::System.Data.DataColumn columnIntro;
             
             private global::System.Data.DataColumn columnBudget;
@@ -580,6 +582,14 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PreferTimeColumn {
+                get {
+                    return this.columnPreferTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn IntroColumn {
                 get {
                     return this.columnIntro;
@@ -639,7 +649,7 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ActivitiesRow AddActivitiesRow(int ID, string Place, string Address, string MainUserId, System.DateTime EstimateTime, string Intro, int Budget, System.DateTime Stamp) {
+            public ActivitiesRow AddActivitiesRow(int ID, string Place, string Address, string MainUserId, System.DateTime EstimateTime, int PreferTime, string Intro, int Budget, System.DateTime Stamp) {
                 ActivitiesRow rowActivitiesRow = ((ActivitiesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
@@ -647,6 +657,7 @@ namespace Final_Project {
                         Address,
                         MainUserId,
                         EstimateTime,
+                        PreferTime,
                         Intro,
                         Budget,
                         Stamp};
@@ -684,6 +695,7 @@ namespace Final_Project {
                 this.columnAddress = base.Columns["Address"];
                 this.columnMainUserId = base.Columns["MainUserId"];
                 this.columnEstimateTime = base.Columns["EstimateTime"];
+                this.columnPreferTime = base.Columns["PreferTime"];
                 this.columnIntro = base.Columns["Intro"];
                 this.columnBudget = base.Columns["Budget"];
                 this.columnStamp = base.Columns["Stamp"];
@@ -702,6 +714,8 @@ namespace Final_Project {
                 base.Columns.Add(this.columnMainUserId);
                 this.columnEstimateTime = new global::System.Data.DataColumn("EstimateTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEstimateTime);
+                this.columnPreferTime = new global::System.Data.DataColumn("PreferTime", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPreferTime);
                 this.columnIntro = new global::System.Data.DataColumn("Intro", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIntro);
                 this.columnBudget = new global::System.Data.DataColumn("Budget", typeof(int), null, global::System.Data.MappingType.Element);
@@ -2767,6 +2781,22 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int PreferTime {
+                get {
+                    try {
+                        return ((int)(this[this.tableActivities.PreferTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'Activities\' 中資料行 \'PreferTime\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableActivities.PreferTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Intro {
                 get {
                     return ((string)(this[this.tableActivities.IntroColumn]));
@@ -2796,6 +2826,18 @@ namespace Final_Project {
                 set {
                     this[this.tableActivities.StampColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPreferTimeNull() {
+                return this.IsNull(this.tableActivities.PreferTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPreferTimeNull() {
+                this[this.tableActivities.PreferTimeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3704,42 +3746,47 @@ namespace Final_Project.MainDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Intro", "Intro");
             tableMapping.ColumnMappings.Add("Budget", "Budget");
             tableMapping.ColumnMappings.Add("Stamp", "Stamp");
+            tableMapping.ColumnMappings.Add("PreferTime", "PreferTime");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Activities] WHERE (([ID] = @Original_ID) AND ([Place] = @Original_Place) AND ([Address] = @Original_Address) AND ([MainUserId] = @Original_MainUserId) AND ([EstimateTime] = @Original_EstimateTime) AND ([Intro] = @Original_Intro) AND ([Budget] = @Original_Budget) AND ([Stamp] = @Original_Stamp))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Activities] WHERE (([ID] = @Original_ID) AND ([Place] = @Original_Place) AND ([Address] = @Original_Address) AND ([MainUserId] = @Original_MainUserId) AND ([EstimateTime] = @Original_EstimateTime) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)) AND ([Intro] = @Original_Intro) AND ([Budget] = @Original_Budget) AND ([Stamp] = @Original_Stamp))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MainUserId", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MainUserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstimateTime", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimateTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stamp", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stamp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Activities] ([ID], [Place], [Address], [MainUserId], [EstimateTime], [Intro], [Budget], [Stamp]) VALUES (@ID, @Place, @Address, @MainUserId, @EstimateTime, @Intro, @Budget, @Stamp);
-SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM Activities WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Activities] ([ID], [Place], [Address], [MainUserId], [EstimateTime], [PreferTime], [Intro], [Budget], [Stamp]) VALUES (@ID, @Place, @Address, @MainUserId, @EstimateTime, @PreferTime, @Intro, @Budget, @Stamp);
+SELECT ID, Place, Address, MainUserId, EstimateTime, PreferTime, Intro, Budget, Stamp FROM Activities WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MainUserId", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MainUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstimateTime", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimateTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stamp", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Activities] SET [ID] = @ID, [Place] = @Place, [Address] = @Address, [MainUserId] = @MainUserId, [EstimateTime] = @EstimateTime, [Intro] = @Intro, [Budget] = @Budget, [Stamp] = @Stamp WHERE (([ID] = @Original_ID) AND ([Place] = @Original_Place) AND ([Address] = @Original_Address) AND ([MainUserId] = @Original_MainUserId) AND ([EstimateTime] = @Original_EstimateTime) AND ([Intro] = @Original_Intro) AND ([Budget] = @Original_Budget) AND ([Stamp] = @Original_Stamp));
-SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM Activities WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Activities] SET [ID] = @ID, [Place] = @Place, [Address] = @Address, [MainUserId] = @MainUserId, [EstimateTime] = @EstimateTime, [PreferTime] = @PreferTime, [Intro] = @Intro, [Budget] = @Budget, [Stamp] = @Stamp WHERE (([ID] = @Original_ID) AND ([Place] = @Original_Place) AND ([Address] = @Original_Address) AND ([MainUserId] = @Original_MainUserId) AND ([EstimateTime] = @Original_EstimateTime) AND ((@IsNull_PreferTime = 1 AND [PreferTime] IS NULL) OR ([PreferTime] = @Original_PreferTime)) AND ([Intro] = @Original_Intro) AND ([Budget] = @Original_Budget) AND ([Stamp] = @Original_Stamp));
+SELECT ID, Place, Address, MainUserId, EstimateTime, PreferTime, Intro, Budget, Stamp FROM Activities WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MainUserId", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MainUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstimateTime", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimateTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stamp", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stamp", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3748,6 +3795,8 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Address", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MainUserId", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MainUserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstimateTime", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstimateTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PreferTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PreferTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intro", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Budget", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Budget", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Stamp", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Stamp", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3766,8 +3815,8 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM db" +
-                "o.Activities";
+            this._commandCollection[0].CommandText = "SELECT ID, Place, Address, MainUserId, EstimateTime, PreferTime, Intro, Budget, S" +
+                "tamp FROM Activities";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3828,7 +3877,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_Place, string Original_Address, string Original_MainUserId, System.DateTime Original_EstimateTime, string Original_Intro, int Original_Budget, System.DateTime Original_Stamp) {
+        public virtual int Delete(int Original_ID, string Original_Place, string Original_Address, string Original_MainUserId, System.DateTime Original_EstimateTime, global::System.Nullable<int> Original_PreferTime, string Original_Intro, int Original_Budget, System.DateTime Original_Stamp) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Place == null)) {
                 throw new global::System.ArgumentNullException("Original_Place");
@@ -3849,14 +3898,22 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_MainUserId));
             }
             this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_EstimateTime));
+            if ((Original_PreferTime.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_PreferTime.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             if ((Original_Intro == null)) {
                 throw new global::System.ArgumentNullException("Original_Intro");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Intro));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Intro));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Budget));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_Stamp));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Budget));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_Stamp));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3877,7 +3934,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string Place, string Address, string MainUserId, System.DateTime EstimateTime, string Intro, int Budget, System.DateTime Stamp) {
+        public virtual int Insert(int ID, string Place, string Address, string MainUserId, System.DateTime EstimateTime, global::System.Nullable<int> PreferTime, string Intro, int Budget, System.DateTime Stamp) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
             if ((Place == null)) {
                 throw new global::System.ArgumentNullException("Place");
@@ -3898,14 +3955,20 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(MainUserId));
             }
             this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(EstimateTime));
+            if ((PreferTime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(PreferTime.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             if ((Intro == null)) {
                 throw new global::System.ArgumentNullException("Intro");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Intro));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Intro));
             }
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Budget));
-            this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Stamp));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Budget));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(Stamp));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3932,6 +3995,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
                     string Address, 
                     string MainUserId, 
                     System.DateTime EstimateTime, 
+                    global::System.Nullable<int> PreferTime, 
                     string Intro, 
                     int Budget, 
                     System.DateTime Stamp, 
@@ -3940,6 +4004,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
                     string Original_Address, 
                     string Original_MainUserId, 
                     System.DateTime Original_EstimateTime, 
+                    global::System.Nullable<int> Original_PreferTime, 
                     string Original_Intro, 
                     int Original_Budget, 
                     System.DateTime Original_Stamp) {
@@ -3963,42 +4028,56 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(MainUserId));
             }
             this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(EstimateTime));
+            if ((PreferTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(PreferTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
             if ((Intro == null)) {
                 throw new global::System.ArgumentNullException("Intro");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Intro));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Intro));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Budget));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Stamp));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Budget));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Stamp));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ID));
             if ((Original_Place == null)) {
                 throw new global::System.ArgumentNullException("Original_Place");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Place));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Place));
             }
             if ((Original_Address == null)) {
                 throw new global::System.ArgumentNullException("Original_Address");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Address));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Address));
             }
             if ((Original_MainUserId == null)) {
                 throw new global::System.ArgumentNullException("Original_MainUserId");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_MainUserId));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_MainUserId));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_EstimateTime));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_EstimateTime));
+            if ((Original_PreferTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_PreferTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
             if ((Original_Intro == null)) {
                 throw new global::System.ArgumentNullException("Original_Intro");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Intro));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Intro));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Budget));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Stamp));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Budget));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_Stamp));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4019,8 +4098,25 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp FROM A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Place, string Address, string MainUserId, System.DateTime EstimateTime, string Intro, int Budget, System.DateTime Stamp, int Original_ID, string Original_Place, string Original_Address, string Original_MainUserId, System.DateTime Original_EstimateTime, string Original_Intro, int Original_Budget, System.DateTime Original_Stamp) {
-            return this.Update(Original_ID, Place, Address, MainUserId, EstimateTime, Intro, Budget, Stamp, Original_ID, Original_Place, Original_Address, Original_MainUserId, Original_EstimateTime, Original_Intro, Original_Budget, Original_Stamp);
+        public virtual int Update(
+                    string Place, 
+                    string Address, 
+                    string MainUserId, 
+                    System.DateTime EstimateTime, 
+                    global::System.Nullable<int> PreferTime, 
+                    string Intro, 
+                    int Budget, 
+                    System.DateTime Stamp, 
+                    int Original_ID, 
+                    string Original_Place, 
+                    string Original_Address, 
+                    string Original_MainUserId, 
+                    System.DateTime Original_EstimateTime, 
+                    global::System.Nullable<int> Original_PreferTime, 
+                    string Original_Intro, 
+                    int Original_Budget, 
+                    System.DateTime Original_Stamp) {
+            return this.Update(Original_ID, Place, Address, MainUserId, EstimateTime, PreferTime, Intro, Budget, Stamp, Original_ID, Original_Place, Original_Address, Original_MainUserId, Original_EstimateTime, Original_PreferTime, Original_Intro, Original_Budget, Original_Stamp);
         }
     }
     

@@ -36,6 +36,7 @@ namespace Final_Project {
                 AddressLabel.Text = "-------";
                 CountLabel.Text = "------";
                 IntroLabel.Text = "------";
+                IndexLabel.Text = "0/0";
                 return;
             }
 
@@ -53,6 +54,7 @@ namespace Final_Project {
 
             UAA_Adapter.Fill(db.User_Activity_A, act.Field<int>("ID"));
             CountLabel.Text = db.User_Activity_A.Count.ToString();
+            IndexLabel.Text = $"{ActIndex + 1}/{db.User_Activity_U.Count}";
         }
 
         private void PicBox_MouseEnter(object sender, EventArgs e) {
