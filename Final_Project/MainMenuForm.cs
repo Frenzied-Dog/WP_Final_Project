@@ -160,7 +160,14 @@ namespace Final_Project {
         }
 
         private void SignPicBox_Click(object sender, EventArgs e) {
+            if (db.User_Activity_A.Select($"UserID = '{db.Me[0].Id}'").Count() != 0 ) {
+                MessageBox.Show("你已經報名過了!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            db.User_Activity_A.AddUser_Activity_ARow(db.Me[0].Id, (int) Acts[ActIndex]["ID"]);
+            UAA_Adapter.Update(db.User_Activity_A);
+            MessageBox.Show("報名成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

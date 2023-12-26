@@ -61,6 +61,7 @@ namespace Final_Project {
             BudgetComboBox.SelectedIndex = db.Me[0].Budget;
             PreferTimeComboBox.SelectedIndex = db.Me[0].PreferTime;
             ProfilePhoto.Image = Image.FromStream(new MemoryStream(db.Me[0].Pic));
+            //ProfilePhoto.Image = (Image)new ImageConverter().ConvertFrom(db.Me[0].Pic);
         }
 
         private void MyProfileForm_FormClosed(object sender, FormClosedEventArgs e) {

@@ -13,6 +13,7 @@ using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
 using Final_Project.MainDataSetTableAdapters;
+using System.Drawing.Imaging;
 
 namespace Final_Project {
     public partial class LoginForm : Form {
@@ -137,18 +138,18 @@ namespace Final_Project {
         private void button6_Click(object sender, EventArgs e) {
             // hot fix avatar
 
-            //using (MemoryStream mStream = new MemoryStream()) {
-            //    Bitmap img = Properties.Resources.cutedog1;
-            //    img.Save(mStream, img.RawFormat);
-            //    var defaultAvatar = mStream.ToArray();
+            using (MemoryStream mStream = new MemoryStream()) {
+                Bitmap img = Properties.Resources.cutedog1;
+                img.Save(mStream, ImageFormat.Bmp);
+                var defaultAvatar = mStream.ToArray();
 
-            //    UsersTableAdapter UserAdapter = new UsersTableAdapter();
-            //    UserAdapter.Fill(db.Users);
-            //    foreach (var user in db.Users) {
-            //        user.Pic = defaultAvatar;
-            //    }  
-            //    UserAdapter.Update(db.Users);
-            //};
+                UsersTableAdapter UserAdapter = new UsersTableAdapter();
+                UserAdapter.Fill(db.Users);
+                foreach (var user in db.Users) {
+                    user.Pic = defaultAvatar;
+                }
+                UserAdapter.Update(db.Users);
+            };
         }
     }
 }

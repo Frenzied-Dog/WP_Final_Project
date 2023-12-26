@@ -364,11 +364,8 @@
   <ItemGroup>
     <Content Include="Resources\BackGround.png" />
     <Content Include="Resources\BackGround_2.png" />
-    <Content Include="Test_DB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Test_DB.mdf" />
     <Content Include="Test_DB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Test_DB.mdf</DependentUpon>
     </Content>
     <None Include="Resources\一鍵報名Btn.png" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -55,7 +56,7 @@ namespace Final_Project {
 
 			using (MemoryStream mStream = new MemoryStream()) {
 				Bitmap img = Properties.Resources.cutedog1;
-				img.Save(mStream, img.RawFormat);
+				img.Save(mStream, ImageFormat.Bmp);
 				var defaultAvatar =  mStream.ToArray();
 
 				db.Me.AddMeRow(ID, name, nickname, major, budgetType, preferTime, defaultAvatar, aboutMe, gender);
