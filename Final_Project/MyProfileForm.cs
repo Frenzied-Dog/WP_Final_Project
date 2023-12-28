@@ -14,8 +14,8 @@ using System.Windows.Forms;
 
 namespace Final_Project {
     public partial class MyProfileForm : Form {
-        string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
-        string[] times = { "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
+        string[] budgets = { "", "50~100", "100~200", "200~300", "300~400", "400以上" };
+        string[] times = { "", "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
         bool modifying = false;
         PictureBox[] EditPicBoxs;
 
@@ -47,10 +47,10 @@ namespace Final_Project {
             //將 Profile Photo 變成圓形框  https://www.jb51.net/article/220686.htm
             GraphicsPath gp = new GraphicsPath();
             gp.AddEllipse(ProfilePhoto.ClientRectangle);
+            ProfilePhoto.Region = new Region(gp);
+
             BudgetComboBox.DataSource = budgets;
             PreferTimeComboBox.DataSource = times;
-
-            ProfilePhoto.Region = new Region(gp);
             EditPicBoxs = new PictureBox[] { EditPicBox1, EditPicBox2, EditPicBox3, EditPicBox4, EditPicBox5 };
 
             ID_Label.Text = db.Me[0].ID;
@@ -74,7 +74,9 @@ namespace Final_Project {
                 GenderTextBox.ReadOnly = false;
                 SelfTextBox.ReadOnly = false;
                 BudgetComboBox.Enabled = true;
+                BudgetComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
                 PreferTimeComboBox.Enabled = true;
+                PreferTimeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
                 ModifyPicBox.Image = Properties.Resources.儲存更動Btn_2;
                 ReUploadPicBox.Visible = true;
                 NickTextBox.Text = NickNameLabel.Text;
@@ -95,7 +97,9 @@ namespace Final_Project {
                 GenderTextBox.ReadOnly = true;
                 SelfTextBox.ReadOnly = true;
                 BudgetComboBox.Enabled = false;
+                BudgetComboBox.DropDownStyle = ComboBoxStyle.Simple;
                 PreferTimeComboBox.Enabled = false;
+                PreferTimeComboBox.DropDownStyle = ComboBoxStyle.Simple;
                 ReUploadPicBox.Visible = false;
                 NickNameLabel.Text = NickTextBox.Text;
                 NickTextBox.Visible = false;

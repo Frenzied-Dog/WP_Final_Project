@@ -28,6 +28,7 @@ namespace Final_Project {
 				//ChatAdapter.Insert(activityID, (string)db.Me.Rows[0]["ID"], DateTime.Now, PostTextBox.Text);
 				db.Chat.AddChatRow(activityID, (string)db.Me.Rows[0]["ID"], DateTime.Now, PostTextBox.Text);
 				ChatAdapter.Update(db.Chat);
+				DialogResult = DialogResult.OK;
 				Close();
 			}
 		}

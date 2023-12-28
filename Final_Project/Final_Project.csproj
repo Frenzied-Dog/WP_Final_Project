@@ -211,6 +211,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatChunk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChatChunk.Designer.cs">
+      <DependentUpon>ChatChunk.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +287,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChatChunk.resx">
+      <DependentUpon>ChatChunk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateEventForm.resx">
       <DependentUpon>CreateEventForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +378,9 @@
     <None Include="Resources\討論版Btn.png" />
     <None Include="Resources\討論版Btn_2.png" />
     <None Include="Resources\取消報名Btn_2.png" />
+    <None Include="Resources\DiscussTitle.png" />
+    <None Include="Resources\ChunkBg.png" />
+    <None Include="Resources\CuteDog_2.png" />
     <Content Include="Test_DB.mdf" />
     <Content Include="Test_DB_log.ldf">
       <DependentUpon>Test_DB.mdf</DependentUpon>

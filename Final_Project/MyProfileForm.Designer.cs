@@ -90,6 +90,7 @@
             // BudgetComboBox
             // 
             this.BudgetComboBox.BackColor = System.Drawing.Color.PapayaWhip;
+            this.BudgetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.BudgetComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.BudgetComboBox.FormattingEnabled = true;
             this.BudgetComboBox.Location = new System.Drawing.Point(633, 282);
@@ -101,6 +102,7 @@
             // PreferTimeComboBox
             // 
             this.PreferTimeComboBox.BackColor = System.Drawing.Color.PapayaWhip;
+            this.PreferTimeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.PreferTimeComboBox.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.PreferTimeComboBox.FormattingEnabled = true;
             this.PreferTimeComboBox.Location = new System.Drawing.Point(633, 349);
@@ -162,7 +164,7 @@
             // ProfilePhoto
             // 
             this.ProfilePhoto.BackColor = System.Drawing.Color.Transparent;
-            this.ProfilePhoto.Image = global::Final_Project.Properties.Resources.cutedog1;
+            this.ProfilePhoto.Image = global::Final_Project.Properties.Resources.CuteDog;
             this.ProfilePhoto.Location = new System.Drawing.Point(83, 232);
             this.ProfilePhoto.Name = "ProfilePhoto";
             this.ProfilePhoto.Size = new System.Drawing.Size(220, 220);

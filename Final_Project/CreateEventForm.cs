@@ -10,7 +10,8 @@ using System.Windows.Forms;
 namespace Final_Project {
     public partial class CreateEventForm : Form {
         MapForm Maps;
-        string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
+        string[] budgets = { "", "50~100", "100~200", "200~300", "300~400", "400以上" };
+        string[] times = { "", "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
 
         public CreateEventForm(MainDataSet db) {
             InitializeComponent();
@@ -48,12 +49,12 @@ namespace Final_Project {
 
             int hr = TimePicker.Value.Hour;
             int preferTime = 0;
-            if (hr >= 6 && hr < 11) preferTime = 0;
-            else if (hr >= 11 && hr < 13) preferTime = 1;
-            else if (hr >= 13 && hr < 18) preferTime = 2;
-            else if (hr >= 18 && hr < 23) preferTime = 3;
-            else if (hr >= 23 || hr < 1) preferTime = 4;
-            else if (hr >= 1 && hr < 6) preferTime = 5;
+            if (hr >= 6 && hr < 11) preferTime = 1;
+            else if (hr >= 11 && hr < 13) preferTime = 2;
+            else if (hr >= 13 && hr < 18) preferTime = 3;
+            else if (hr >= 18 && hr < 23) preferTime = 4;
+            else if (hr >= 23 || hr < 1) preferTime = 5;
+            else if (hr >= 1 && hr < 6) preferTime = 6;
 
             int id = rnd.Next();
             db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, db.Me[0].ID, est, preferTime, intro, BudgetComboBox.SelectedIndex, DateTime.Now);

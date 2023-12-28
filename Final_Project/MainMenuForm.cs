@@ -16,7 +16,6 @@ namespace Final_Project {
         MyEventForm eventForm;
         //CreateEventForm createEventForm;
         NotificationForm notifyForm;
-        bool Loading = true;
         DataRow[] Acts;
         int ActIndex = 0;
         string[] budgets = { "", "50~100", "100~200", "200~300", "300~400", "400以上" };
@@ -40,19 +39,17 @@ namespace Final_Project {
             }
 
             ReloadEvent();
-            PlaceHolder.Text = "";
-            Loading = false;
         }
 
         void ReloadEvent() {
             string filter = "";
             ActivityAdapter.Fill(db.Activities);
             if (BudgetComboBox.SelectedIndex > 0 && TimeComboBox.SelectedIndex > 0) {
-                filter = $"Budget = {BudgetComboBox.SelectedIndex - 1} AND PreferTime = {TimeComboBox.SelectedIndex - 1}";
+                filter = $"Budget = {BudgetComboBox.SelectedIndex} AND PreferTime = {TimeComboBox.SelectedIndex}";
             } else if (BudgetComboBox.SelectedIndex > 0) {
-                filter = $"Budget = {BudgetComboBox.SelectedIndex - 1}";
+                filter = $"Budget = {BudgetComboBox.SelectedIndex}";
             } else if (TimeComboBox.SelectedIndex > 0) {
-                filter = $"PreferTime = {TimeComboBox.SelectedIndex - 1}";
+                filter = $"PreferTime = {TimeComboBox.SelectedIndex}";
             }
             Acts = db.Activities.Select(filter);
 
@@ -169,10 +166,19 @@ namespace Final_Project {
         }
 
         private void ArrowPicBox_Click(object sender, EventArgs e) {
+            if (Acts.Length == 0) return;
             PictureBox picBox = (PictureBox)sender;
             string n = picBox.Name.Substring(0, picBox.Name.Length - 6);
-            if (n == "Left" && ActIndex > 0) ActIndex--;
-            else if (n == "Right" && ActIndex < Acts.Length - 1) ActIndex++;
+            //if (n == "Left" && ActIndex > 0) ActIndex--;
+            //else if (n == "Right" && ActIndex < Acts.Length - 1) ActIndex++;
+            //else return;
+            if (n == "Left") {
+                ActIndex--;
+                if (ActIndex < 0) ActIndex = Acts.Length - 1;
+            } else if (n == "Right") {
+                ActIndex++;
+                if (ActIndex >= Acts.Length) ActIndex = 0;
+            }
             else return;
             LoadEvent();
         }
@@ -190,12 +196,11 @@ namespace Final_Project {
 
             db.User_Activity_A.AddUser_Activity_ARow(db.Me[0].ID, (int)Acts[ActIndex]["ID"]);
             UAA_Adapter.Update(db.User_Activity_A);
-            MessageBox.Show("報名成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("報名成功!\n可至上方 My Event 處查看活動", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadEvent();
         }
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e) {
-            if (Loading) return;
             ReloadEvent();
         }
     }

@@ -139,7 +139,7 @@ namespace Final_Project {
             // hot fix avatar
 
             using (MemoryStream mStream = new MemoryStream()) {
-                Bitmap img = Properties.Resources.cutedog1;
+                Bitmap img = Properties.Resources.CuteDog;
                 img.Save(mStream, ImageFormat.Bmp);
                 var defaultAvatar = mStream.ToArray();
 

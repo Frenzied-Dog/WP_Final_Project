@@ -113,6 +113,16 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap ChunkBg {
+            get {
+                object obj = ResourceManager.GetObject("ChunkBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap CreateEventBg {
             get {
                 object obj = ResourceManager.GetObject("CreateEventBg", resourceCulture);
@@ -153,9 +163,29 @@ namespace Final_Project.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
-        internal static System.Drawing.Bitmap cutedog1 {
+        internal static System.Drawing.Bitmap CuteDog {
             get {
-                object obj = ResourceManager.GetObject("cutedog1", resourceCulture);
+                object obj = ResourceManager.GetObject("CuteDog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap CuteDog_2 {
+            get {
+                object obj = ResourceManager.GetObject("CuteDog_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap DiscussTitle {
+            get {
+                object obj = ResourceManager.GetObject("DiscussTitle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

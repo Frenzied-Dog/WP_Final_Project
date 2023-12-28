@@ -118,182 +118,188 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NotiticationBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NotiticationBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo5_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="發布活動btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\發布活動btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ReUpload" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ReUpload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="使用地圖Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\使用地圖Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="JoinEventLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\JoinEventLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EventInfoBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EventInfoBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="發佈貼文Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\發佈貼文Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MyEventBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MyEventBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="標題label" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\標題label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="初次登入填寫資料" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\初次登入填寫資料.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="emptystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\emptystar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CustomizeLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CustomizeLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HomePhoto 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HomePhoto 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MyProfileBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MyProfileBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ellipsis 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ellipsis 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="完成註冊Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\報名Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="編輯資料Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\編輯資料Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Btn1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Btn1_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HomePhoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HomePhoto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="發佈貼文Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\發佈貼文Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RightBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RightArrow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Note_Pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Note_Pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LeftBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeftBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ReUpload_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ReUpload_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FirstLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FirstLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="一鍵報名Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\報名Btn (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="重設地圖Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\重設地圖Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="完成註冊Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\報名Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CreatEventBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CreatEventBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HomePhoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HomePhoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mainLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mainLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cutedog1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cutedog1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="一鍵報名Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\一鍵報名Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NotiticationBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NotiticationBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LeftBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeftArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RightBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RightBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="發佈貼文" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\發佈貼文.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Btn2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Btn2_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ChangeNickName_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ChangeNickName_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="編輯資料Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\編輯資料Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="儲存更動Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\儲存更動Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="重設地圖Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\重設地圖Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="HomePhotoFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HomePhotoFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="使用地圖Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\使用地圖Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MyEventBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MyEventBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CreateEventBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CreateEventBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="儲存更動Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\儲存更動Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="發布活動btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\發布活動btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BackGround_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BackGround_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HomePhoto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePhoto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ellipsis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ellipsis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="標題label" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\標題label.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="地點確認Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\地點確認Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Btn2_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Btn2_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="地點確認Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\地點確認Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="完成註冊Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\報名Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomePhoto 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePhoto 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CreatEventBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CreatEventBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MyProfileBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MyProfileBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="emptystar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emptystar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReUpload" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReUpload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="討論版Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\討論版Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FirstLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FirstLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EventInfoBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EventInfoBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreateEventBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreateEventBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeftBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeftArrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo5_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo5_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ellipsis 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ellipsis 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="一鍵報名Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\一鍵報名Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="地點確認Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\地點確認Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotiticationBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotiticationBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="儲存更動Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\儲存更動Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackGround_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackGround_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="一鍵報名Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\報名Btn (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Note_Pencil" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Note_Pencil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChangeNickName_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChangeNickName_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MyEventBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MyEventBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="發佈貼文" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\發佈貼文.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DiscussTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DiscussTitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="完成註冊Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\報名Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="發佈貼文Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\發佈貼文Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeftBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeftBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="編輯資料Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\編輯資料Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NotiticationBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NotiticationBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MyProfileBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MyProfileBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ChangeNickName" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ChangeNickName.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="儲存更動Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\儲存更動Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="發布活動btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\發布活動btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomePhoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePhoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="編輯資料Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\編輯資料Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HomePhotoFinal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HomePhotoFinal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ReUpload_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReUpload_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MyEventBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MyEventBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ChunkBg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChunkBg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MyProfileBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MyProfileBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CreatEventBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CreatEventBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="發佈貼文Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\發佈貼文Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="使用地圖Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\使用地圖Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="討論版Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\討論版Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="使用地圖Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\使用地圖Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RightBtn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RightBtn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Btn1_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Btn1_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="重設地圖Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\重設地圖Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="JoinEventLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\JoinEventLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="地點確認Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\地點確認Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="初次登入填寫資料" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\初次登入填寫資料.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="重設地圖Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\重設地圖Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CuteDog" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cutedog1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CustomizeLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CustomizeLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="取消報名Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\取消報名Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mainLabel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mainLabel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RightBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RightArrow1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MyProfileBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MyProfileBtn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,13 +307,16 @@
   <data name="取消報名Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\取消報名Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="討論版Btn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\討論版Btn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ellipsis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ellipsis.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="取消報名Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\取消報名Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="討論版Btn_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\討論版Btn_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CuteDog_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CuteDog_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

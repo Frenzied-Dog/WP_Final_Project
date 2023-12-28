@@ -71,6 +71,7 @@
             // BudgetComboBox
             // 
             this.BudgetComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BudgetComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.BudgetComboBox.Font = new System.Drawing.Font("微軟正黑體", 13F);
             this.BudgetComboBox.FormattingEnabled = true;
             this.BudgetComboBox.Location = new System.Drawing.Point(856, 267);

@@ -14,8 +14,8 @@ namespace Final_Project {
 	public partial class NewUserForm : Form {
 		//MainDataSet db;
 		string ID, name;
-        string[] budgets = { "50~100", "100~200", "200~300", "300~400", "400以上" };
-        string[] times = { "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
+        string[] budgets = { "", "50~100", "100~200", "200~300", "300~400", "400以上" };
+        string[] times = { "", "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
 
         public NewUserForm(MainDataSet db, string ID, string name) {
 			InitializeComponent();
@@ -55,7 +55,7 @@ namespace Final_Project {
 				aboutMe = "這傢伙人狠話不多...啥都沒留:(";
 
 			using (MemoryStream mStream = new MemoryStream()) {
-				Bitmap img = Properties.Resources.cutedog1;
+				Bitmap img = Properties.Resources.CuteDog;
 				img.Save(mStream, ImageFormat.Bmp);
 				var defaultAvatar =  mStream.ToArray();
 

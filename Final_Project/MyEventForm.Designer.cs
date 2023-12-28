@@ -25,28 +25,27 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyEventForm));
             this.db = new Final_Project.MainDataSet();
-            this.MarkPicBox = new System.Windows.Forms.PictureBox();
-            this.LogoPicBox = new System.Windows.Forms.PictureBox();
             this.ActivityAdapter = new Final_Project.MainDataSetTableAdapters.ActivitiesTableAdapter();
             this.UAU_Adapter = new Final_Project.MainDataSetTableAdapters.User_Activity_UTableAdapter();
             this.UAA_Adapter = new Final_Project.MainDataSetTableAdapters.User_Activity_ATableAdapter();
             this.IndexLabel = new System.Windows.Forms.Label();
-            this.DiscussPicBox = new System.Windows.Forms.PictureBox();
-            this.CancelPicBox = new System.Windows.Forms.PictureBox();
-            this.TitlePicBox = new System.Windows.Forms.PictureBox();
             this.CountLabel = new System.Windows.Forms.Label();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.ShopLabel = new System.Windows.Forms.Label();
             this.TimeLabel = new System.Windows.Forms.Label();
             this.DateLabel = new System.Windows.Forms.Label();
             this.IntroLabel = new System.Windows.Forms.Label();
+            this.DiscussPicBox = new System.Windows.Forms.PictureBox();
+            this.CancelPicBox = new System.Windows.Forms.PictureBox();
+            this.TitlePicBox = new System.Windows.Forms.PictureBox();
             this.RightPicBox = new System.Windows.Forms.PictureBox();
             this.LeftPicBox = new System.Windows.Forms.PictureBox();
             this.EventPicBox = new System.Windows.Forms.PictureBox();
             this.DotsPicBox = new System.Windows.Forms.PictureBox();
+            this.MarkPicBox = new System.Windows.Forms.PictureBox();
+            this.LogoPicBox = new System.Windows.Forms.PictureBox();
+            this.UsersAdapter = new Final_Project.MainDataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MarkPicBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiscussPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancelPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TitlePicBox)).BeginInit();
@@ -54,33 +53,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.LeftPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DotsPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MarkPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // db
             // 
             this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // MarkPicBox
-            // 
-            this.MarkPicBox.BackColor = System.Drawing.Color.Transparent;
-            this.MarkPicBox.Image = global::Final_Project.Properties.Resources.mark;
-            this.MarkPicBox.Location = new System.Drawing.Point(485, 674);
-            this.MarkPicBox.Name = "MarkPicBox";
-            this.MarkPicBox.Size = new System.Drawing.Size(330, 45);
-            this.MarkPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.MarkPicBox.TabIndex = 42;
-            this.MarkPicBox.TabStop = false;
-            // 
-            // LogoPicBox
-            // 
-            this.LogoPicBox.Image = global::Final_Project.Properties.Resources.mainLabel;
-            this.LogoPicBox.Location = new System.Drawing.Point(0, -6);
-            this.LogoPicBox.Name = "LogoPicBox";
-            this.LogoPicBox.Size = new System.Drawing.Size(345, 100);
-            this.LogoPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.LogoPicBox.TabIndex = 4;
-            this.LogoPicBox.TabStop = false;
             // 
             // ActivityAdapter
             // 
@@ -104,6 +84,71 @@
             this.IndexLabel.TabIndex = 56;
             this.IndexLabel.Text = "0/0";
             this.IndexLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CountLabel
+            // 
+            this.CountLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.CountLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CountLabel.Location = new System.Drawing.Point(333, 451);
+            this.CountLabel.Name = "CountLabel";
+            this.CountLabel.Size = new System.Drawing.Size(133, 39);
+            this.CountLabel.TabIndex = 49;
+            this.CountLabel.Text = "PlaceHolder";
+            this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // AddressLabel
+            // 
+            this.AddressLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AddressLabel.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.AddressLabel.Location = new System.Drawing.Point(257, 382);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(209, 67);
+            this.AddressLabel.TabIndex = 50;
+            this.AddressLabel.Text = "PlaceHolder";
+            this.AddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ShopLabel
+            // 
+            this.ShopLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ShopLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.ShopLabel.Location = new System.Drawing.Point(257, 338);
+            this.ShopLabel.Name = "ShopLabel";
+            this.ShopLabel.Size = new System.Drawing.Size(209, 47);
+            this.ShopLabel.TabIndex = 51;
+            this.ShopLabel.Text = "PlaceHolder";
+            this.ShopLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // TimeLabel
+            // 
+            this.TimeLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TimeLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TimeLabel.Location = new System.Drawing.Point(256, 280);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(209, 42);
+            this.TimeLabel.TabIndex = 52;
+            this.TimeLabel.Text = "PlaceHolder";
+            this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DateLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.DateLabel.Location = new System.Drawing.Point(257, 223);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(209, 40);
+            this.DateLabel.TabIndex = 53;
+            this.DateLabel.Text = "PlaceHolder";
+            this.DateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IntroLabel
+            // 
+            this.IntroLabel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.IntroLabel.Font = new System.Drawing.Font("微軟正黑體", 16F, System.Drawing.FontStyle.Bold);
+            this.IntroLabel.Location = new System.Drawing.Point(546, 258);
+            this.IntroLabel.Name = "IntroLabel";
+            this.IntroLabel.Size = new System.Drawing.Size(293, 253);
+            this.IntroLabel.TabIndex = 54;
+            this.IntroLabel.Text = "PlaceHolder";
             // 
             // DiscussPicBox
             // 
@@ -143,71 +188,6 @@
             this.TitlePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.TitlePicBox.TabIndex = 55;
             this.TitlePicBox.TabStop = false;
-            // 
-            // CountLabel
-            // 
-            this.CountLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.CountLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.CountLabel.Location = new System.Drawing.Point(333, 451);
-            this.CountLabel.Name = "CountLabel";
-            this.CountLabel.Size = new System.Drawing.Size(133, 39);
-            this.CountLabel.TabIndex = 49;
-            this.CountLabel.Text = "PlaceHolder";
-            this.CountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // AddressLabel
-            // 
-            this.AddressLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.AddressLabel.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.AddressLabel.Location = new System.Drawing.Point(257, 382);
-            this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(209, 67);
-            this.AddressLabel.TabIndex = 50;
-            this.AddressLabel.Text = "PlaceHolder";
-            this.AddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // ShopLabel
-            // 
-            this.ShopLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ShopLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.ShopLabel.Location = new System.Drawing.Point(257, 338);
-            this.ShopLabel.Name = "ShopLabel";
-            this.ShopLabel.Size = new System.Drawing.Size(209, 47);
-            this.ShopLabel.TabIndex = 51;
-            this.ShopLabel.Text = "PlaceHolder";
-            this.ShopLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // TimeLabel
-            // 
-            this.TimeLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.TimeLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.TimeLabel.Location = new System.Drawing.Point(256, 280);
-            this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(209, 42);
-            this.TimeLabel.TabIndex = 52;
-            this.TimeLabel.Text = "PlaceHolder";
-            this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // DateLabel
-            // 
-            this.DateLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.DateLabel.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.DateLabel.Location = new System.Drawing.Point(257, 223);
-            this.DateLabel.Name = "DateLabel";
-            this.DateLabel.Size = new System.Drawing.Size(209, 40);
-            this.DateLabel.TabIndex = 53;
-            this.DateLabel.Text = "PlaceHolder";
-            this.DateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IntroLabel
-            // 
-            this.IntroLabel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.IntroLabel.Font = new System.Drawing.Font("微軟正黑體", 16F);
-            this.IntroLabel.Location = new System.Drawing.Point(546, 258);
-            this.IntroLabel.Name = "IntroLabel";
-            this.IntroLabel.Size = new System.Drawing.Size(293, 253);
-            this.IntroLabel.TabIndex = 54;
-            this.IntroLabel.Text = "PlaceHolder";
             // 
             // RightPicBox
             // 
@@ -255,6 +235,31 @@
             this.DotsPicBox.TabIndex = 48;
             this.DotsPicBox.TabStop = false;
             // 
+            // MarkPicBox
+            // 
+            this.MarkPicBox.BackColor = System.Drawing.Color.Transparent;
+            this.MarkPicBox.Image = global::Final_Project.Properties.Resources.mark;
+            this.MarkPicBox.Location = new System.Drawing.Point(485, 674);
+            this.MarkPicBox.Name = "MarkPicBox";
+            this.MarkPicBox.Size = new System.Drawing.Size(330, 45);
+            this.MarkPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.MarkPicBox.TabIndex = 42;
+            this.MarkPicBox.TabStop = false;
+            // 
+            // LogoPicBox
+            // 
+            this.LogoPicBox.Image = global::Final_Project.Properties.Resources.mainLabel;
+            this.LogoPicBox.Location = new System.Drawing.Point(0, -6);
+            this.LogoPicBox.Name = "LogoPicBox";
+            this.LogoPicBox.Size = new System.Drawing.Size(345, 100);
+            this.LogoPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogoPicBox.TabIndex = 4;
+            this.LogoPicBox.TabStop = false;
+            // 
+            // UsersAdapter
+            // 
+            this.UsersAdapter.ClearBeforeFill = true;
+            // 
             // MyEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -285,8 +290,6 @@
             this.Text = "My Events";
             this.Load += new System.EventHandler(this.MyEventForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MarkPicBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiscussPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancelPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TitlePicBox)).EndInit();
@@ -294,6 +297,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.LeftPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EventPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DotsPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MarkPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogoPicBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -320,5 +325,6 @@
         private System.Windows.Forms.PictureBox LeftPicBox;
         private System.Windows.Forms.PictureBox EventPicBox;
         private System.Windows.Forms.PictureBox DotsPicBox;
+        private MainDataSetTableAdapters.UsersTableAdapter UsersAdapter;
     }
 }
