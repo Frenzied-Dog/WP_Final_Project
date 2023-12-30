@@ -12,14 +12,17 @@ using System.Windows.Forms;
 namespace Final_Project {
     public partial class DiscussionForm : Form {
         int ActID;
-        ChatChunk[] chunks = new ChatChunk[20];
         int chunkCount = 0;
+        string UID = "";
+        ChatChunk[] chunks = new ChatChunk[20];
 
-        public DiscussionForm(MainDataSet db, int ActID) {
+        public DiscussionForm(MainDataSet db, int ActID, string UID) {
             InitializeComponent();
             this.db = db;
             this.ActID = ActID;
+            this.UID = UID;
             ChatAdapter.Fill(db.Chat, ActID);
+            
             ReloadChat();
         }
 
@@ -37,12 +40,14 @@ namespace Final_Project {
                 DogPic.Location = new Point(760, 250);
                 DogPic.Image = Properties.Resources.CuteDog;
                 EmptyLabel.Visible = true;
+                return;
             } else {
                 PostPicBox.Location = new Point(770, 22);
                 DogPic.Location = new Point(1050, 145);
                 DogPic.Image = Properties.Resources.CuteDog_2;
                 EmptyLabel.Visible = false;
             }
+
 
             if (db.Chat.Count <= 20) {
                 foreach (var chat in db.Chat) AddChunk(chunkCount);
@@ -59,7 +64,7 @@ namespace Final_Project {
         }
 
         private void PostPicBox_Click(object sender, EventArgs e) {
-            if (new NewPostForm(db, ActID).ShowDialog() == DialogResult.OK) {
+            if (new NewPostForm(db, ActID, UID).ShowDialog() == DialogResult.OK) {
                 if (db.Chat.Count > 20 || db.Chat.Count == 1) ReloadChat();
                 else AddChunk(db.Chat.Count - 1);
             }

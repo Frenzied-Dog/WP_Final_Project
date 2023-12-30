@@ -31,8 +31,10 @@ namespace Final_Project {
             }
 
             if (ShopName != "" && Address != "" ) {
-                if ( MessageBox.Show($"請確認以下資訊是否正確 ?\n\r店家名稱: {ShopName}\n\r地址: {Address}", "地點確認", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes )
+                if ( MessageBox.Show($"請確認以下資訊是否正確 ?\n\r店家名稱: {ShopName}\n\r地址: {Address}", "地點確認", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes ) {
+                    DialogResult = DialogResult.OK;
                     Close();
+                }
             } else {
                 MessageBox.Show("請先選擇地點!\n\r有問題請洽作者", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

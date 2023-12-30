@@ -18,15 +18,17 @@ namespace Final_Project {
         NotificationForm notifyForm;
         DataRow[] Acts;
         int ActIndex = 0;
+        string UID = "";
         string[] budgets = { "", "50~100", "100~200", "200~300", "300~400", "400以上" };
         string[] times = { "", "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
         Label[] eventLabels = new Label[6];
 
-        public MainMenuForm(MainDataSet db) {
+        public MainMenuForm(MainDataSet db, string UID) {
             InitializeComponent();
             this.db = db;
-            profileForm = new MyProfileForm(db);
-            eventForm = new MyEventForm(db);
+            this.UID = UID;
+            profileForm = new MyProfileForm(db, UID);
+            eventForm = new MyEventForm(db, UID);
             //createEventForm = new CreateEventForm(db);
             notifyForm = new NotificationForm(db);
             BudgetComboBox.DataSource = budgets;
@@ -42,14 +44,14 @@ namespace Final_Project {
         }
 
         void ReloadEvent() {
-            string filter = "";
+            string filter = "Deleted = 0";
             ActivityAdapter.Fill(db.Activities);
             if (BudgetComboBox.SelectedIndex > 0 && TimeComboBox.SelectedIndex > 0) {
-                filter = $"Budget = {BudgetComboBox.SelectedIndex} AND PreferTime = {TimeComboBox.SelectedIndex}";
+                filter += $" AND Budget = {BudgetComboBox.SelectedIndex} AND PreferTime = {TimeComboBox.SelectedIndex}";
             } else if (BudgetComboBox.SelectedIndex > 0) {
-                filter = $"Budget = {BudgetComboBox.SelectedIndex}";
+                filter += $" AND Budget = {BudgetComboBox.SelectedIndex}";
             } else if (TimeComboBox.SelectedIndex > 0) {
-                filter = $"PreferTime = {TimeComboBox.SelectedIndex}";
+                filter += $" AND PreferTime = {TimeComboBox.SelectedIndex}";
             }
             Acts = db.Activities.Select(filter);
 
@@ -76,9 +78,13 @@ namespace Final_Project {
             AddressLabel.Text = act.Field<string>("Address");
             IntroLabel.Text = act.Field<string>("Intro");
 
-            UAA_Adapter.Fill(db.User_Activity_A, act.Field<int>("ID"));
-            CountLabel.Text = db.User_Activity_A.Count.ToString();
+            UA_Adapter.FillByAct(db.User_Activity, act.Field<int>("ID"));
+            CountLabel.Text = db.User_Activity.Count.ToString();
             IndexLabel.Text = $"{ActIndex + 1}/{Acts.Length}";
+
+            //UAA_Adapter.Fill(db.User_Activity_A, act.Field<int>("ID"));
+            //CountLabel.Text = db.User_Activity_A.Count.ToString();
+            //IndexLabel.Text = $"{ActIndex + 1}/{Acts.Length}";
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -96,7 +102,7 @@ namespace Final_Project {
                 ReloadEvent();
                 break;
             case "CreateEvent":
-                new CreateEventForm(db).ShowDialog();
+                new CreateEventForm(db, UID).ShowDialog();
                 ReloadEvent();
                 break;
             case "Notify":
@@ -184,18 +190,22 @@ namespace Final_Project {
         }
 
         private void SignPicBox_Click(object sender, EventArgs e) {
-            if (db.Activities.FindByID(db.User_Activity_A[0].ActivityID).MainUserId.Trim(' ') == db.Me[0].ID.Trim(' ')) {
+            int actID = Acts[ActIndex].Field<int>("ID");
+
+            if (Acts[ActIndex].Field<string>("MainUserId").Trim(' ') == UID) {
                 MessageBox.Show("你是主揪你還報啥XDD", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            if (db.User_Activity_A.Select($"UserID = '{db.Me[0].ID}'").Count() != 0) {
+            if (db.User_Activity.Select($"UserID = '{UID}' AND ActivityID = {actID}").Count() != 0) {
                 MessageBox.Show("你已經報名過了!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            db.User_Activity_A.AddUser_Activity_ARow(db.Me[0].ID, (int)Acts[ActIndex]["ID"]);
-            UAA_Adapter.Update(db.User_Activity_A);
+            UA_Adapter.Insert(UID, actID);
+            UA_Adapter.FillByAct(db.User_Activity, actID);
+            //db.User_Activity_A.AddUser_Activity_ARow(db.Users.FindByID(db.Me[0].ID), db.Activities.FindByID(Acts[ActIndex].Field<int>("ID")));
+            //UAA_Adapter.Update(db.User_Activity_A);
             MessageBox.Show("報名成功!\n可至上方 My Event 處查看活動", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadEvent();
         }

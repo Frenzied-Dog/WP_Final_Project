@@ -26,8 +26,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MyEventForm));
             this.db = new Final_Project.MainDataSet();
             this.ActivityAdapter = new Final_Project.MainDataSetTableAdapters.ActivitiesTableAdapter();
-            this.UAU_Adapter = new Final_Project.MainDataSetTableAdapters.User_Activity_UTableAdapter();
-            this.UAA_Adapter = new Final_Project.MainDataSetTableAdapters.User_Activity_ATableAdapter();
             this.IndexLabel = new System.Windows.Forms.Label();
             this.CountLabel = new System.Windows.Forms.Label();
             this.AddressLabel = new System.Windows.Forms.Label();
@@ -45,6 +43,7 @@
             this.MarkPicBox = new System.Windows.Forms.PictureBox();
             this.LogoPicBox = new System.Windows.Forms.PictureBox();
             this.UsersAdapter = new Final_Project.MainDataSetTableAdapters.UsersTableAdapter();
+            this.UA_Adapter = new Final_Project.MainDataSetTableAdapters.User_ActivityTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiscussPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CancelPicBox)).BeginInit();
@@ -65,14 +64,6 @@
             // ActivityAdapter
             // 
             this.ActivityAdapter.ClearBeforeFill = true;
-            // 
-            // UAU_Adapter
-            // 
-            this.UAU_Adapter.ClearBeforeFill = true;
-            // 
-            // UAA_Adapter
-            // 
-            this.UAA_Adapter.ClearBeforeFill = true;
             // 
             // IndexLabel
             // 
@@ -260,6 +251,10 @@
             // 
             this.UsersAdapter.ClearBeforeFill = true;
             // 
+            // UA_Adapter
+            // 
+            this.UA_Adapter.ClearBeforeFill = true;
+            // 
             // MyEventForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -309,8 +304,6 @@
         private System.Windows.Forms.PictureBox LogoPicBox;
         private System.Windows.Forms.PictureBox MarkPicBox;
         private MainDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
-        private MainDataSetTableAdapters.User_Activity_UTableAdapter UAU_Adapter;
-        private MainDataSetTableAdapters.User_Activity_ATableAdapter UAA_Adapter;
         private System.Windows.Forms.Label IndexLabel;
         private System.Windows.Forms.PictureBox DiscussPicBox;
         private System.Windows.Forms.PictureBox CancelPicBox;
@@ -326,5 +319,6 @@
         private System.Windows.Forms.PictureBox EventPicBox;
         private System.Windows.Forms.PictureBox DotsPicBox;
         private MainDataSetTableAdapters.UsersTableAdapter UsersAdapter;
+        private MainDataSetTableAdapters.User_ActivityTableAdapter UA_Adapter;
     }
 }

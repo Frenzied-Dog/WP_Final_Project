@@ -52,7 +52,7 @@
             this.LogoPicBox = new System.Windows.Forms.PictureBox();
             this.db = new Final_Project.MainDataSet();
             this.ActivityAdapter = new Final_Project.MainDataSetTableAdapters.ActivitiesTableAdapter();
-            this.UAA_Adapter = new Final_Project.MainDataSetTableAdapters.User_Activity_ATableAdapter();
+            this.UA_Adapter = new Final_Project.MainDataSetTableAdapters.User_ActivityTableAdapter();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SignPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CustomizePicBox)).BeginInit();
@@ -393,9 +393,9 @@
             // 
             this.ActivityAdapter.ClearBeforeFill = true;
             // 
-            // UAA_Adapter
+            // UA_Adapter
             // 
-            this.UAA_Adapter.ClearBeforeFill = true;
+            this.UA_Adapter.ClearBeforeFill = true;
             // 
             // MainMenuForm
             // 
@@ -466,7 +466,7 @@
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.Label ShopLabel;
         private System.Windows.Forms.Label TimeLabel;
-        private MainDataSetTableAdapters.User_Activity_ATableAdapter UAA_Adapter;
         private System.Windows.Forms.Label IndexLabel;
+        private MainDataSetTableAdapters.User_ActivityTableAdapter UA_Adapter;
     }
 }

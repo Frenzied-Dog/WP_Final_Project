@@ -41,13 +41,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.db = new Final_Project.MainDataSet();
             this.ReUploadPicBox = new System.Windows.Forms.PictureBox();
-            this.MeAdapter = new Final_Project.MainDataSetTableAdapters.MeTableAdapter();
             this.NickTextBox = new System.Windows.Forms.TextBox();
             this.EditPicBox1 = new System.Windows.Forms.PictureBox();
             this.EditPicBox2 = new System.Windows.Forms.PictureBox();
             this.EditPicBox3 = new System.Windows.Forms.PictureBox();
             this.EditPicBox4 = new System.Windows.Forms.PictureBox();
             this.EditPicBox5 = new System.Windows.Forms.PictureBox();
+            this.UsersAdapter = new Final_Project.MainDataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.ModifyPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProfilePhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
@@ -154,11 +154,11 @@
             // 
             this.NickNameLabel.BackColor = System.Drawing.Color.Transparent;
             this.NickNameLabel.Font = new System.Drawing.Font("微軟正黑體", 22F, System.Drawing.FontStyle.Bold);
-            this.NickNameLabel.Location = new System.Drawing.Point(100, 501);
+            this.NickNameLabel.Location = new System.Drawing.Point(34, 505);
             this.NickNameLabel.Name = "NickNameLabel";
-            this.NickNameLabel.Size = new System.Drawing.Size(194, 63);
+            this.NickNameLabel.Size = new System.Drawing.Size(322, 42);
             this.NickNameLabel.TabIndex = 9;
-            this.NickNameLabel.Text = "張亨利";
+            this.NickNameLabel.Text = "www張亨利www";
             this.NickNameLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ProfilePhoto
@@ -201,16 +201,12 @@
             this.ReUploadPicBox.MouseEnter += new System.EventHandler(this.PicBox_MouseEnter);
             this.ReUploadPicBox.MouseLeave += new System.EventHandler(this.PicBox_MouseLeave);
             // 
-            // MeAdapter
-            // 
-            this.MeAdapter.ClearBeforeFill = true;
-            // 
             // NickTextBox
             // 
-            this.NickTextBox.Font = new System.Drawing.Font("微軟正黑體", 22F, System.Drawing.FontStyle.Bold);
-            this.NickTextBox.Location = new System.Drawing.Point(96, 504);
+            this.NickTextBox.Font = new System.Drawing.Font("微軟正黑體", 23F, System.Drawing.FontStyle.Bold);
+            this.NickTextBox.Location = new System.Drawing.Point(38, 505);
             this.NickTextBox.Name = "NickTextBox";
-            this.NickTextBox.Size = new System.Drawing.Size(198, 47);
+            this.NickTextBox.Size = new System.Drawing.Size(315, 48);
             this.NickTextBox.TabIndex = 19;
             this.NickTextBox.Text = "辜勤翰";
             this.NickTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -276,6 +272,10 @@
             this.EditPicBox5.TabStop = false;
             this.EditPicBox5.Visible = false;
             // 
+            // UsersAdapter
+            // 
+            this.UsersAdapter.ClearBeforeFill = true;
+            // 
             // MyProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -336,12 +336,12 @@
         private System.Windows.Forms.Label label3;
         private MainDataSet db;
         private System.Windows.Forms.PictureBox ReUploadPicBox;
-        private MainDataSetTableAdapters.MeTableAdapter MeAdapter;
         private System.Windows.Forms.TextBox NickTextBox;
         private System.Windows.Forms.PictureBox EditPicBox1;
         private System.Windows.Forms.PictureBox EditPicBox2;
         private System.Windows.Forms.PictureBox EditPicBox3;
         private System.Windows.Forms.PictureBox EditPicBox4;
         private System.Windows.Forms.PictureBox EditPicBox5;
+        private MainDataSetTableAdapters.UsersTableAdapter UsersAdapter;
     }
 }

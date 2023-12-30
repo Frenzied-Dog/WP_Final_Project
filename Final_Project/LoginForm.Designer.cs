@@ -31,12 +31,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.MeAdapter = new Final_Project.MainDataSetTableAdapters.MeTableAdapter();
             this.db = new Final_Project.MainDataSet();
             this.label2 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.UsersAdapter = new Final_Project.MainDataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.LoginPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
@@ -113,10 +112,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // MeAdapter
-            // 
-            this.MeAdapter.ClearBeforeFill = true;
-            // 
             // db
             // 
             this.db.DataSetName = "MainDataSet";
@@ -130,16 +125,6 @@
             this.label2.Size = new System.Drawing.Size(32, 12);
             this.label2.TabIndex = 6;
             this.label2.Text = "Name";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(968, 282);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "New Post";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -162,6 +147,10 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // UsersAdapter
+            // 
+            this.UsersAdapter.ClearBeforeFill = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -171,7 +160,6 @@
             this.ClientSize = new System.Drawing.Size(1264, 711);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
@@ -205,12 +193,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
-        private MainDataSetTableAdapters.MeTableAdapter MeAdapter;
         private MainDataSet db;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private MainDataSetTableAdapters.UsersTableAdapter UsersAdapter;
     }
 }
 

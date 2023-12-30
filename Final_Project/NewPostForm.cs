@@ -11,11 +11,13 @@ using System.Windows.Forms;
 namespace Final_Project {
 	public partial class NewPostForm : Form {
 		int activityID = 0;
+		string UID = "";
 
-		public NewPostForm(MainDataSet db, int ID) {
+		public NewPostForm(MainDataSet db, int actID, string UID) {
 			InitializeComponent();
-			activityID = ID;
+			activityID = actID;
 			this.db = db;
+			this.UID = UID;
 		}
 
 		private void PostPicBox_Click(object sender, EventArgs e) {
@@ -25,10 +27,10 @@ namespace Final_Project {
 			}
 
 			if (MessageBox.Show("確定要發佈貼文嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) {
-				//ChatAdapter.Insert(activityID, (string)db.Me.Rows[0]["ID"], DateTime.Now, PostTextBox.Text);
-				db.Chat.AddChatRow(activityID, (string)db.Me.Rows[0]["ID"], DateTime.Now, PostTextBox.Text);
-				ChatAdapter.Update(db.Chat);
-				DialogResult = DialogResult.OK;
+				ChatAdapter.Insert(activityID, UID, DateTime.Now, PostTextBox.Text);
+				//db.Chat.AddChatRow(activityID, (string)db.Me.Rows[0]["ID"], DateTime.Now, PostTextBox.Text);
+				ChatAdapter.Fill(db.Chat, activityID);
+                DialogResult = DialogResult.OK;
 				Close();
 			}
 		}

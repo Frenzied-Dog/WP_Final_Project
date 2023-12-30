@@ -88,12 +88,13 @@ namespace Final_Project {
                 return;
             }
 
-            MeAdapter.Fill(db.Me, ID);
-            if (db.Me.Count == 0) {
+            var me = UsersAdapter.GetDataByID(ID)[0];
+
+            if (me == null) {
                 new NewUserForm(db, TextBox_ID.Text, name).Show();
             } else {
                 MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new MainMenuForm(db).Show();
+                new MainMenuForm(db, ID).Show();
             }
 
             Close();
@@ -104,8 +105,7 @@ namespace Final_Project {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            MeAdapter.Fill(db.Me, DevID);
-            new MainMenuForm(db).Show();
+            new MainMenuForm(db, DevID).Show();
             Close();
         }
 
@@ -115,20 +115,14 @@ namespace Final_Project {
         }
 
         private void button3_Click(object sender, EventArgs e) {
-            MeAdapter.Fill(db.Me,TextBox_ID.Text);
-            if (db.Me.Count == 0) MessageBox.Show("查無此人", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var user = UsersAdapter.GetDataByID(ID)[0];
+
+            if (user == null) MessageBox.Show("查無此人", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else {
-                string name = db.Me[0].Name;
-                db.Me[0].Delete();
-                MeAdapter.Update(db.Me);
+                string name = user.Name;
+                UsersAdapter.Delete(ID);
                 MessageBox.Show($"已刪除{name}的資料", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void button4_Click(object sender, EventArgs e) {
-            //ActivityAdapter.Fill(db.Activities);
-            MeAdapter.Fill(db.Me, DevID);
-            new NewPostForm(db, 729138875).Show();
         }
 
         private void button5_Click(object sender, EventArgs e) {

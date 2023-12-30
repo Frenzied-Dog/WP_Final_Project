@@ -17,6 +17,7 @@ namespace Final_Project {
         string[] budgets = { "", "50~100", "100~200", "200~300", "300~400", "400以上" };
         string[] times = { "", "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
         bool modifying = false;
+        MainDataSet.UsersRow me;
         PictureBox[] EditPicBoxs;
 
         // https://stackoverflow.com/a/24199315
@@ -40,10 +41,9 @@ namespace Final_Project {
             return destImage;
         }
 
-        public MyProfileForm(MainDataSet db) {
+        public MyProfileForm(MainDataSet db, string UID) {
             InitializeComponent();
             this.db = db;
-
             //將 Profile Photo 變成圓形框  https://www.jb51.net/article/220686.htm
             GraphicsPath gp = new GraphicsPath();
             gp.AddEllipse(ProfilePhoto.ClientRectangle);
@@ -53,14 +53,26 @@ namespace Final_Project {
             PreferTimeComboBox.DataSource = times;
             EditPicBoxs = new PictureBox[] { EditPicBox1, EditPicBox2, EditPicBox3, EditPicBox4, EditPicBox5 };
 
-            ID_Label.Text = db.Me[0].ID;
-            NickNameLabel.Text = db.Me[0].NickName;
-            MajorTextBox.Text = db.Me[0]["Major"] != DBNull.Value ? db.Me[0].Major : "";
-            GenderTextBox.Text = db.Me[0]["Gender"] != DBNull.Value ? db.Me[0].Gender : "";
-            SelfTextBox.Text = db.Me[0].AboutMe;
-            BudgetComboBox.SelectedIndex = db.Me[0].Budget;
-            PreferTimeComboBox.SelectedIndex = db.Me[0].PreferTime;
-            ProfilePhoto.Image = Image.FromStream(new MemoryStream(db.Me[0].Pic));
+            me = UsersAdapter.GetDataByID(UID)[0];
+
+            ID_Label.DataBindings.Add("Text", me, "ID", false, DataSourceUpdateMode.OnPropertyChanged);
+            NickNameLabel.DataBindings.Add("Text", me, "NickName", false, DataSourceUpdateMode.OnPropertyChanged);
+            NickTextBox.DataBindings.Add("Text", me, "NickName", false, DataSourceUpdateMode.OnPropertyChanged);
+            MajorTextBox.DataBindings.Add("Text", me, "Major", false, DataSourceUpdateMode.OnPropertyChanged);
+            GenderTextBox.DataBindings.Add("Text", me, "Gender", false, DataSourceUpdateMode.OnPropertyChanged);
+            SelfTextBox.DataBindings.Add("Text", me, "AboutMe", false, DataSourceUpdateMode.OnPropertyChanged);
+            BudgetComboBox.DataBindings.Add("SelectedIndex", me, "Budget", false, DataSourceUpdateMode.OnPropertyChanged);
+            PreferTimeComboBox.DataBindings.Add("SelectedIndex", me, "PreferTime", false, DataSourceUpdateMode.OnPropertyChanged);
+            //ProfilePhoto.DataBindings.Add("Image", me, "Pic", true, DataSourceUpdateMode.OnPropertyChanged);
+
+            //ID_Label.Text = me.ID;
+            //NickTextBox.Text = me.NickName;
+            //MajorTextBox.Text = me["Major"] != DBNull.Value ? me.Major : "";
+            //GenderTextBox.Text = me["Gender"] != DBNull.Value ? me.Gender : "";
+            //SelfTextBox.Text = me.AboutMe;
+            //BudgetComboBox.SelectedIndex = me.Budget;
+            //PreferTimeComboBox.SelectedIndex = me.PreferTime;
+            ProfilePhoto.Image = Image.FromStream(new MemoryStream(me.Pic));
             //ProfilePhoto.Image = (Image)new ImageConverter().ConvertFrom(db.Me[0].Pic);
         }
 
@@ -79,7 +91,7 @@ namespace Final_Project {
                 PreferTimeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
                 ModifyPicBox.Image = Properties.Resources.儲存更動Btn_2;
                 ReUploadPicBox.Visible = true;
-                NickTextBox.Text = NickNameLabel.Text;
+                //NickTextBox.Text = NickNameLabel.Text;
                 NickTextBox.Visible = true;
                 foreach (PictureBox picBox in EditPicBoxs) picBox.Visible = true;
                 modifying = true;
@@ -89,7 +101,7 @@ namespace Final_Project {
                     return;
                 }
                 if (string.IsNullOrWhiteSpace(NickTextBox.Text))
-                    NickTextBox.Text = db.Me[0].Name;
+                    NickTextBox.Text = me.Name;
                 if (string.IsNullOrWhiteSpace(SelfTextBox.Text))
                     SelfTextBox.Text = "這傢伙人狠話不多...啥都沒留:(";
 
@@ -101,22 +113,22 @@ namespace Final_Project {
                 PreferTimeComboBox.Enabled = false;
                 PreferTimeComboBox.DropDownStyle = ComboBoxStyle.Simple;
                 ReUploadPicBox.Visible = false;
-                NickNameLabel.Text = NickTextBox.Text;
+                //NickNameLabel.Text = NickTextBox.Text;
                 NickTextBox.Visible = false;
                 foreach (PictureBox picBox in EditPicBoxs) picBox.Visible = false;
                 ModifyPicBox.Image = Properties.Resources.編輯資料Btn_2;
 
-                db.Me[0].NickName = NickNameLabel.Text;
-                db.Me[0].Major = MajorTextBox.Text;
-                db.Me[0].Gender = GenderTextBox.Text;
-                db.Me[0].Budget = BudgetComboBox.SelectedIndex;
-                db.Me[0].PreferTime = PreferTimeComboBox.SelectedIndex;
-                db.Me[0].AboutMe = SelfTextBox.Text;
+                //me.NickName = NickNameLabel.Text;
+                //me.Major = MajorTextBox.Text;
+                //me.Gender = GenderTextBox.Text;
+                //me.Budget = BudgetComboBox.SelectedIndex;
+                //me.PreferTime = PreferTimeComboBox.SelectedIndex;
+                //me.AboutMe = SelfTextBox.Text;
                 using (MemoryStream mStream = new MemoryStream()) {
                     ProfilePhoto.Image.Save(mStream, ImageFormat.Bmp);
-                    db.Me[0].Pic = mStream.ToArray();
+                    me.Pic = mStream.ToArray();
                 };
-                MeAdapter.Update(db.Me);
+                UsersAdapter.Update(me);
                 modifying = false;
             }
         }

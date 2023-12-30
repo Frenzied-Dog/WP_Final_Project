@@ -10,12 +10,14 @@ using System.Windows.Forms;
 namespace Final_Project {
     public partial class CreateEventForm : Form {
         MapForm Maps;
+        string UID = "";
         string[] budgets = { "", "50~100", "100~200", "200~300", "300~400", "400以上" };
         string[] times = { "", "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
 
-        public CreateEventForm(MainDataSet db) {
+        public CreateEventForm(MainDataSet db, string UID) {
             InitializeComponent();
             this.db = db;
+            this.UID = UID;
             Maps = new MapForm();
             BudgetComboBox.DataSource = budgets;
             DatePicker.Value = DateTime.Now;
@@ -43,6 +45,8 @@ namespace Final_Project {
                 return;
             }
             
+            MessageBox.Show("活動時間：" + est.ToString() + "\n\r預算：" + budgets[BudgetComboBox.SelectedIndex] + "\n\r地點：" + ShopTextBox.Text, "確認", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
             if (intro == "") {
                 intro = "好吧看來有人不想介紹@@";
             }
@@ -57,10 +61,13 @@ namespace Final_Project {
             else if (hr >= 1 && hr < 6) preferTime = 6;
 
             int id = rnd.Next();
-            db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, db.Me[0].ID, est, preferTime, intro, BudgetComboBox.SelectedIndex, DateTime.Now);
-            db.User_Activity.AddUser_ActivityRow(db.Me[0].ID, id);
+            db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, UID, est, preferTime, intro, BudgetComboBox.SelectedIndex, DateTime.Now, false);
             ActivityAdapter.Update(db.Activities);
-            User_ActivityAdapter.Update(db.User_Activity);
+
+            User_ActivityAdapter.Insert(UID, id);
+
+            //db.User_Activity.AddUser_ActivityRow(UID, id);
+            //User_ActivityAdapter.Update(db.User_Activity);
 
             MessageBox.Show("活動已發布～\n\r祝您結交志同道合的朋友！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DialogResult = DialogResult.OK;
@@ -68,9 +75,10 @@ namespace Final_Project {
         }
 
         private void UseMapPicBox_Click(object sender, EventArgs e) {
-            Maps.ShowDialog();
-            ShopTextBox.Text = Maps.ShopName;
-            AddressTextBox.Text = Maps.Address;
+            if (Maps.ShowDialog() == DialogResult.OK) {
+                ShopTextBox.Text = Maps.ShopName;
+                AddressTextBox.Text = Maps.Address;
+            } 
         }
 
         private void PicBox_MouseEnter(object sender, EventArgs e) {

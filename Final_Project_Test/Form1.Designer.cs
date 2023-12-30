@@ -35,12 +35,13 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.FPds = new Final_Project.Final_ProjectDataSet();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.TDB = new Final_Project.TDS();
+            this.Adapter = new Final_Project.TDSTableAdapters.TestTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FPds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TDB)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -122,11 +123,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(766, 150);
             this.dataGridView1.TabIndex = 11;
             // 
-            // FPds
-            // 
-            this.FPds.DataSetName = "Final_ProjectDataSet";
-            this.FPds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -148,6 +144,15 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // TDB
+            // 
+            this.TDB.DataSetName = "TDS";
+            this.TDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // Adapter
+            // 
+            this.Adapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -168,8 +173,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FPds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TDB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,10 +190,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button4;
-        private Final_ProjectDataSet FPds;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
+        private TDS TDB;
+        private TDSTableAdapters.TestTableAdapter Adapter;
     }
 }
 

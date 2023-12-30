@@ -33,7 +33,7 @@
             this.CommitPicBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.db = new Final_Project.MainDataSet();
-            this.MeAdapter = new Final_Project.MainDataSetTableAdapters.MeTableAdapter();
+            this.UsersAdapter = new Final_Project.MainDataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.CommitPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
@@ -148,9 +148,9 @@
             this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // MeAdapter
+            // UsersAdapter
             // 
-            this.MeAdapter.ClearBeforeFill = true;
+            this.UsersAdapter.ClearBeforeFill = true;
             // 
             // NewUserForm
             // 
@@ -194,6 +194,6 @@
         private System.Windows.Forms.PictureBox CommitPicBox;
         private System.Windows.Forms.Label label1;
         private MainDataSet db;
-        private MainDataSetTableAdapters.MeTableAdapter MeAdapter;
+        private MainDataSetTableAdapters.UsersTableAdapter UsersAdapter;
     }
 }
