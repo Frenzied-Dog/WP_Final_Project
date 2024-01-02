@@ -11,24 +11,36 @@ using System.Windows.Forms;
 
 namespace Final_Project {
     public partial class ChatChunk : UserControl {
-        MainDataSet.ChatRow act;
+        MainDataSet.ChatRow chat;
 
         public ChatChunk() {
             InitializeComponent();
         }
 
-        public ChatChunk(MainDataSet db, MainDataSet.ChatRow act) {
+        //public ChatChunk(MainDataSet db, int actID) {
+        //    InitializeComponent();
+        //    this.db = db;
+        //    chat = db.Chat[actID];
+        //    GraphicsPath gp = new GraphicsPath();
+        //    gp.AddEllipse(Avatar.ClientRectangle);
+        //    Avatar.Region = new Region(gp);
+        //    Avatar.Image = Image.FromStream(new MemoryStream(db.Users.FindByID(chat.SenderID).Pic));
+
+        //    NameLabel.Text = db.Users.FindByID(chat.SenderID).NickName;
+        //    TextsLabel.Text = chat.Content;
+        //    TimeLabel.Text = chat.Time.ToString("f");
+        //}
+
+        public ChatChunk(MainDataSet.ChatRow chat) {
             InitializeComponent();
-            this.db = db;
-            this.act = act;
+
             GraphicsPath gp = new GraphicsPath();
             gp.AddEllipse(Avatar.ClientRectangle);
             Avatar.Region = new Region(gp);
-            Avatar.Image = Image.FromStream(new MemoryStream(db.Users.FindByID(act.SenderID).Pic));
-
-            NameLabel.Text = db.Users.FindByID(act.SenderID).NickName;
-            TextsLabel.Text = act.Content;
-            TimeLabel.Text = act.Time.ToString("f");
+            Avatar.Image = Image.FromStream(new MemoryStream(chat.GetParentRow("FK_Chat_ToUser").Field<byte[]>("Pic")));
+            NameLabel.Text = chat.GetParentRow("FK_Chat_ToUser").Field<string>("NickName");
+            TextsLabel.Text = chat.Content;
+            TimeLabel.Text = chat.Time.ToString("f");
         }
     }
 }

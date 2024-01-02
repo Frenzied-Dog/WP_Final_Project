@@ -285,6 +285,12 @@
     <Compile Include="NotificationForm.Designer.cs">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NotifyChunk.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotifyChunk.Designer.cs">
+      <DependentUpon>NotifyChunk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ChatChunk.resx">
@@ -319,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NotificationForm.resx">
       <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifyChunk.resx">
+      <DependentUpon>NotifyChunk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -381,6 +390,16 @@
     <None Include="Resources\DiscussTitle.png" />
     <None Include="Resources\ChunkBg.png" />
     <None Include="Resources\CuteDog_2.png" />
+    <None Include="Resources\NotifyBg.png" />
+    <None Include="Resources\好康通知.png" />
+    <None Include="Resources\取消通知.png" />
+    <None Include="Resources\活動提醒.png" />
+    <None Include="Resources\我知道了Btn.png" />
+    <None Include="Resources\我知道了Btn_2.png" />
+    <None Include="Resources\查看更多Btn.png" />
+    <None Include="Resources\查看更多Btn_2.png" />
+    <None Include="Resources\CuteDog_3.png" />
+    <None Include="Resources\NotifyTitle.png" />
     <Content Include="Test_DB.mdf" />
     <Content Include="Test_DB_log.ldf">
       <DependentUpon>Test_DB.mdf</DependentUpon>

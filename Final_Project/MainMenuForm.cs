@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Final_Project {
+    public enum NotifyType { NEW_EVENT, EVENT_CANCELED, EVENT_SOON };
+
     public partial class MainMenuForm : Form {
         //MainDataSet db;
         MyProfileForm profileForm;
@@ -39,6 +41,8 @@ namespace Final_Project {
             foreach (var label in eventLabels) {
                 label.Text = "";
             }
+            UsersAdapter.Fill(db.Users);
+            UA_Adapter.Fill(db.User_Activity);
 
             ReloadEvent();
         }
@@ -46,9 +50,8 @@ namespace Final_Project {
         void ReloadEvent() {
             string filter = "Deleted = 0";
             ActivityAdapter.Fill(db.Activities);
-            if (BudgetComboBox.SelectedIndex > 0 && TimeComboBox.SelectedIndex > 0) {
-                filter += $" AND Budget = {BudgetComboBox.SelectedIndex} AND PreferTime = {TimeComboBox.SelectedIndex}";
-            } else if (BudgetComboBox.SelectedIndex > 0) {
+
+            if (BudgetComboBox.SelectedIndex > 0) {
                 filter += $" AND Budget = {BudgetComboBox.SelectedIndex}";
             } else if (TimeComboBox.SelectedIndex > 0) {
                 filter += $" AND PreferTime = {TimeComboBox.SelectedIndex}";
@@ -78,13 +81,9 @@ namespace Final_Project {
             AddressLabel.Text = act.Field<string>("Address");
             IntroLabel.Text = act.Field<string>("Intro");
 
-            UA_Adapter.FillByAct(db.User_Activity, act.Field<int>("ID"));
-            CountLabel.Text = db.User_Activity.Count.ToString();
+            var tmp = act.GetChildRows("FK_UA_ToActivity");
+            CountLabel.Text = tmp.Length.ToString();
             IndexLabel.Text = $"{ActIndex + 1}/{Acts.Length}";
-
-            //UAA_Adapter.Fill(db.User_Activity_A, act.Field<int>("ID"));
-            //CountLabel.Text = db.User_Activity_A.Count.ToString();
-            //IndexLabel.Text = $"{ActIndex + 1}/{Acts.Length}";
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -202,16 +201,23 @@ namespace Final_Project {
                 return;
             }
 
-            UA_Adapter.Insert(UID, actID);
-            UA_Adapter.FillByAct(db.User_Activity, actID);
-            //db.User_Activity_A.AddUser_Activity_ARow(db.Users.FindByID(db.Me[0].ID), db.Activities.FindByID(Acts[ActIndex].Field<int>("ID")));
-            //UAA_Adapter.Update(db.User_Activity_A);
+            var tmp = db.User_Activity.AddUser_ActivityRow(db.Users.FindByID(UID), db.Activities.FindByID(actID));
+            UA_Adapter.Update(tmp);
+            //UA_Adapter.Fill(db.User_Activity);
             MessageBox.Show("報名成功!\n可至上方 My Event 處查看活動", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadEvent();
         }
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e) {
             ReloadEvent();
+        }
+
+        private void Tmr_Tick(object sender, EventArgs e) {
+            UsersAdapter.Fill(db.Users);
+            UA_Adapter.Fill(db.User_Activity);
+            ActivityAdapter.Fill(db.Activities);
+
+
         }
     }
 }

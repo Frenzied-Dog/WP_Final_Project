@@ -57,7 +57,8 @@ namespace Final_Project {
         }
 
         void AddChunk(int chatIndex) {
-            chunks[chunkCount] = new ChatChunk(db, db.Chat[chatIndex]);
+            //chunks[chunkCount] = new ChatChunk(db, chatIndex);
+            chunks[chunkCount] = new ChatChunk(db.Chat[chatIndex]);
             ChatPanel.Controls.Add(chunks[chunkCount]);
             chunks[chunkCount].Location = new Point(130, 110 + chunkCount * 276);
             chunkCount++;

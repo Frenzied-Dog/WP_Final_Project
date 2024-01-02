@@ -61,8 +61,9 @@ namespace Final_Project {
             else if (hr >= 1 && hr < 6) preferTime = 6;
 
             int id = rnd.Next();
-            db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, UID, est, preferTime, intro, BudgetComboBox.SelectedIndex, DateTime.Now, false);
-            ActivityAdapter.Update(db.Activities);
+            ActivityAdapter.Insert(id, ShopTextBox.Text, AddressTextBox.Text, UID, est, preferTime, intro, BudgetComboBox.SelectedIndex, DateTime.Now, false);
+            //db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, UID, est, preferTime, intro, BudgetComboBox.SelectedIndex, DateTime.Now, false);
+            //ActivityAdapter.Update(db.Activities);
 
             User_ActivityAdapter.Insert(UID, id);
 

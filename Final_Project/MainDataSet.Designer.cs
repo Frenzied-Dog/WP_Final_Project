@@ -40,6 +40,8 @@ namespace Final_Project {
         
         private global::System.Data.DataRelation relationFK_UA_ToUser;
         
+        private global::System.Data.DataRelation relationFK_Activity_ToUser;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -278,6 +280,7 @@ namespace Final_Project {
             this.relationFK_Chat_ToUser = this.Relations["FK_Chat_ToUser"];
             this.relationFK_UA_ToActivity = this.Relations["FK_UA_ToActivity"];
             this.relationFK_UA_ToUser = this.Relations["FK_UA_ToUser"];
+            this.relationFK_Activity_ToUser = this.Relations["FK_Activity_ToUser"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -312,6 +315,10 @@ namespace Final_Project {
                         this.tableUsers.IDColumn}, new global::System.Data.DataColumn[] {
                         this.tableUser_Activity.UserIDColumn}, false);
             this.Relations.Add(this.relationFK_UA_ToUser);
+            this.relationFK_Activity_ToUser = new global::System.Data.DataRelation("FK_Activity_ToUser", new global::System.Data.DataColumn[] {
+                        this.tableUsers.IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableActivities.MainUserIdColumn}, false);
+            this.Relations.Add(this.relationFK_Activity_ToUser);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -962,19 +969,22 @@ namespace Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ActivitiesRow AddActivitiesRow(int ID, string Place, string Address, string MainUserId, System.DateTime EstimateTime, int PreferTime, string Intro, int Budget, System.DateTime Stamp, bool Deleted) {
+            public ActivitiesRow AddActivitiesRow(int ID, string Place, string Address, UsersRow parentUsersRowByFK_Activity_ToUser, System.DateTime EstimateTime, int PreferTime, string Intro, int Budget, System.DateTime Stamp, bool Deleted) {
                 ActivitiesRow rowActivitiesRow = ((ActivitiesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         Place,
                         Address,
-                        MainUserId,
+                        null,
                         EstimateTime,
                         PreferTime,
                         Intro,
                         Budget,
                         Stamp,
                         Deleted};
+                if ((parentUsersRowByFK_Activity_ToUser != null)) {
+                    columnValuesArray[3] = parentUsersRowByFK_Activity_ToUser[0];
+                }
                 rowActivitiesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowActivitiesRow);
                 return rowActivitiesRow;
@@ -1954,6 +1964,17 @@ namespace Final_Project {
                     return ((User_ActivityRow[])(base.GetChildRows(this.Table.ChildRelations["FK_UA_ToUser"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ActivitiesRow[] GetActivitiesRows() {
+                if ((this.Table.ChildRelations["FK_Activity_ToUser"] == null)) {
+                    return new ActivitiesRow[0];
+                }
+                else {
+                    return ((ActivitiesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Activity_ToUser"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2082,6 +2103,17 @@ namespace Final_Project {
                 }
                 set {
                     this[this.tableActivities.DeletedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public UsersRow UsersRow {
+                get {
+                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK_Activity_ToUser"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Activity_ToUser"]);
                 }
             }
             

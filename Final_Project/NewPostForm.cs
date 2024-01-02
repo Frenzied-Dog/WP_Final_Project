@@ -27,9 +27,10 @@ namespace Final_Project {
 			}
 
 			if (MessageBox.Show("確定要發佈貼文嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) {
-				ChatAdapter.Insert(activityID, UID, DateTime.Now, PostTextBox.Text);
+				var tmp = db.Chat.AddChatRow(db.Activities.FindByID(activityID), db.Users.FindByID(UID), DateTime.Now, PostTextBox.Text);
+				ChatAdapter.Update(tmp);
 				//db.Chat.AddChatRow(activityID, (string)db.Me.Rows[0]["ID"], DateTime.Now, PostTextBox.Text);
-				ChatAdapter.Fill(db.Chat, activityID);
+				//ChatAdapter.Fill(db.Chat, activityID);
                 DialogResult = DialogResult.OK;
 				Close();
 			}

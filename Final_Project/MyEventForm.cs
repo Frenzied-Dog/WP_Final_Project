@@ -13,12 +13,14 @@ namespace Final_Project {
         int ActIndex = 0;
         string UID = "";
         Label[] eventLabels = new Label[6];
+        List<DataRow> Acts;
         //List<DataRow> acts = new List<DataRow>();
 
         public MyEventForm(MainDataSet db, string UID) {
             InitializeComponent();
             this.db = db;
             this.UID = UID;
+            Acts = new List<DataRow>();
 
             eventLabels = new Label[6] { DateLabel, TimeLabel, ShopLabel, AddressLabel, CountLabel, IntroLabel };
             foreach (var label in eventLabels) {
@@ -27,13 +29,16 @@ namespace Final_Project {
         }
 
         void ReloadEvent() {
-            //acts.Clear();
-            ActivityAdapter.FillByUID(db.Activities, UID, false);
-            //UA_Adapter.FillByUser(db.User_Activity, UID, false);
+            Acts.Clear();
+            //ActivityAdapter.FillByUID(db.Activities , UID, false);
 
+            foreach (var ua in db.User_Activity.Select($"UserID = '{UID}'")) {
+                var tmp = db.Activities.Select($"ID = {ua.Field<int>("ActivityID")} AND Deleted = False");
+                if (tmp.Length > 0) Acts.Add(tmp[0]);
+                //Acts.Add(ua.GetParentRow("FK_UA_ToActivity"));
+            }
 
-            if (db.Activities.Count == 0) {
-            //if (acts.Count == 0) {
+            if (Acts.Count == 0) {
                 DateLabel.Text = "------";
                 TimeLabel.Text = "------";
                 ShopLabel.Text = "------";
@@ -48,8 +53,7 @@ namespace Final_Project {
         }
 
         void LoadEvent() {
-            var act = db.Activities[ActIndex];
-            //var act = acts[ActIndex];
+            var act = Acts[ActIndex];
 
             DateLabel.Text = act.Field<DateTime>("EstimateTime").ToString("d");
             TimeLabel.Text = act.Field<DateTime>("EstimateTime").ToString("t");
@@ -57,9 +61,9 @@ namespace Final_Project {
             AddressLabel.Text = act.Field<string>("Address");
             IntroLabel.Text = act.Field<string>("Intro");
 
-            UA_Adapter.FillByAct(db.User_Activity, act.Field<int>("ID"));
-            CountLabel.Text = db.User_Activity.Count.ToString();
-            IndexLabel.Text = $"{ActIndex + 1}/{db.Activities.Count}";
+            var tmp = act.GetChildRows("FK_UA_ToActivity");
+            CountLabel.Text = tmp.Length.ToString();
+            IndexLabel.Text = $"{ActIndex + 1}/{Acts.Count}";
         }
 
         private void PicBox_MouseEnter(object sender, EventArgs e) {
@@ -103,19 +107,17 @@ namespace Final_Project {
         }
 
         private void ArrowPicBox_Click(object sender, EventArgs e) {
-            if (db.Activities.Count == 0) return;
+            if (Acts.Count == 0) return;
 
             PictureBox picBox = (PictureBox)sender;
             string n = picBox.Name.Substring(0, picBox.Name.Length - 6);
-            //if (n == "Left" && ActIndex > 0) ActIndex--;
-            //else if (n == "Right" && ActIndex < db.User_Activity_U.Count - 1) ActIndex++;
-            //else return;
+
             if (n == "Left") {
                 ActIndex--;
-                if (ActIndex < 0) ActIndex = db.Activities.Count - 1;
+                if (ActIndex < 0) ActIndex = Acts.Count - 1;
             } else if (n == "Right") {
                 ActIndex++;
-                if (ActIndex >= db.Activities.Count) ActIndex = 0;
+                if (ActIndex >= Acts.Count) ActIndex = 0;
             } else return;
             LoadEvent();
         }
@@ -123,7 +125,7 @@ namespace Final_Project {
         private void PicBox_Click(object sender, EventArgs e) {
             PictureBox picBox = (PictureBox)sender;
             string n = picBox.Name.Substring(0, picBox.Name.Length - 6);
-            var act = db.Activities[ActIndex];
+            var act = db.Activities.FindByID(Acts[ActIndex].Field<int>("ID"));
 
             if (n == "Discuss") {
                 new DiscussionForm(db, act.ID, UID).ShowDialog();
@@ -133,24 +135,20 @@ namespace Final_Project {
                         act.Deleted = true;
                         ActivityAdapter.Update(act);
 
-
-                        var tmp = UA_Adapter.GetDataByUser(UID, true).Select($"ActivityID = {act.ID}")[0];
+                        var tmp = db.User_Activity.Select($"UserID = '{UID}' AND ActivityID = {act.ID}")[0];
                         tmp.Delete();
                         UA_Adapter.Update(tmp);
-                        //foreach(var uv in db.User_Activity_A) uv.Delete();
-                        //UAA_Adapter.Update(db.User_Activity_A);
-                        //db.User_Activity_U.Select($"UserID = '{db.Me[0].ID}' AND ActivityID = {acts[ActIndex].Field<int>("ID")}")[0].Delete();
-                        //UAU_Adapter.Update(db.User_Activity_U);
-                        //acts.RemoveAt(ActIndex);
+
                         MessageBox.Show("活動已取消", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         if (ActIndex > 0) ActIndex--;
                         ReloadEvent();
                     }
                 } else if (MessageBox.Show("確定要取消報名嗎?", "取消報名", MessageBoxButtons.YesNo) == DialogResult.Yes) {
-                    var tmp = UA_Adapter.GetDataByUser(UID, false).Select($"ActivityID = {act.ID}")[0];
+                    var tmp = db.User_Activity.Select($"UserID = '{UID}' AND ActivityID = {act.ID}")[0];
                     tmp.Delete();
                     UA_Adapter.Update(tmp);
+
                     MessageBox.Show("已取消報名", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     if (ActIndex > 0) ActIndex--;
