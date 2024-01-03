@@ -31,7 +31,6 @@
             this.PreferTimeComboBox = new System.Windows.Forms.ComboBox();
             this.AboutMeTextBox = new System.Windows.Forms.TextBox();
             this.CommitPicBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.db = new Final_Project.MainDataSet();
             this.UsersAdapter = new Final_Project.MainDataSetTableAdapters.UsersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.CommitPicBox)).BeginInit();
@@ -134,15 +133,6 @@
             this.CommitPicBox.MouseEnter += new System.EventHandler(this.CommitPicBox_MouseEnter);
             this.CommitPicBox.MouseLeave += new System.EventHandler(this.CommitPicBox_MouseLeave);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 12);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Dev Branch";
-            // 
             // db
             // 
             this.db.DataSetName = "MainDataSet";
@@ -159,7 +149,6 @@
             this.BackgroundImage = global::Final_Project.Properties.Resources.初次登入填寫資料;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 711);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.CommitPicBox);
             this.Controls.Add(this.PreferTimeComboBox);
             this.Controls.Add(this.BudgetComboBox);
@@ -192,7 +181,6 @@
         private System.Windows.Forms.ComboBox PreferTimeComboBox;
         private System.Windows.Forms.TextBox AboutMeTextBox;
         private System.Windows.Forms.PictureBox CommitPicBox;
-        private System.Windows.Forms.Label label1;
         private MainDataSet db;
         private MainDataSetTableAdapters.UsersTableAdapter UsersAdapter;
     }

@@ -38,7 +38,6 @@
             this.ID_Label = new System.Windows.Forms.Label();
             this.NickNameLabel = new System.Windows.Forms.Label();
             this.ProfilePhoto = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.db = new Final_Project.MainDataSet();
             this.ReUploadPicBox = new System.Windows.Forms.PictureBox();
             this.NickTextBox = new System.Windows.Forms.TextBox();
@@ -172,15 +171,6 @@
             this.ProfilePhoto.TabIndex = 15;
             this.ProfilePhoto.TabStop = false;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 12);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Dev Branch";
-            // 
             // db
             // 
             this.db.DataSetName = "MainDataSet";
@@ -290,7 +280,6 @@
             this.Controls.Add(this.EditPicBox1);
             this.Controls.Add(this.NickTextBox);
             this.Controls.Add(this.ReUploadPicBox);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.ProfilePhoto);
             this.Controls.Add(this.NickNameLabel);
             this.Controls.Add(this.ID_Label);
@@ -333,7 +322,6 @@
         private System.Windows.Forms.Label ID_Label;
         private System.Windows.Forms.Label NickNameLabel;
         private System.Windows.Forms.PictureBox ProfilePhoto;
-        private System.Windows.Forms.Label label3;
         private MainDataSet db;
         private System.Windows.Forms.PictureBox ReUploadPicBox;
         private System.Windows.Forms.TextBox NickTextBox;

@@ -2614,7 +2614,7 @@ SELECT ID, Name, NickName, Major, Budget, PreferTime, Pic, AboutMe, Gender FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Final_Project.Properties.Settings.Default.TestDB_String;
+            this._connection.ConnectionString = global::Final_Project.Properties.Settings.Default.MainDB_String;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3162,7 +3162,7 @@ SELECT ID, Place, Address, MainUserId, EstimateTime, PreferTime, Intro, Budget, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Final_Project.Properties.Settings.Default.TestDB_String;
+            this._connection.ConnectionString = global::Final_Project.Properties.Settings.Default.MainDB_String;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3673,7 +3673,7 @@ WHERE           (User_Activity.UserID = @UID) AND (Activities.Deleted = @del)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Final_Project.Properties.Settings.Default.TestDB_String;
+            this._connection.ConnectionString = global::Final_Project.Properties.Settings.Default.MainDB_String;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3923,7 +3923,7 @@ WHERE           (User_Activity.UserID = @UID) AND (Activities.Deleted = @del)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Final_Project.Properties.Settings.Default.TestDB_String;
+            this._connection.ConnectionString = global::Final_Project.Properties.Settings.Default.MainDB_String;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

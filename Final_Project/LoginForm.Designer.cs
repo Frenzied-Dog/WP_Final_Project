@@ -26,16 +26,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.TextBox_ID = new System.Windows.Forms.TextBox();
             this.LoginPicBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.DevLoginBtn = new System.Windows.Forms.Button();
+            this.DeleteUserBtn = new System.Windows.Forms.Button();
             this.db = new Final_Project.MainDataSet();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.ResetAvatarBtn = new System.Windows.Forms.Button();
             this.UsersAdapter = new Final_Project.MainDataSetTableAdapters.UsersTableAdapter();
+            this.DevNewUserBtn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.DevLoginAsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LoginPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +49,7 @@
             this.TextBox_ID.Size = new System.Drawing.Size(267, 33);
             this.TextBox_ID.TabIndex = 0;
             this.TextBox_ID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBox_ID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_ID_KeyPress);
             // 
             // LoginPicBox
             // 
@@ -66,90 +66,86 @@
             this.LoginPicBox.MouseEnter += new System.EventHandler(this.LoginPicBox_MouseEnter);
             this.LoginPicBox.MouseLeave += new System.EventHandler(this.LoginPicBox_MouseLeave);
             // 
-            // label1
+            // DevLoginBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 12);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Dev Branch";
+            this.DevLoginBtn.Location = new System.Drawing.Point(790, 283);
+            this.DevLoginBtn.Name = "DevLoginBtn";
+            this.DevLoginBtn.Size = new System.Drawing.Size(75, 23);
+            this.DevLoginBtn.TabIndex = 3;
+            this.DevLoginBtn.Text = "MainMenu";
+            this.DevLoginBtn.UseVisualStyleBackColor = true;
+            this.DevLoginBtn.Click += new System.EventHandler(this.DevLoginBtn_Click);
             // 
-            // button1
+            // DeleteUserBtn
             // 
-            this.button1.Location = new System.Drawing.Point(968, 122);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "MainMenu";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(968, 188);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "NewUser";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(968, 229);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 4;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(499, 283);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "DeleteUser";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.DeleteUserBtn.Location = new System.Drawing.Point(580, 283);
+            this.DeleteUserBtn.Name = "DeleteUserBtn";
+            this.DeleteUserBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteUserBtn.TabIndex = 5;
+            this.DeleteUserBtn.Text = "DeleteUser";
+            this.DeleteUserBtn.UseVisualStyleBackColor = true;
+            this.DeleteUserBtn.Visible = false;
+            this.DeleteUserBtn.Click += new System.EventHandler(this.DeleteUserBtn_Click);
             // 
             // db
             // 
             this.db.DataSetName = "MainDataSet";
             this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label2
+            // ResetAvatarBtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(966, 214);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 12);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Name";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(968, 344);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Map";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(968, 405);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 9;
-            this.button6.Text = "Reset Avatar";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.ResetAvatarBtn.Location = new System.Drawing.Point(790, 322);
+            this.ResetAvatarBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.ResetAvatarBtn.Name = "ResetAvatarBtn";
+            this.ResetAvatarBtn.Size = new System.Drawing.Size(75, 23);
+            this.ResetAvatarBtn.TabIndex = 9;
+            this.ResetAvatarBtn.Text = "Reset Avatar";
+            this.ResetAvatarBtn.UseVisualStyleBackColor = true;
+            this.ResetAvatarBtn.Visible = false;
+            this.ResetAvatarBtn.Click += new System.EventHandler(this.ResetAvatarBtn_Click);
             // 
             // UsersAdapter
             // 
             this.UsersAdapter.ClearBeforeFill = true;
+            // 
+            // DevNewUserBtn
+            // 
+            this.DevNewUserBtn.Location = new System.Drawing.Point(790, 363);
+            this.DevNewUserBtn.Name = "DevNewUserBtn";
+            this.DevNewUserBtn.Size = new System.Drawing.Size(75, 23);
+            this.DevNewUserBtn.TabIndex = 3;
+            this.DevNewUserBtn.Text = "NewUser";
+            this.DevNewUserBtn.UseVisualStyleBackColor = true;
+            this.DevNewUserBtn.Visible = false;
+            this.DevNewUserBtn.Click += new System.EventHandler(this.DevNewUserBtn_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(790, 404);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(788, 389);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 12);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Name";
+            this.label2.Visible = false;
+            // 
+            // DevLoginAsBtn
+            // 
+            this.DevLoginAsBtn.Location = new System.Drawing.Point(499, 283);
+            this.DevLoginAsBtn.Name = "DevLoginAsBtn";
+            this.DevLoginAsBtn.Size = new System.Drawing.Size(75, 23);
+            this.DevLoginAsBtn.TabIndex = 10;
+            this.DevLoginAsBtn.Text = "Login As";
+            this.DevLoginAsBtn.UseVisualStyleBackColor = true;
+            this.DevLoginAsBtn.Click += new System.EventHandler(this.DevLoginAsBtn_Click);
             // 
             // LoginForm
             // 
@@ -158,14 +154,13 @@
             this.BackgroundImage = global::Final_Project.Properties.Resources.BackGround_3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1264, 711);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.DevLoginAsBtn);
+            this.Controls.Add(this.ResetAvatarBtn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.DeleteUserBtn);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.DevNewUserBtn);
+            this.Controls.Add(this.DevLoginBtn);
             this.Controls.Add(this.LoginPicBox);
             this.Controls.Add(this.TextBox_ID);
             this.DoubleBuffered = true;
@@ -188,16 +183,15 @@
 
         private System.Windows.Forms.TextBox TextBox_ID;
         private System.Windows.Forms.PictureBox LoginPicBox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button DevLoginBtn;
+        private System.Windows.Forms.Button DeleteUserBtn;
         private MainDataSet db;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button ResetAvatarBtn;
         private MainDataSetTableAdapters.UsersTableAdapter UsersAdapter;
+        private System.Windows.Forms.Button DevNewUserBtn;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button DevLoginAsBtn;
     }
 }
 

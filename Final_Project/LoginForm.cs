@@ -104,17 +104,17 @@ namespace Final_Project {
             if (Application.OpenForms.Count == 0) Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void DevLoginBtn_Click(object sender, EventArgs e) {
             new MainMenuForm(db, DevID).Show();
             Close();
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+        private void DevNewUserBtn_Click(object sender, EventArgs e) {
             new NewUserForm(db, TextBox_ID.Text, textBox1.Text).Show();
             Close();
         }
 
-        private void button3_Click(object sender, EventArgs e) {
+        private void DeleteUserBtn_Click(object sender, EventArgs e) {
             var user = UsersAdapter.GetDataByID(ID)[0];
 
             if (user == null) MessageBox.Show("查無此人", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -125,13 +125,8 @@ namespace Final_Project {
             }
         }
 
-        private void button5_Click(object sender, EventArgs e) {
-            new MapForm().Show();
-        }
-
-        private void button6_Click(object sender, EventArgs e) {
+        private void ResetAvatarBtn_Click(object sender, EventArgs e) {
             // hot fix avatar
-
             using (MemoryStream mStream = new MemoryStream()) {
                 Bitmap img = Properties.Resources.CuteDog;
                 img.Save(mStream, ImageFormat.Bmp);
@@ -144,6 +139,25 @@ namespace Final_Project {
                 }
                 UserAdapter.Update(db.Users);
             };
+        }
+
+        private void DevLoginAsBtn_Click(object sender, EventArgs e) {
+            ID = TextBox_ID.Text;
+            var me = UsersAdapter.GetDataByID(ID)[0];
+
+            if (me == null) {
+                MessageBox.Show("查無此用戶!");
+            } else {
+                MessageBox.Show($"歡迎回來，{me.Name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new MainMenuForm(db, ID).Show();
+            }
+            Close();
+        }
+
+        private void TextBox_ID_KeyPress(object sender, KeyPressEventArgs e) {
+            if (e.KeyChar == (char)Keys.Enter) {
+                LoginPicBox_Click(sender, e);
+            }
         }
     }
 }
