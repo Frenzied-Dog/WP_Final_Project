@@ -13,7 +13,11 @@ namespace Final_Project {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            AppDomain.CurrentDomain.SetData("DataDirectory", $"{Environment.CurrentDirectory.Substring(0,Environment.CurrentDirectory.Length-9)}");
+
+            MainDataSet db = new MainDataSet();
+            (new LoginForm(db)).Show();
+            Application.Run();
         }
     }
 }

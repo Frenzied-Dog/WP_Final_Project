@@ -9,7 +9,6 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Final_Project.Final_ProjectDataSetTableAdapters;
 using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
 using Newtonsoft.Json;
@@ -19,6 +18,8 @@ namespace Final_Project {
     public partial class Form1 : Form { 
         public static IPublicClientApplication PublicClientApp;
         static string graphAPI_Me = "https://graph.microsoft.com/v1.0/me";
+        Form3 f3 = new Form3();
+        Form2 f2 = new Form2();
 
 
         public Form1() {
@@ -28,11 +29,14 @@ namespace Final_Project {
                 .WithRedirectUri("https://login.microsoftonline.com/common/oauth2/nativeclient")
                 .WithAuthority(AzureCloudInstance.AzurePublic, "c2e7753f-aa05-4abc-8c02-293ad122ca19")
                 .Build();
+
+            var t = Adapter.GetDataByID(1)[0];
+
+            t.age = 100;
+            Adapter.Update(t);
         }
 
         private void Form1_Load(object sender, EventArgs e) {
-            // TODO: 這行程式碼會將資料載入 'FPds.Users' 資料表。您可以視需要進行移動或移除。
-            this.usersTableAdapter.Fill(this.FPds.Users);
 
         }
 
@@ -84,16 +88,19 @@ namespace Final_Project {
         }
 
         private void button3_Click(object sender, EventArgs e) {
-            Form2 f2 = new Form2();
             f2.ShowDialog();
 
             label2.Text = f2.ShopName + "\r\n" + f2.Address;
         }
 
         private void button4_Click(object sender, EventArgs e) {
-            FPds.Users.Rows.Add("E2411","Hank");
-            // Maybe should use TRY
-            usersTableAdapter.Update(FPds.Users);
+            //FPds.Users.Rows.Add("E2411","Hank");
+            //// Maybe should use TRY
+            ////usersTableAdapter.Update(FPds.Users);
+        }
+
+        private void button5_Click(object sender, EventArgs e) {
+            f3.ShowDialog();
         }
     }
 }

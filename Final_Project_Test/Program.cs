@@ -13,6 +13,8 @@ namespace Final_Project {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            AppDomain.CurrentDomain.SetData("DataDirectory", $"{Environment.CurrentDirectory.Substring(0, Environment.CurrentDirectory.Length - 9)}");
             Application.Run(new Form1());
         }
     }

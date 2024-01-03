@@ -34,5 +34,16 @@ namespace Final_Project.Properties {
                 return ((string)(this["Final_ProjectConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\testing.mdf;I" +
+            "ntegrated Security=True")]
+        public string testingConnectionString {
+            get {
+                return ((string)(this["testingConnectionString"]));
+            }
+        }
     }
 }

@@ -9,7 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
+using Final_Project.MainDataSetTableAdapters;
+using System.Drawing.Imaging;
 
 namespace Final_Project {
     public partial class LoginForm : Form {
@@ -17,13 +21,16 @@ namespace Final_Project {
         static string graphAPI_Me = "https://graph.microsoft.com/v1.0/me";
         string name = "";
         string ID = "";
+        string DevID = "E24116128";
 
-        public LoginForm() {
+        public LoginForm(MainDataSet db) {
             InitializeComponent();
             PublicClientApp = PublicClientApplicationBuilder.Create("9cbbf580-d751-42ec-97d0-01d35df3fa7c")
                  .WithRedirectUri("https://login.microsoftonline.com/common/oauth2/nativeclient")
                  .WithAuthority(AzureCloudInstance.AzurePublic, "c2e7753f-aa05-4abc-8c02-293ad122ca19")
                  .Build();
+
+            this.db = db;
         }
 
         private void LoginPicBox_MouseEnter(object sender, EventArgs e) {
@@ -50,7 +57,7 @@ namespace Final_Project {
                 authResult = await PublicClientApp.AcquireTokenSilent(scopes, accounts.FirstOrDefault())
                     .ExecuteAsync();
 
-            } catch (MsalUiRequiredException ex) {
+            } catch (MsalUiRequiredException) {
                 try {
                     authResult = await PublicClientApp.AcquireTokenInteractive(scopes)
                         .WithPrompt(Prompt.SelectAccount)
@@ -76,12 +83,67 @@ namespace Final_Project {
                 var resultDic = JsonConvert.DeserializeObject<Dictionary<string, object>>(content);
                 name = resultDic["displayName"].ToString().Split(' ').First();
             } catch (Exception ex) {
+                ex.Message.ToString();
                 MessageBox.Show(ex.ToString());
                 return;
             }
 
+            var me = UsersAdapter.GetDataByID(ID)[0];
 
+            if (me == null) {
+                new NewUserForm(db, TextBox_ID.Text, name).Show();
+            } else {
+                MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new MainMenuForm(db, ID).Show();
+            }
 
+            Close();
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
+            if (Application.OpenForms.Count == 0) Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            new MainMenuForm(db, DevID).Show();
+            Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            new NewUserForm(db, TextBox_ID.Text, textBox1.Text).Show();
+            Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            var user = UsersAdapter.GetDataByID(ID)[0];
+
+            if (user == null) MessageBox.Show("查無此人", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else {
+                string name = user.Name;
+                UsersAdapter.Delete(ID);
+                MessageBox.Show($"已刪除{name}的資料", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e) {
+            new MapForm().Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e) {
+            // hot fix avatar
+
+            using (MemoryStream mStream = new MemoryStream()) {
+                Bitmap img = Properties.Resources.CuteDog;
+                img.Save(mStream, ImageFormat.Bmp);
+                var defaultAvatar = mStream.ToArray();
+
+                UsersTableAdapter UserAdapter = new UsersTableAdapter();
+                UserAdapter.Fill(db.Users);
+                foreach (var user in db.Users) {
+                    user.Pic = defaultAvatar;
+                }
+                UserAdapter.Update(db.Users);
+            };
         }
     }
 }

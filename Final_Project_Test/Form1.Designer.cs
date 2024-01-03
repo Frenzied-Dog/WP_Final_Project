@@ -32,24 +32,16 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nickNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.majorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.budgetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preferTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.picDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.FPds = new Final_Project.Final_ProjectDataSet();
-            this.usersTableAdapter = new Final_Project.Final_ProjectDataSetTableAdapters.UsersTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.TDB = new Final_Project.TDS();
+            this.Adapter = new Final_Project.TDSTableAdapters.TestTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FPds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TDB)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -110,17 +102,7 @@
             this.label2.Size = new System.Drawing.Size(33, 12);
             this.label2.TabIndex = 8;
             this.label2.Text = "label2";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(695, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(237, 131);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button4
             // 
@@ -134,84 +116,49 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.nickNameDataGridViewTextBoxColumn,
-            this.majorDataGridViewTextBoxColumn,
-            this.budgetDataGridViewTextBoxColumn,
-            this.preferTimeDataGridViewTextBoxColumn,
-            this.picDataGridViewImageColumn});
-            this.dataGridView1.DataSource = this.usersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 290);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 54);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(766, 150);
             this.dataGridView1.TabIndex = 11;
             // 
-            // idDataGridViewTextBoxColumn
+            // pictureBox1
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(794, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 144);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
-            // nameDataGridViewTextBoxColumn
+            // button5
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.button5.Location = new System.Drawing.Point(833, 566);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(96, 26);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "Main Menu";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // nickNameDataGridViewTextBoxColumn
+            // TDB
             // 
-            this.nickNameDataGridViewTextBoxColumn.DataPropertyName = "NickName";
-            this.nickNameDataGridViewTextBoxColumn.HeaderText = "NickName";
-            this.nickNameDataGridViewTextBoxColumn.Name = "nickNameDataGridViewTextBoxColumn";
+            this.TDB.DataSetName = "TDS";
+            this.TDB.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // majorDataGridViewTextBoxColumn
+            // Adapter
             // 
-            this.majorDataGridViewTextBoxColumn.DataPropertyName = "Major";
-            this.majorDataGridViewTextBoxColumn.HeaderText = "Major";
-            this.majorDataGridViewTextBoxColumn.Name = "majorDataGridViewTextBoxColumn";
-            // 
-            // budgetDataGridViewTextBoxColumn
-            // 
-            this.budgetDataGridViewTextBoxColumn.DataPropertyName = "Budget";
-            this.budgetDataGridViewTextBoxColumn.HeaderText = "Budget";
-            this.budgetDataGridViewTextBoxColumn.Name = "budgetDataGridViewTextBoxColumn";
-            // 
-            // preferTimeDataGridViewTextBoxColumn
-            // 
-            this.preferTimeDataGridViewTextBoxColumn.DataPropertyName = "PreferTime";
-            this.preferTimeDataGridViewTextBoxColumn.HeaderText = "PreferTime";
-            this.preferTimeDataGridViewTextBoxColumn.Name = "preferTimeDataGridViewTextBoxColumn";
-            // 
-            // picDataGridViewImageColumn
-            // 
-            this.picDataGridViewImageColumn.DataPropertyName = "Pic";
-            this.picDataGridViewImageColumn.HeaderText = "Pic";
-            this.picDataGridViewImageColumn.Name = "picDataGridViewImageColumn";
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.FPds;
-            // 
-            // FPds
-            // 
-            this.FPds.DataSetName = "Final_ProjectDataSet";
-            this.FPds.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usersTableAdapter
-            // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            this.Adapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 681);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.pictureBox1);
@@ -221,13 +168,13 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FPds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TDB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,20 +188,13 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button4;
-        private Final_ProjectDataSet FPds;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource usersBindingSource;
-        private Final_ProjectDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nickNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn majorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn budgetDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preferTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn picDataGridViewImageColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button5;
+        private TDS TDB;
+        private TDSTableAdapters.TestTableAdapter Adapter;
     }
 }
 
