@@ -47,17 +47,17 @@
             // 
             this.MainPanel.AutoScroll = true;
             this.MainPanel.Controls.Add(this.TitlePicBox);
-            this.MainPanel.Location = new System.Drawing.Point(0, 96);
+            this.MainPanel.Location = new System.Drawing.Point(0, 118);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(0);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(1265, 581);
+            this.MainPanel.Size = new System.Drawing.Size(1265, 559);
             this.MainPanel.TabIndex = 9;
             // 
             // TitlePicBox
             // 
             this.TitlePicBox.BackColor = System.Drawing.Color.Transparent;
             this.TitlePicBox.Image = global::Final_Project.Properties.Resources.NotifyTitle;
-            this.TitlePicBox.Location = new System.Drawing.Point(79, 27);
+            this.TitlePicBox.Location = new System.Drawing.Point(79, 12);
             this.TitlePicBox.Name = "TitlePicBox";
             this.TitlePicBox.Size = new System.Drawing.Size(303, 55);
             this.TitlePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -68,7 +68,7 @@
             // 
             this.DogPic.BackColor = System.Drawing.Color.Transparent;
             this.DogPic.Image = global::Final_Project.Properties.Resources.CuteDog_3;
-            this.DogPic.Location = new System.Drawing.Point(887, 12);
+            this.DogPic.Location = new System.Drawing.Point(1111, 67);
             this.DogPic.Name = "DogPic";
             this.DogPic.Size = new System.Drawing.Size(138, 138);
             this.DogPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -112,7 +112,6 @@
             this.Name = "NotificationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Notifications";
-            this.Load += new System.EventHandler(this.NotificationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.MainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.TitlePicBox)).EndInit();

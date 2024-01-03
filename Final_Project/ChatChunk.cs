@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Final_Project {
     public partial class ChatChunk : UserControl {
-        MainDataSet.ChatRow chat;
+        //MainDataSet.ChatRow chat;
 
         public ChatChunk() {
             InitializeComponent();

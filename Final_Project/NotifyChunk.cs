@@ -11,17 +11,22 @@ using System.Windows.Forms;
 namespace Final_Project {
 
     public partial class NotifyChunk : UserControl {
+        string UID;
         public NotifyType type;
-        public int act_ID;
+        public int actID;
+        NotificationForm parent;
 
         public NotifyChunk() {
             InitializeComponent();
         }
 
-        public NotifyChunk(NotifyType type, MainDataSet.ActivitiesRow act) {
+        public NotifyChunk(NotificationForm parent, MainDataSet db, string UID, NotifyType type, MainDataSet.ActivitiesRow act) {
             InitializeComponent();
+            this.parent = parent;
+            this.db = db;
+            this.UID = UID;
             this.type = type;
-            act_ID = act.ID;
+            actID = act.ID;
 
             switch (type) {
             case NotifyType.NEW_EVENT:
@@ -39,9 +44,9 @@ namespace Final_Project {
                 break;
             case NotifyType.EVENT_SOON:
                 TitlePicBox.Image = Properties.Resources.活動提醒;
-                ConfirmPicBox.Image = Properties.Resources.我知道了Btn;
+                ConfirmPicBox.Visible = false;
                 MainLabel.Text = $"您曾報名 { act.EstimateTime.ToString("g") } 於 { act.Place } 之活動，" +
-                    $"活動再10分鐘就要開始囉！該從床上爬起來了！";
+                    $"活動再15分鐘就要開始囉！該從床上爬起來了！";
                 break;
             }
         }
@@ -49,11 +54,22 @@ namespace Final_Project {
         private void ConfirmPicBox_Click(object sender, EventArgs e) {
             switch (type) {
             case NotifyType.NEW_EVENT:
+                //parent.RemoveNotify(this);
+                parent.parent.ShowInformation(actID);
+                parent.Close();
+                //Dispose();
                 break;
             case NotifyType.EVENT_CANCELED:
+                db.User_Activity.Select($"UserID = '{UID}' AND ActivityID = {actID}")[0].Delete();
+                UA_Adapter.Update(db.User_Activity);
+                MessageBox.Show("已刪除報名紀錄", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                parent.RemoveNotify(this);
+                Dispose();
                 break;
-            case NotifyType.EVENT_SOON:
-                break;
+            //case NotifyType.EVENT_SOON:
+            //    parent.RemoveNotify(this);
+            //    Dispose();
+            //    break;
             }
         }
 
@@ -65,9 +81,9 @@ namespace Final_Project {
             case NotifyType.EVENT_CANCELED:
                 ConfirmPicBox.Image = Properties.Resources.我知道了Btn_2;
                 break;
-            case NotifyType.EVENT_SOON:
-                ConfirmPicBox.Image = Properties.Resources.我知道了Btn_2;
-                break;
+            //case NotifyType.EVENT_SOON:
+            //    ConfirmPicBox.Image = Properties.Resources.我知道了Btn_2;
+            //    break;
             }
         }
 
@@ -79,9 +95,9 @@ namespace Final_Project {
             case NotifyType.EVENT_CANCELED:
                 ConfirmPicBox.Image = Properties.Resources.我知道了Btn;
                 break;
-            case NotifyType.EVENT_SOON:
-                ConfirmPicBox.Image = Properties.Resources.我知道了Btn;
-                break;
+            //case NotifyType.EVENT_SOON:
+            //    ConfirmPicBox.Image = Properties.Resources.我知道了Btn;
+            //    break;
             }
         }
     }

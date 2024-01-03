@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -11,21 +12,63 @@ using System.Windows.Forms;
 namespace Final_Project {
     public partial class NotificationForm : Form {
         List<NotifyChunk> lists = new List<NotifyChunk>();
+        string UID;
+        public int count = 0;
+        public MainMenuForm parent;
 
-        public NotificationForm(MainDataSet db) {
+        public NotificationForm(MainMenuForm parent, MainDataSet db, string UID) {
             InitializeComponent();
+            this.parent = parent;
             this.db = db;
+            this.UID = UID;
+
+            //AddNotify(NotifyType.NEW_EVENT, db.Activities.FindByID(1996046805));
+            //AddNotify(NotifyType.EVENT_SOON, db.Activities.FindByID(1996046805));
         }
 
-        public void AddNotify(NotifyType type, MainDataSet.ActivitiesRow act) {
-            var tmp = new NotifyChunk(type, act);
-            tmp.Location = new Point(145, 100 + 220 * lists.Count);
+        public void Check() {
+            foreach (var ua in db.User_Activity.Select($"UserID = '{UID}'")) {
+                var tmp = db.Activities.FindByID(ua.Field<int>("ActivityID"));
+                
+                // check deleted events
+                if (tmp.Deleted && !lists.Exists(x => x.type == NotifyType.EVENT_CANCELED && x.actID == tmp.ID)) {
+                    AddNotify(NotifyType.EVENT_CANCELED, tmp);
+                }
+            
+                // check event soon
+                var timeLeft = tmp.EstimateTime.Subtract(DateTime.Now).TotalMinutes;
+                if (!tmp.Deleted && timeLeft > 0 && timeLeft < 15 && !lists.Exists(x => x.type == NotifyType.EVENT_SOON && x.actID == tmp.ID)) {
+                    AddNotify(NotifyType.EVENT_SOON, tmp);
+                }
+            }
+
+            var me = db.Users.FindByID(UID);
+            // check new events
+            foreach (var act in db.Activities.Select($"Deleted = false AND EstimateTime > '{DateTime.Now:yyyy-MM-dd HH:mm:ss}' AND" +
+                                                                     $" PreferTime = {me.PreferTime} AND Budget = {me.Budget} AND MainUserId <> '{UID}'")) {
+                if (!db.User_Activity.Select($"UserID = '{UID}' AND ActivityID = {act.Field<int>("ID")}").Any() &&
+                        !lists.Exists(x => x.type == NotifyType.NEW_EVENT && x.actID == act.Field<int>("ID"))) {
+                    AddNotify(NotifyType.NEW_EVENT, db.Activities.FindByID(act.Field<int>("ID")));
+                }
+            }
+        }
+
+        public void RemoveNotify(NotifyChunk toRemove) {
+            MainPanel.Controls.Remove(toRemove);
+            lists.Remove(toRemove);
+            count--;
+            int i = 0;
+            foreach (var item in lists) {
+                item.Location = new Point(110, 90 + 220 * i++);
+            }
+        }
+
+        void AddNotify(NotifyType type, MainDataSet.ActivitiesRow act) {
+            var tmp = new NotifyChunk(this, db, UID, type, act);
             MainPanel.Controls.Add(tmp);
+            tmp.Location = new Point(110, 90 + 220 * count);
             lists.Add(tmp);
-        }
-
-        private void NotificationForm_Load(object sender, EventArgs e) {
-
+            count++;
         }
     }
 }

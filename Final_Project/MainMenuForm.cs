@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,13 +14,12 @@ namespace Final_Project {
     public enum NotifyType { NEW_EVENT, EVENT_CANCELED, EVENT_SOON };
 
     public partial class MainMenuForm : Form {
-        //MainDataSet db;
         MyProfileForm profileForm;
         MyEventForm eventForm;
-        //CreateEventForm createEventForm;
         NotificationForm notifyForm;
         DataRow[] Acts;
         int ActIndex = 0;
+        int t = 0;
         string UID = "";
         string[] budgets = { "", "50~100", "100~200", "200~300", "300~400", "400以上" };
         string[] times = { "", "早上", "中午", "下午", "晚上", "半夜", "凌晨" };
@@ -29,10 +29,9 @@ namespace Final_Project {
             InitializeComponent();
             this.db = db;
             this.UID = UID;
+
             profileForm = new MyProfileForm(db, UID);
             eventForm = new MyEventForm(db, UID);
-            //createEventForm = new CreateEventForm(db);
-            notifyForm = new NotificationForm(db);
             BudgetComboBox.DataSource = budgets;
             TimeComboBox.DataSource = times;
             BudgetComboBox.SelectedIndex = 0;
@@ -43,13 +42,22 @@ namespace Final_Project {
             }
             UsersAdapter.Fill(db.Users);
             UA_Adapter.Fill(db.User_Activity);
+            ActivityAdapter.Fill(db.Activities);
+            notifyForm = new NotificationForm(this, db, UID);
+
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddEllipse(NotifyLabel.ClientRectangle);
+            NotifyLabel.Region = new Region(gp);
+            gp = new GraphicsPath();
+            gp.AddEllipse(SpotPicBox.ClientRectangle);
+            SpotPicBox.Region = new Region(gp);
 
             ReloadEvent();
+            Tmr_Tick(null, null);
         }
 
         void ReloadEvent() {
-            string filter = "Deleted = 0";
-            ActivityAdapter.Fill(db.Activities);
+            string filter = "Deleted = False";
 
             if (BudgetComboBox.SelectedIndex > 0) {
                 filter += $" AND Budget = {BudgetComboBox.SelectedIndex}";
@@ -90,6 +98,18 @@ namespace Final_Project {
             if (Application.OpenForms.Count == 0) Application.Exit();
         }
 
+        public void ShowInformation(int actID) {
+            BudgetComboBox.SelectedIndex = 0;
+            TimeComboBox.SelectedIndex = 0;
+
+            Acts = db.Activities.Select("Deleted = False");
+            int index = Array.FindIndex(Acts, x => x.Field<int>("ID") == actID);
+            if (index == -1) throw new Exception("找不到");
+            ActIndex = index;
+            LoadEvent();
+            MainPanel.VerticalScroll.Value = MainPanel.VerticalScroll.Maximum;
+        }
+
         private void MenuPicBox_Click(object sender, EventArgs e) {
             PictureBox picBox = (PictureBox)sender;
             switch (picBox.Name.Substring(0, picBox.Name.Length - 6)) {
@@ -106,6 +126,15 @@ namespace Final_Project {
                 break;
             case "Notify":
                 notifyForm.ShowDialog();
+                if (notifyForm.count == 0) {
+                    SpotPicBox.Visible = false;
+                    NotifyLabel.Visible = false;
+                } else {
+                    SpotPicBox.Visible = true;
+                    NotifyLabel.Visible = true;
+                    int c = notifyForm.count;
+                    NotifyLabel.Text = c.ToString();
+                }
                 break;
             default:
                 break;
@@ -203,7 +232,7 @@ namespace Final_Project {
 
             var tmp = db.User_Activity.AddUser_ActivityRow(db.Users.FindByID(UID), db.Activities.FindByID(actID));
             UA_Adapter.Update(tmp);
-            //UA_Adapter.Fill(db.User_Activity);
+
             MessageBox.Show("報名成功!\n可至上方 My Event 處查看活動", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoadEvent();
         }
@@ -213,11 +242,24 @@ namespace Final_Project {
         }
 
         private void Tmr_Tick(object sender, EventArgs e) {
-            UsersAdapter.Fill(db.Users);
+            t++;
+            if (t == 1) {
+                t = 0;
+                UsersAdapter.Fill(db.Users);
+            }
             UA_Adapter.Fill(db.User_Activity);
             ActivityAdapter.Fill(db.Activities);
 
-
+            notifyForm.Check();
+            if (notifyForm.count == 0) {
+                SpotPicBox.Visible = false;
+                NotifyLabel.Visible = false;
+            } else {
+                SpotPicBox.Visible = true;
+                NotifyLabel.Visible = true;
+                int c = notifyForm.count;
+                NotifyLabel.Text = c.ToString();
+            }
         }
     }
 }

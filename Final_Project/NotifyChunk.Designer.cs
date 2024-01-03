@@ -27,8 +27,11 @@
             this.MainLabel = new System.Windows.Forms.Label();
             this.ConfirmPicBox = new System.Windows.Forms.PictureBox();
             this.UsersAdapter = new Final_Project.MainDataSetTableAdapters.UsersTableAdapter();
+            this.UA_Adapter = new Final_Project.MainDataSetTableAdapters.User_ActivityTableAdapter();
+            this.db = new Final_Project.MainDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.TitlePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConfirmPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.SuspendLayout();
             // 
             // TitlePicBox
@@ -70,6 +73,15 @@
             // 
             this.UsersAdapter.ClearBeforeFill = true;
             // 
+            // UA_Adapter
+            // 
+            this.UA_Adapter.ClearBeforeFill = true;
+            // 
+            // db
+            // 
+            this.db.DataSetName = "MainDataSet";
+            this.db.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // NotifyChunk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -85,6 +97,7 @@
             this.Size = new System.Drawing.Size(990, 200);
             ((System.ComponentModel.ISupportInitialize)(this.TitlePicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConfirmPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,5 +109,7 @@
         private System.Windows.Forms.Label MainLabel;
         private System.Windows.Forms.PictureBox ConfirmPicBox;
         private MainDataSetTableAdapters.UsersTableAdapter UsersAdapter;
+        private MainDataSetTableAdapters.User_ActivityTableAdapter UA_Adapter;
+        private MainDataSet db;
     }
 }

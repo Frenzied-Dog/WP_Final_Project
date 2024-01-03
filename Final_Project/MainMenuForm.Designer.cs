@@ -37,10 +37,13 @@
             this.BudgetFilterLabel = new System.Windows.Forms.Label();
             this.TimeComboBox = new System.Windows.Forms.ComboBox();
             this.BudgetComboBox = new System.Windows.Forms.ComboBox();
+            this.Tmr = new System.Windows.Forms.Timer(this.components);
             this.db = new Final_Project.MainDataSet();
             this.ActivityAdapter = new Final_Project.MainDataSetTableAdapters.ActivitiesTableAdapter();
             this.UA_Adapter = new Final_Project.MainDataSetTableAdapters.User_ActivityTableAdapter();
             this.UsersAdapter = new Final_Project.MainDataSetTableAdapters.UsersTableAdapter();
+            this.NotifyLabel = new System.Windows.Forms.Label();
+            this.SpotPicBox = new System.Windows.Forms.PictureBox();
             this.NotifyPicBox = new System.Windows.Forms.PictureBox();
             this.CreateEventPicBox = new System.Windows.Forms.PictureBox();
             this.MyEventPicBox = new System.Windows.Forms.PictureBox();
@@ -55,9 +58,9 @@
             this.DotsPicBox = new System.Windows.Forms.PictureBox();
             this.MarkPicBox = new System.Windows.Forms.PictureBox();
             this.LogoPicBox = new System.Windows.Forms.PictureBox();
-            this.Tmr = new System.Windows.Forms.Timer(this.components);
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpotPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NotifyPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateEventPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyEventPicBox)).BeginInit();
@@ -226,6 +229,12 @@
             this.BudgetComboBox.TabStop = false;
             this.BudgetComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBox_SelectedIndexChanged);
             // 
+            // Tmr
+            // 
+            this.Tmr.Enabled = true;
+            this.Tmr.Interval = 30000;
+            this.Tmr.Tick += new System.EventHandler(this.Tmr_Tick);
+            // 
             // db
             // 
             this.db.DataSetName = "MainDataSet";
@@ -242,6 +251,29 @@
             // UsersAdapter
             // 
             this.UsersAdapter.ClearBeforeFill = true;
+            // 
+            // NotifyLabel
+            // 
+            this.NotifyLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.NotifyLabel.Font = new System.Drawing.Font("微軟正黑體", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotifyLabel.ForeColor = System.Drawing.Color.White;
+            this.NotifyLabel.Location = new System.Drawing.Point(1053, 9);
+            this.NotifyLabel.Name = "NotifyLabel";
+            this.NotifyLabel.Size = new System.Drawing.Size(33, 33);
+            this.NotifyLabel.TabIndex = 43;
+            this.NotifyLabel.Text = "0";
+            this.NotifyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SpotPicBox
+            // 
+            this.SpotPicBox.BackColor = System.Drawing.Color.Transparent;
+            this.SpotPicBox.Image = global::Final_Project.Properties.Resources.spot;
+            this.SpotPicBox.Location = new System.Drawing.Point(1051, 7);
+            this.SpotPicBox.Name = "SpotPicBox";
+            this.SpotPicBox.Size = new System.Drawing.Size(35, 35);
+            this.SpotPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.SpotPicBox.TabIndex = 43;
+            this.SpotPicBox.TabStop = false;
             // 
             // NotifyPicBox
             // 
@@ -404,17 +436,14 @@
             this.LogoPicBox.TabIndex = 3;
             this.LogoPicBox.TabStop = false;
             // 
-            // Tmr
-            // 
-            this.Tmr.Interval = 30000;
-            this.Tmr.Tick += new System.EventHandler(this.Tmr_Tick);
-            // 
             // MainMenuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1264, 711);
+            this.Controls.Add(this.NotifyLabel);
+            this.Controls.Add(this.SpotPicBox);
             this.Controls.Add(this.NotifyPicBox);
             this.Controls.Add(this.CreateEventPicBox);
             this.Controls.Add(this.MyEventPicBox);
@@ -432,6 +461,7 @@
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SpotPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NotifyPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CreateEventPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyEventPicBox)).EndInit();
@@ -482,5 +512,7 @@
         private MainDataSetTableAdapters.User_ActivityTableAdapter UA_Adapter;
         private MainDataSetTableAdapters.UsersTableAdapter UsersAdapter;
         private System.Windows.Forms.Timer Tmr;
+        private System.Windows.Forms.PictureBox SpotPicBox;
+        private System.Windows.Forms.Label NotifyLabel;
     }
 }

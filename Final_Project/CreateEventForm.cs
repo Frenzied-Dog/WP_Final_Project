@@ -61,14 +61,11 @@ namespace Final_Project {
             else if (hr >= 1 && hr < 6) preferTime = 6;
 
             int id = rnd.Next();
-            ActivityAdapter.Insert(id, ShopTextBox.Text, AddressTextBox.Text, UID, est, preferTime, intro, BudgetComboBox.SelectedIndex, DateTime.Now, false);
-            //db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, UID, est, preferTime, intro, BudgetComboBox.SelectedIndex, DateTime.Now, false);
-            //ActivityAdapter.Update(db.Activities);
+            db.Activities.AddActivitiesRow(id, ShopTextBox.Text, AddressTextBox.Text, db.Users.FindByID(UID), est, preferTime, intro, BudgetComboBox.SelectedIndex, DateTime.Now, false);
+            ActivityAdapter.Update(db.Activities);
 
-            User_ActivityAdapter.Insert(UID, id);
-
-            //db.User_Activity.AddUser_ActivityRow(UID, id);
-            //User_ActivityAdapter.Update(db.User_Activity);
+            var tmp = db.User_Activity.AddUser_ActivityRow(db.Users.FindByID(UID), db.Activities.FindByID(id));
+            UA_Adapter.Update(tmp);
 
             MessageBox.Show("活動已發布～\n\r祝您結交志同道合的朋友！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             DialogResult = DialogResult.OK;

@@ -34,7 +34,7 @@
             this.TimePicker = new System.Windows.Forms.DateTimePicker();
             this.db = new Final_Project.MainDataSet();
             this.ActivityAdapter = new Final_Project.MainDataSetTableAdapters.ActivitiesTableAdapter();
-            this.User_ActivityAdapter = new Final_Project.MainDataSetTableAdapters.User_ActivityTableAdapter();
+            this.UA_Adapter = new Final_Project.MainDataSetTableAdapters.User_ActivityTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.CreatePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UseMapPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
@@ -152,9 +152,9 @@
             // 
             this.ActivityAdapter.ClearBeforeFill = true;
             // 
-            // User_ActivityAdapter
+            // UA_Adapter
             // 
-            this.User_ActivityAdapter.ClearBeforeFill = true;
+            this.UA_Adapter.ClearBeforeFill = true;
             // 
             // CreateEventForm
             // 
@@ -195,7 +195,7 @@
         private System.Windows.Forms.TextBox ShopTextBox;
         private System.Windows.Forms.TextBox AddressTextBox;
         private MainDataSetTableAdapters.ActivitiesTableAdapter ActivityAdapter;
-        private MainDataSetTableAdapters.User_ActivityTableAdapter User_ActivityAdapter;
+        private MainDataSetTableAdapters.User_ActivityTableAdapter UA_Adapter;
         private System.Windows.Forms.DateTimePicker TimePicker;
     }
 }

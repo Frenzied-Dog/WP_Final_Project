@@ -57,7 +57,7 @@ namespace Final_Project {
                 authResult = await PublicClientApp.AcquireTokenSilent(scopes, accounts.FirstOrDefault())
                     .ExecuteAsync();
 
-            } catch (MsalUiRequiredException ex) {
+            } catch (MsalUiRequiredException) {
                 try {
                     authResult = await PublicClientApp.AcquireTokenInteractive(scopes)
                         .WithPrompt(Prompt.SelectAccount)

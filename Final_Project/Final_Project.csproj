@@ -400,6 +400,7 @@
     <None Include="Resources\查看更多Btn_2.png" />
     <None Include="Resources\CuteDog_3.png" />
     <None Include="Resources\NotifyTitle.png" />
+    <None Include="Resources\spot.png" />
     <Content Include="Test_DB.mdf" />
     <Content Include="Test_DB_log.ldf">
       <DependentUpon>Test_DB.mdf</DependentUpon>
