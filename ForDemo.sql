@@ -1,0 +1,3 @@
+﻿UPDATE Activities
+SET Deleted = 0
+WHERE ID = 402357065

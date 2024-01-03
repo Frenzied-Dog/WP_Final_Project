@@ -264,6 +264,7 @@ namespace Final_Project {
             } else {
                 SpotPicBox.Visible = true;
                 NotifyLabel.Visible = true;
+                NotifyLabel.BringToFront();
                 int c = notifyForm.count;
                 NotifyLabel.Text = c.ToString();
             }
