@@ -17,7 +17,7 @@ namespace Final_Project {
         MyProfileForm profileForm;
         MyEventForm eventForm;
         NotificationForm notifyForm;
-        DataRow[] Acts;
+        List<int> Acts;
         int ActIndex = 0;
         int t = 0;
         string UID = "";
@@ -29,6 +29,7 @@ namespace Final_Project {
             InitializeComponent();
             this.db = db;
             this.UID = UID;
+            Acts = new List<int>();
 
             profileForm = new MyProfileForm(db, UID);
             eventForm = new MyEventForm(db, UID);
@@ -52,11 +53,12 @@ namespace Final_Project {
             gp.AddEllipse(SpotPicBox.ClientRectangle);
             SpotPicBox.Region = new Region(gp);
 
-            ReloadEvent();
+            ActIndex = 0;
             Tmr_Tick(null, null);
         }
 
         void ReloadEvent() {
+            Acts.Clear();
             string filter = "Deleted = False";
 
             if (BudgetComboBox.SelectedIndex > 0) {
@@ -64,9 +66,9 @@ namespace Final_Project {
             } else if (TimeComboBox.SelectedIndex > 0) {
                 filter += $" AND PreferTime = {TimeComboBox.SelectedIndex}";
             }
-            Acts = db.Activities.Select(filter);
+            var tmp = db.Activities.Select(filter);
 
-            if (Acts.Length == 0) {
+            if (tmp.Length == 0) {
                 DateLabel.Text = "------";
                 TimeLabel.Text = "------";
                 ShopLabel.Text = "------";
@@ -77,21 +79,24 @@ namespace Final_Project {
                 return;
             }
 
-            ActIndex = 0;
+            foreach (var act in tmp)
+                Acts.Add(act.Field<int>("ID"));
+
+            if (ActIndex > Acts.Count-1) ActIndex = 0;
             LoadEvent();
         }
 
         void LoadEvent() {
-            var act = Acts[ActIndex];
-            DateLabel.Text = act.Field<DateTime>("EstimateTime").ToString("d");
-            TimeLabel.Text = act.Field<DateTime>("EstimateTime").ToString("t");
-            ShopLabel.Text = act.Field<string>("Place");
-            AddressLabel.Text = act.Field<string>("Address");
-            IntroLabel.Text = act.Field<string>("Intro");
+            var act = db.Activities.FindByID(Acts[ActIndex]);
+            DateLabel.Text = act.EstimateTime.ToString("d");
+            TimeLabel.Text = act.EstimateTime.ToString("t");
+            ShopLabel.Text = act.Place;
+            AddressLabel.Text = act.Address;
+            IntroLabel.Text = act.Intro;
 
             var tmp = act.GetChildRows("FK_UA_ToActivity");
             CountLabel.Text = tmp.Length.ToString();
-            IndexLabel.Text = $"{ActIndex + 1}/{Acts.Length}";
+            IndexLabel.Text = $"{ActIndex + 1}/{Acts.Count}";
         }
 
         private void MainMenuForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -102,9 +107,8 @@ namespace Final_Project {
             BudgetComboBox.SelectedIndex = 0;
             TimeComboBox.SelectedIndex = 0;
 
-            Acts = db.Activities.Select("Deleted = False");
-            int index = Array.FindIndex(Acts, x => x.Field<int>("ID") == actID);
-            if (index == -1) throw new Exception("找不到");
+            int index = Acts.FindIndex(x => x == actID);
+            if (index == -1) return;
             ActIndex = index;
             LoadEvent();
             MainPanel.VerticalScroll.Value = MainPanel.VerticalScroll.Maximum;
@@ -118,10 +122,12 @@ namespace Final_Project {
                 break;
             case "MyEvent":
                 eventForm.ShowDialog();
+                ActIndex = 0;
                 ReloadEvent();
                 break;
             case "CreateEvent":
                 new CreateEventForm(db, UID).ShowDialog();
+                ActIndex = 0;
                 ReloadEvent();
                 break;
             case "Notify":
@@ -200,27 +206,26 @@ namespace Final_Project {
         }
 
         private void ArrowPicBox_Click(object sender, EventArgs e) {
-            if (Acts.Length == 0) return;
+            if (Acts.Count == 0) return;
             PictureBox picBox = (PictureBox)sender;
             string n = picBox.Name.Substring(0, picBox.Name.Length - 6);
             //if (n == "Left" && ActIndex > 0) ActIndex--;
-            //else if (n == "Right" && ActIndex < Acts.Length - 1) ActIndex++;
+            //else if (n == "Right" && ActIndex < Acts.Count - 1) ActIndex++;
             //else return;
             if (n == "Left") {
                 ActIndex--;
-                if (ActIndex < 0) ActIndex = Acts.Length - 1;
+                if (ActIndex < 0) ActIndex = Acts.Count - 1;
             } else if (n == "Right") {
                 ActIndex++;
-                if (ActIndex >= Acts.Length) ActIndex = 0;
-            }
-            else return;
+                if (ActIndex >= Acts.Count) ActIndex = 0;
+            } else return;
             LoadEvent();
         }
 
         private void SignPicBox_Click(object sender, EventArgs e) {
-            int actID = Acts[ActIndex].Field<int>("ID");
+            int actID = Acts[ActIndex];
 
-            if (Acts[ActIndex].Field<string>("MainUserId").Trim(' ') == UID) {
+            if (db.Activities.FindByID(Acts[ActIndex]).MainUserId.Trim(' ') == UID) {
                 MessageBox.Show("你是主揪你還報啥XDD", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -238,6 +243,7 @@ namespace Final_Project {
         }
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e) {
+            ActIndex = 0;
             ReloadEvent();
         }
 
@@ -251,6 +257,7 @@ namespace Final_Project {
             ActivityAdapter.Fill(db.Activities);
 
             notifyForm.Check();
+            ReloadEvent();
             if (notifyForm.count == 0) {
                 SpotPicBox.Visible = false;
                 NotifyLabel.Visible = false;

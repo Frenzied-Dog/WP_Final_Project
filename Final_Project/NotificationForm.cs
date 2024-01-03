@@ -28,27 +28,30 @@ namespace Final_Project {
 
         public void Check() {
             foreach (var ua in db.User_Activity.Select($"UserID = '{UID}'")) {
-                var tmp = db.Activities.FindByID(ua.Field<int>("ActivityID"));
+                var act = db.Activities.FindByID(ua.Field<int>("ActivityID"));
                 
+                if (act.EstimateTime < DateTime.Now) continue;
+
                 // check deleted events
-                if (tmp.Deleted && !lists.Exists(x => x.type == NotifyType.EVENT_CANCELED && x.actID == tmp.ID)) {
-                    AddNotify(NotifyType.EVENT_CANCELED, tmp);
+                if (act.Deleted && !lists.Exists(x => x.type == NotifyType.EVENT_CANCELED && x.actID == act.ID)) {
+                    AddNotify(NotifyType.EVENT_CANCELED, act);
                 }
             
                 // check event soon
-                var timeLeft = tmp.EstimateTime.Subtract(DateTime.Now).TotalMinutes;
-                if (!tmp.Deleted && timeLeft > 0 && timeLeft < 15 && !lists.Exists(x => x.type == NotifyType.EVENT_SOON && x.actID == tmp.ID)) {
-                    AddNotify(NotifyType.EVENT_SOON, tmp);
+                var timeLeft = act.EstimateTime.Subtract(DateTime.Now).TotalMinutes;
+                if (!act.Deleted && timeLeft > 0 && timeLeft < 15 && !lists.Exists(x => x.type == NotifyType.EVENT_SOON && x.actID == act.ID)) {
+                    AddNotify(NotifyType.EVENT_SOON, act);
                 }
             }
 
             var me = db.Users.FindByID(UID);
             // check new events
-            foreach (var act in db.Activities.Select($"Deleted = false AND EstimateTime > '{DateTime.Now:yyyy-MM-dd HH:mm:ss}' AND" +
+            foreach (var act in db.Activities.Select($"Deleted = false AND EstimateTime > '{DateTime.Now:g}' AND" +
                                                                      $" PreferTime = {me.PreferTime} AND Budget = {me.Budget} AND MainUserId <> '{UID}'")) {
-                if (!db.User_Activity.Select($"UserID = '{UID}' AND ActivityID = {act.Field<int>("ID")}").Any() &&
-                        !lists.Exists(x => x.type == NotifyType.NEW_EVENT && x.actID == act.Field<int>("ID"))) {
-                    AddNotify(NotifyType.NEW_EVENT, db.Activities.FindByID(act.Field<int>("ID")));
+                int actID = act.Field<int>("ID");
+                if (!db.User_Activity.Select($"UserID = '{UID}' AND ActivityID = {actID}").Any() &&
+                        !lists.Exists(x => x.type == NotifyType.NEW_EVENT && x.actID == actID)) {
+                    AddNotify(NotifyType.NEW_EVENT, db.Activities.FindByID(actID));
                 }
             }
         }

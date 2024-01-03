@@ -13,14 +13,14 @@ namespace Final_Project {
         int ActIndex = 0;
         string UID = "";
         Label[] eventLabels = new Label[6];
-        List<DataRow> Acts;
+        List<int> Acts;
         //List<DataRow> acts = new List<DataRow>();
 
         public MyEventForm(MainDataSet db, string UID) {
             InitializeComponent();
             this.db = db;
             this.UID = UID;
-            Acts = new List<DataRow>();
+            Acts = new List<int>();
 
             eventLabels = new Label[6] { DateLabel, TimeLabel, ShopLabel, AddressLabel, CountLabel, IntroLabel };
             foreach (var label in eventLabels) {
@@ -30,12 +30,10 @@ namespace Final_Project {
 
         void ReloadEvent() {
             Acts.Clear();
-            //ActivityAdapter.FillByUID(db.Activities , UID, false);
 
             foreach (var ua in db.User_Activity.Select($"UserID = '{UID}'")) {
-                var tmp = db.Activities.Select($"ID = {ua.Field<int>("ActivityID")} AND Deleted = False");
-                if (tmp.Length > 0) Acts.Add(tmp[0]);
-                //Acts.Add(ua.GetParentRow("FK_UA_ToActivity"));
+                var tmp = db.Activities.FindByID(ua.Field<int>("ActivityID"));
+                if (!tmp.Deleted) Acts.Add(tmp.ID);
             }
 
             if (Acts.Count == 0) {
@@ -53,13 +51,13 @@ namespace Final_Project {
         }
 
         void LoadEvent() {
-            var act = Acts[ActIndex];
+            var act = db.Activities.FindByID(Acts[ActIndex]);
 
-            DateLabel.Text = act.Field<DateTime>("EstimateTime").ToString("d");
-            TimeLabel.Text = act.Field<DateTime>("EstimateTime").ToString("t");
-            ShopLabel.Text = act.Field<string>("Place");
-            AddressLabel.Text = act.Field<string>("Address");
-            IntroLabel.Text = act.Field<string>("Intro");
+            DateLabel.Text = act.EstimateTime.ToString("d");
+            TimeLabel.Text = act.EstimateTime.ToString("t");
+            ShopLabel.Text = act.Place;
+            AddressLabel.Text = act.Address;
+            IntroLabel.Text = act.Intro;
 
             var tmp = act.GetChildRows("FK_UA_ToActivity");
             CountLabel.Text = tmp.Length.ToString();
@@ -125,7 +123,7 @@ namespace Final_Project {
         private void PicBox_Click(object sender, EventArgs e) {
             PictureBox picBox = (PictureBox)sender;
             string n = picBox.Name.Substring(0, picBox.Name.Length - 6);
-            var act = db.Activities.FindByID(Acts[ActIndex].Field<int>("ID"));
+            var act = db.Activities.FindByID(Acts[ActIndex]);
 
             if (n == "Discuss") {
                 new DiscussionForm(db, act.ID, UID).ShowDialog();

@@ -33,19 +33,19 @@ namespace Final_Project {
                 TitlePicBox.Image = Properties.Resources.好康通知;
                 ConfirmPicBox.Image = Properties.Resources.查看更多Btn;
                 MainLabel.Text = $"{ act.GetParentRow("FK_Activity_ToUser").Field<string>("NickName") }" +
-                    $"在 { act.EstimateTime.ToString("g") } 舉辦了活動，地點是 { act.Place }" +
+                    $"在 { act.EstimateTime:g} 舉辦了活動，地點是 { act.Place }" +
                     $"。我們認為你會有興趣，點擊去看看吧！";
                 break;
             case NotifyType.EVENT_CANCELED:
                 TitlePicBox.Image = Properties.Resources.取消通知;
                 ConfirmPicBox.Image = Properties.Resources.我知道了Btn;
-                MainLabel.Text = $"您曾報名 { act.EstimateTime.ToString("g") } 於 { act.Place } 之活動，" +
+                MainLabel.Text = $"您曾報名 { act.EstimateTime:g} 於 { act.Place } 之活動，" +
                     $"主辦人因個人因素取消活動，請記得不要白跑一趟喔！";
                 break;
             case NotifyType.EVENT_SOON:
                 TitlePicBox.Image = Properties.Resources.活動提醒;
                 ConfirmPicBox.Visible = false;
-                MainLabel.Text = $"您曾報名 { act.EstimateTime.ToString("g") } 於 { act.Place } 之活動，" +
+                MainLabel.Text = $"您曾報名 { act.EstimateTime:g} 於 { act.Place } 之活動，" +
                     $"活動再15分鐘就要開始囉！該從床上爬起來了！";
                 break;
             }
