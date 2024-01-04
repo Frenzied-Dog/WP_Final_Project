@@ -1,3 +1,3 @@
-﻿UPDATE Activities
-SET Deleted = 0
-WHERE ID = 402357065
+﻿/*DELETE FROM Users WHERE ID = 'F74102292';*/
+
+SELECT * FROM Users;

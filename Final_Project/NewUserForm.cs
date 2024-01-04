@@ -59,13 +59,12 @@ namespace Final_Project {
 				img.Save(mStream, ImageFormat.Bmp);
 				var defaultAvatar =  mStream.ToArray();
 
-				//db.Me.AddMeRow(ID, name, nickname, major, budgetType, preferTime, defaultAvatar, aboutMe, gender);
-				//MeAdapter.Update(db.Me);
-				UsersAdapter.Insert(ID, name, nickname, major, budgetType, preferTime, defaultAvatar, aboutMe, gender);
+				var tmp = db.Users.AddUsersRow(ID, name, nickname, major, budgetType, preferTime, defaultAvatar, aboutMe, gender);
+				UsersAdapter.Update(tmp);
 				MessageBox.Show("註冊成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			};
 
-            new MainMenuForm(db, ID).Show();
+            new MainMenuForm(db, ID) {Location = Location}.Show();
             Close();
         }
 
