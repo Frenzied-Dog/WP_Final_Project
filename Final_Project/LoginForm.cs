@@ -83,21 +83,26 @@ namespace Final_Project {
                 var resultDic = JsonConvert.DeserializeObject<Dictionary<string, object>>(content);
                 name = resultDic["displayName"].ToString().Split(' ').First();
             } catch (Exception ex) {
-                ex.Message.ToString();
                 MessageBox.Show(ex.ToString());
                 return;
             }
 
-            var me = UsersAdapter.GetDataByID(ID)[0];
+            try {
+                var me = UsersAdapter.GetDataByID(ID)[0];
 
-            if (me == null) {
-                new NewUserForm(db, TextBox_ID.Text, name).Show();
-            } else {
-                MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new MainMenuForm(db, ID).Show();
-            }
+                if (me == null) {
+                    new NewUserForm(db, TextBox_ID.Text, name) { Location = Location }.Show();
+                } else {
+                    MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new MainMenuForm(db, ID) { Location = Location }.Show();
+                }
 
-            Close();
+                Close();
+            } catch (Exception) {
+                MessageBox.Show("資料庫連線錯誤!\n請稍後再試", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            } 
+
         }
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -105,12 +110,12 @@ namespace Final_Project {
         }
 
         private void DevLoginBtn_Click(object sender, EventArgs e) {
-            new MainMenuForm(db, DevID).Show();
+            new MainMenuForm(db, DevID) { Location = Location }.Show();
             Close();
         }
 
         private void DevNewUserBtn_Click(object sender, EventArgs e) {
-            new NewUserForm(db, TextBox_ID.Text, textBox1.Text).Show();
+            new NewUserForm(db, TextBox_ID.Text, textBox1.Text) { Location = Location }.Show();
             Close();
         }
 
@@ -143,15 +148,21 @@ namespace Final_Project {
 
         private void DevLoginAsBtn_Click(object sender, EventArgs e) {
             ID = TextBox_ID.Text;
-            var me = UsersAdapter.GetDataByID(ID)[0];
 
-            if (me == null) {
-                MessageBox.Show("查無此用戶!");
-            } else {
-                MessageBox.Show($"歡迎回來，{me.Name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new MainMenuForm(db, ID).Show();
+            try {
+                var me = UsersAdapter.GetDataByID(ID)[0];
+
+                if (me == null) {
+                    MessageBox.Show("查無此用戶!");
+                } else {
+                    MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    new MainMenuForm(db, ID) { Location = Location }.Show();
+                    Close();
+                }
+            } catch (Exception) {
+                MessageBox.Show("資料庫連線錯誤!\n請稍後再試", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
-            Close();
         }
 
         private void TextBox_ID_KeyPress(object sender, KeyPressEventArgs e) {

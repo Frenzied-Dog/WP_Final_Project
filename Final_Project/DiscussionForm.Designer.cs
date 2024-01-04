@@ -26,18 +26,18 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiscussionForm));
             this.db = new Final_Project.MainDataSet();
             this.ChatPanel = new System.Windows.Forms.Panel();
-            this.ChatAdapter = new Final_Project.MainDataSetTableAdapters.ChatTableAdapter();
             this.EmptyLabel = new System.Windows.Forms.Label();
-            this.DogPic = new System.Windows.Forms.PictureBox();
             this.TitlePicBox = new System.Windows.Forms.PictureBox();
             this.PostPicBox = new System.Windows.Forms.PictureBox();
+            this.ChatAdapter = new Final_Project.MainDataSetTableAdapters.ChatTableAdapter();
+            this.DogPic = new System.Windows.Forms.PictureBox();
             this.LogoPicBox = new System.Windows.Forms.PictureBox();
             this.MarkPicBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.db)).BeginInit();
             this.ChatPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DogPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TitlePicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PostPicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DogPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarkPicBox)).BeginInit();
             this.SuspendLayout();
@@ -59,10 +59,6 @@
             this.ChatPanel.Size = new System.Drawing.Size(1265, 581);
             this.ChatPanel.TabIndex = 6;
             // 
-            // ChatAdapter
-            // 
-            this.ChatAdapter.ClearBeforeFill = true;
-            // 
             // EmptyLabel
             // 
             this.EmptyLabel.AutoSize = true;
@@ -72,16 +68,6 @@
             this.EmptyLabel.Size = new System.Drawing.Size(369, 80);
             this.EmptyLabel.TabIndex = 3;
             this.EmptyLabel.Text = "目前尚無人發佈貼文！\r\n趕快來和大家說說話吧！\r\n";
-            // 
-            // DogPic
-            // 
-            this.DogPic.Image = global::Final_Project.Properties.Resources.CuteDog;
-            this.DogPic.Location = new System.Drawing.Point(760, 250);
-            this.DogPic.Name = "DogPic";
-            this.DogPic.Size = new System.Drawing.Size(195, 203);
-            this.DogPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.DogPic.TabIndex = 5;
-            this.DogPic.TabStop = false;
             // 
             // TitlePicBox
             // 
@@ -107,6 +93,20 @@
             this.PostPicBox.Click += new System.EventHandler(this.PostPicBox_Click);
             this.PostPicBox.MouseEnter += new System.EventHandler(this.PostPicBox_MouseEnter);
             this.PostPicBox.MouseLeave += new System.EventHandler(this.PostPicBox_MouseLeave);
+            // 
+            // ChatAdapter
+            // 
+            this.ChatAdapter.ClearBeforeFill = true;
+            // 
+            // DogPic
+            // 
+            this.DogPic.Image = global::Final_Project.Properties.Resources.CuteDog;
+            this.DogPic.Location = new System.Drawing.Point(760, 250);
+            this.DogPic.Name = "DogPic";
+            this.DogPic.Size = new System.Drawing.Size(195, 203);
+            this.DogPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.DogPic.TabIndex = 5;
+            this.DogPic.TabStop = false;
             // 
             // LogoPicBox
             // 
@@ -143,14 +143,14 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DiscussionForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Discussion";
             ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
             this.ChatPanel.ResumeLayout(false);
             this.ChatPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DogPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TitlePicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PostPicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DogPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarkPicBox)).EndInit();
             this.ResumeLayout(false);

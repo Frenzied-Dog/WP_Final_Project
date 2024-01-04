@@ -84,6 +84,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MapForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Maps";
             this.Load += new System.EventHandler(this.MapForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Map)).EndInit();
