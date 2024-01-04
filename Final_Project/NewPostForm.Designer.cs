@@ -81,6 +81,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewPostForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Post";
             ((System.ComponentModel.ISupportInitialize)(this.PostPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.db)).EndInit();
