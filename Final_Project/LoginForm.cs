@@ -89,19 +89,17 @@ namespace Final_Project {
 
             try {
                 var me = UsersAdapter.GetDataByID(ID)[0];
-
-                if (me == null) {
-                    new NewUserForm(db, TextBox_ID.Text, name) { Location = Location }.Show();
-                } else {
-                    MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    new MainMenuForm(db, ID) { Location = Location }.Show();
-                }
-
+                MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new MainMenuForm(db, ID) { Location = Location }.Show();
+                
                 Close();
+            } catch (IndexOutOfRangeException) {
+                new NewUserForm(db, TextBox_ID.Text, name) { Location = Location }.Show();
+                return;
             } catch (Exception) {
                 MessageBox.Show("資料庫連線錯誤!\n請稍後再試", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            } 
+                return;
+            }
 
         }
 
@@ -155,7 +153,7 @@ namespace Final_Project {
                 if (me == null) {
                     MessageBox.Show("查無此用戶!");
                 } else {
-                    MessageBox.Show($"歡迎回來，{name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"歡迎回來，{me.Name}！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     new MainMenuForm(db, ID) { Location = Location }.Show();
                     Close();
                 }

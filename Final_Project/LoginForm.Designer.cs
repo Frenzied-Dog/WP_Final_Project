@@ -74,6 +74,7 @@
             this.DevLoginBtn.TabIndex = 3;
             this.DevLoginBtn.Text = "MainMenu";
             this.DevLoginBtn.UseVisualStyleBackColor = true;
+            this.DevLoginBtn.Visible = false;
             this.DevLoginBtn.Click += new System.EventHandler(this.DevLoginBtn_Click);
             // 
             // DeleteUserBtn
@@ -145,6 +146,7 @@
             this.DevLoginAsBtn.TabIndex = 10;
             this.DevLoginAsBtn.Text = "Login As";
             this.DevLoginAsBtn.UseVisualStyleBackColor = true;
+            this.DevLoginAsBtn.Visible = false;
             this.DevLoginAsBtn.Click += new System.EventHandler(this.DevLoginAsBtn_Click);
             // 
             // LoginForm

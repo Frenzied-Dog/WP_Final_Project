@@ -320,7 +320,7 @@
             // Tmr
             // 
             this.Tmr.Enabled = true;
-            this.Tmr.Interval = 30000;
+            this.Tmr.Interval = 10000;
             this.Tmr.Tick += new System.EventHandler(this.Tmr_Tick);
             // 
             // db
